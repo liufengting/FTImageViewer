@@ -56,7 +56,7 @@ class FTImageViewer: NSObject , UIScrollViewDelegate,UIGestureRecognizerDelegate
     func showImages(images : [String] , atIndex : NSInteger , fromSenderArray: [UIView]){
         
         for i in 0 ... fromSenderArray.count-1 {
-            let rect : CGRect = (UIApplication.sharedApplication().keyWindow?.convertRect(fromSenderArray[i].frame, toView:nil))!
+            let rect : CGRect = fromSenderArray[i].superview!.convertRect(fromSenderArray[i].frame, toView:UIApplication.sharedApplication().keyWindow)
             fromSenderRectArray.append(rect)
         }
         
@@ -121,7 +121,6 @@ class FTImageViewer: NSObject , UIScrollViewDelegate,UIGestureRecognizerDelegate
 
         }
         scrollView.frame = UIScreen.mainScreen().bounds
-        scrollView.backgroundColor = UIColor.clearColor()
 
         
         for v in scrollView.subviews{
@@ -235,6 +234,7 @@ class FTImageViewer: NSObject , UIScrollViewDelegate,UIGestureRecognizerDelegate
         UIView.animateWithDuration(FTImageViewerAnimationDuriation, animations: { () -> Void in
             self.beginAnimationView.frame = self.fromSenderRectArray[page]
             self.scrollView.alpha = 0
+            self.backgroundView.backgroundColor = UIColor.clearColor();
             self.tabBar.frame = CGRectMake(0, FTImageViewerScreenHeight, FTImageViewerScreenWidth, FTImageViewBarHeight)
             }) { (finished: Bool) -> Void in
                 if  (finished == true){
@@ -386,7 +386,8 @@ class FTImageViewBar : UIView {
         closeButtonTapBlock = closeTapBlock
         
 
-        let bundleURL : NSString = "Frameworks/FTImageViewer.framework/ImageAssets.bundle"
+//        let bundleURL : NSString = "Frameworks/FTImageViewer.framework/ImageAssets.bundle"
+        let bundleURL : NSString = "ImageAssets.bundle"
         let closeImagePath = bundleURL.stringByAppendingPathComponent("close.png")
         let saveImagePath = bundleURL.stringByAppendingPathComponent("save.png")
         
