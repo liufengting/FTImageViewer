@@ -1,18 +1,19 @@
 # FTImageViewer
 
 FTImageViewer. A simple ImageViewer and ImageGrid. Can preview images with just a few lines of code. 
-
 I wrote this for my future projects. Feel free to try it in your own projects!
-
-The project is now finished. But more feathers are coming. 
-
-I wish I had time to upload a JIF to show you how amazing this is.
-
 
 
 ## ScreenShots
 
-<img src="/ScreenShots/Demo.gif" width="400"/>
+
+<table>
+  <tr>
+    <th><img src="/ScreenShots/Demo1.gif" width="250"/></th>
+    <th><img src="/ScreenShots/Demo2.gif" width="250"/></th>
+    <th><img src="/ScreenShots/Demo3.gif" width="250"/></th>
+  </tr>
+</table>
 
 ##Usage
 
