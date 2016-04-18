@@ -9,6 +9,11 @@ The project is now finished. But more feathers are coming.
 I wish I had time to upload a JIF to show you how amazing this is.
 
 
+
+## ScreenShots
+
+<img src="/ScreenShots/Demo.gif" width="400"/>
+
 ##Usage
 
 
