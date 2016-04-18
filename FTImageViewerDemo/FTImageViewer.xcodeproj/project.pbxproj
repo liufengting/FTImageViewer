@@ -55,7 +55,7 @@
 		5ACB3B5A1CC4EF7C00E4F7EC /* FTImageGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTImageGridView.swift; sourceTree = "<group>"; };
 		5ACB3B5B1CC4EF7C00E4F7EC /* FTImageViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTImageViewer.swift; sourceTree = "<group>"; };
 		5ACB3B5C1CC4EF7C00E4F7EC /* ImageAssets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ImageAssets.bundle; sourceTree = "<group>"; };
-		5AF9FA471C224EE100575376 /* FTImageViewer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FTImageViewer-Bridging-Header.h"; sourceTree = "<group>"; };
+		5ADAD79E1CC531C400740B68 /* FTImageViewer-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FTImageViewer-Bridging-Header.h"; sourceTree = "<group>"; };
 		6C0A93CA2DE036F206194BED /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FBE24FC3B2FB3FF8D0F2FA9C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -135,7 +135,6 @@
 				5AA10BC81C216032001D19AE /* Assets.xcassets */,
 				5AA10BCA1C216032001D19AE /* LaunchScreen.storyboard */,
 				5AA10BCD1C216032001D19AE /* Info.plist */,
-				5AF9FA471C224EE100575376 /* FTImageViewer-Bridging-Header.h */,
 			);
 			path = FTImageViewer;
 			sourceTree = "<group>";
@@ -161,6 +160,7 @@
 		5ACB3B591CC4EF7C00E4F7EC /* FTImageViewer */ = {
 			isa = PBXGroup;
 			children = (
+				5ADAD79E1CC531C400740B68 /* FTImageViewer-Bridging-Header.h */,
 				5ACB3B5A1CC4EF7C00E4F7EC /* FTImageGridView.swift */,
 				5ACB3B5B1CC4EF7C00E4F7EC /* FTImageViewer.swift */,
 				5ACB3B5C1CC4EF7C00E4F7EC /* ImageAssets.bundle */,
