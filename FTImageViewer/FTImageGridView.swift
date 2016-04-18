@@ -59,9 +59,8 @@ class FTImageGridView: UIView{
      */
     class func getHeightWithWidth(width: CGFloat, imgCount: Int) -> CGFloat{
         let imgHeight: CGFloat = (width - FTImageGridViewImageMargin * 2) / 3
-        let photoAlbumHeight : CGFloat = imgHeight * CGFloat(ceilf(Float(imgCount / 3))) + FTImageGridViewImageMargin * CGFloat(ceilf(Float(imgCount / 3)-1))
+        let photoAlbumHeight : CGFloat = imgHeight * CGFloat(ceilf(Float(imgCount) / 3)) + FTImageGridViewImageMargin * CGFloat(ceilf(Float(imgCount) / 3)-1)
         return photoAlbumHeight
-        
     }
 
     /**
