@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
     I wrote this for my future projects. Feel free to try it in your own projects!
                    DESC
   s.homepage     = "https://github.com/liufengting/FTImageViewer"
-  s.screenshots  = "https://raw.githubusercontent.com/liufengting/FTImageViewer/master/ScreenShots/Demo.gif"
+  s.screenshots  = "https://raw.githubusercontent.com/liufengting/FTImageViewer/master/ScreenShots/Demo1.gif","https://raw.githubusercontent.com/liufengting/FTImageViewer/master/ScreenShots/Demo2.gif","https://raw.githubusercontent.com/liufengting/FTImageViewer/master/ScreenShots/Demo3.gif"
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author             = { "liufengting" => "wo157121900@me.com" }
   s.social_media_url   = "http://twitter.com/liufengting"
