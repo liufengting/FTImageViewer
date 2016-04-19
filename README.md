@@ -1,13 +1,14 @@
 # FTImageViewer
 
-Preview images with just a few lines of code. 
-
-I wrote this for my future projects. Feel free to try it in your own projects!
 
 [![Twitter](https://img.shields.io/badge/twitter-@liufengting-blue.svg?style=flat)](http://twitter.com/liufengting) 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/liufengting/FTImageViewer/master/LICENSE)
+[![CI Status](http://img.shields.io/travis/liufengting/FTImageViewer.svg?style=flat)](https://travis-ci.org/liufengting/FTImageViewer)
 [![GitHub stars](https://img.shields.io/github/stars/liufengting/FTImageViewer.svg)](https://github.com/liufengting/FTImageViewer/stargazers)
-[![GitHub issues](https://img.shields.io/github/issues/liufengting/FTImageViewer.svg)](https://github.com/liufengting/FTImageViewer/issues)
+
+Preview images with just a few lines of code.     
+
+I wrote this for my future projects. Feel free to try it in your own projects!
 
 
 ## ScreenShots
