@@ -1,11 +1,16 @@
 # FTImageViewer
 
-FTImageViewer. A simple ImageViewer and ImageGrid. Can preview images with just a few lines of code. 
+Preview images with just a few lines of code. 
+
 I wrote this for my future projects. Feel free to try it in your own projects!
+
+[![Twitter](https://img.shields.io/badge/twitter-@liufengting-blue.svg?style=flat)](http://twitter.com/liufengting) 
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/liufengting/FTImageViewer/master/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/liufengting/FTImageViewer.svg)](https://github.com/liufengting/FTImageViewer/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/liufengting/FTImageViewer.svg)](https://github.com/liufengting/FTImageViewer/issues)
 
 
 ## ScreenShots
-
 
 <table>
   <tr>
@@ -17,10 +22,37 @@ I wrote this for my future projects. Feel free to try it in your own projects!
 
 ##Usage
 
+* show images in  a grid
 
 ```swift
-
-	FTImageViewer.sharedInstance.showImages(imageUrlArray, atIndex: buttonIndex , fromSenderArray: buttonArray)
-
+        let imageGrid = FTImageGridView(frame: CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height), imageArray: imageUrlArray)
+                        { (buttonArray,buttonIndex) -> () in
+                                                    
+        }
+        self.view.addSubview(imageGrid);
 ```
+
+* Preview images with one line of code
+
+```swift
+	FTImageViewer.sharedInstance.showImages(imageUrlArray, atIndex: buttonIndex , fromSenderArray: buttonArray)
+```
+
+
+##Installation
+
+###Manually
+
+* clone this repo.
+* Simply drop the 'FTImageViewer' folder into your project.
+* Enjoy！ 
+
+###Cocoapods
+
+* Not supported yet.  
+
+
+## License
+
+FTPopOverMenu is available under the MIT license. See the LICENSE file for more info.
 

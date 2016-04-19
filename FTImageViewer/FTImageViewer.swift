@@ -386,7 +386,8 @@ class FTImageViewBar : UIView {
         closeButtonTapBlock = closeTapBlock
         
 
-        let bundleURL : NSString = "Frameworks/FTImageViewer.framework/ImageAssets.bundle"
+//        let bundleURL : NSString = "Frameworks/FTImageViewer.framework/ImageAssets.bundle"
+        let bundleURL : NSString = "ImageAssets.bundle"
         let closeImagePath = bundleURL.stringByAppendingPathComponent("close.png")
         let saveImagePath = bundleURL.stringByAppendingPathComponent("save.png")
         

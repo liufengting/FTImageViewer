@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		32D9B733E88F5EEBD225B099 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE24FC3B2FB3FF8D0F2FA9C /* libPods.a */; };
+		5A2598861CC67830009C9E8C /* ImageAssets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5A2598851CC67830009C9E8C /* ImageAssets.bundle */; };
 		5AA10BC21C216032001D19AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA10BC11C216032001D19AE /* AppDelegate.swift */; };
 		5AA10BC41C216032001D19AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA10BC31C216032001D19AE /* ViewController.swift */; };
 		5AA10BC71C216032001D19AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AA10BC51C216032001D19AE /* Main.storyboard */; };
@@ -17,7 +18,6 @@
 		5AA10BE21C216032001D19AE /* FTImageViewerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA10BE11C216032001D19AE /* FTImageViewerUITests.swift */; };
 		5ACB3B5D1CC4EF7C00E4F7EC /* FTImageGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACB3B5A1CC4EF7C00E4F7EC /* FTImageGridView.swift */; };
 		5ACB3B5E1CC4EF7C00E4F7EC /* FTImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACB3B5B1CC4EF7C00E4F7EC /* FTImageViewer.swift */; };
-		5ACB3B5F1CC4EF7C00E4F7EC /* ImageAssets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5ACB3B5C1CC4EF7C00E4F7EC /* ImageAssets.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		4515FFA58F59BCC02612872A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		5A2598851CC67830009C9E8C /* ImageAssets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ImageAssets.bundle; sourceTree = "<group>"; };
 		5A2A74141CC5F55A00F07871 /* FTImageViewer-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FTImageViewer-Bridging-Header.h"; sourceTree = "<group>"; };
 		5AA10BBE1C216032001D19AE /* FTImageViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FTImageViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA10BC11C216032001D19AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,7 +56,6 @@
 		5AA10BE31C216032001D19AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5ACB3B5A1CC4EF7C00E4F7EC /* FTImageGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTImageGridView.swift; sourceTree = "<group>"; };
 		5ACB3B5B1CC4EF7C00E4F7EC /* FTImageViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTImageViewer.swift; sourceTree = "<group>"; };
-		5ACB3B5C1CC4EF7C00E4F7EC /* ImageAssets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ImageAssets.bundle; sourceTree = "<group>"; };
 		6C0A93CA2DE036F206194BED /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FBE24FC3B2FB3FF8D0F2FA9C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -163,7 +163,7 @@
 			children = (
 				5ACB3B5A1CC4EF7C00E4F7EC /* FTImageGridView.swift */,
 				5ACB3B5B1CC4EF7C00E4F7EC /* FTImageViewer.swift */,
-				5ACB3B5C1CC4EF7C00E4F7EC /* ImageAssets.bundle */,
+				5A2598851CC67830009C9E8C /* ImageAssets.bundle */,
 			);
 			name = FTImageViewer;
 			path = ../../FTImageViewer;
@@ -276,7 +276,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5ACB3B5F1CC4EF7C00E4F7EC /* ImageAssets.bundle in Resources */,
+				5A2598861CC67830009C9E8C /* ImageAssets.bundle in Resources */,
 				5AA10BCC1C216032001D19AE /* LaunchScreen.storyboard in Resources */,
 				5AA10BC91C216032001D19AE /* Assets.xcassets in Resources */,
 				5AA10BC71C216032001D19AE /* Main.storyboard in Resources */,
