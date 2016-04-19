@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.author             = { "liufengting" => "wo157121900@me.com" }
   s.social_media_url   = "http://twitter.com/liufengting"
   s.platform     = :ios, "8.0"
-  s.source       = { :git => "https://github.com/liufengting/FTImageViewer.git", :tag => "1.1.0" }
+  s.source       = { :git => "https://github.com/liufengting/FTImageViewer.git", :tag => "#{s.version}" }
   s.source_files  = "FTImageViewer", "FTImageViewer/*.{swift}"
   s.resources = "FTImageViewer/*.{bundle}"
   s.requires_arc = true
