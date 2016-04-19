@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/liufengting/FTImageViewer.git", :tag => "#{s.version}" }
   s.source_files  = "FTImageViewer", "FTImageViewer/*.{swift}"
-  s.resources = "FTImageViewer/*.{bundle}"
+  s.resources = "FTImageViewer/*.{png}"
   s.requires_arc = true
   s.framework = "UIKit"
   s.dependency 'SDWebImage', '~> 3.7.5'
