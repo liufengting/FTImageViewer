@@ -55,5 +55,5 @@ I wrote this for my future projects. Feel free to try it in your own projects!
 
 ## License
 
-FTPopOverMenu is available under the MIT license. See the LICENSE file for more info.
+FTImageViewer is available under the MIT license. See the LICENSE file for more info.
 
