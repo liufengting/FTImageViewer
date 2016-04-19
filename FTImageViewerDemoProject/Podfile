@@ -1,9 +1,13 @@
 
 platform :ios, '8.0'
+
+source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/liufengting/FTImageViewer.git'
+
 use_frameworks!
 
 target 'FTImageViewerDemoProject' do
 pod 'SDWebImage', '~> 3.7.3'
-#pod ' FTImageViewer ', :path => ' /Users/liu/Desktop/FTImageViewer/FTImageViewer '
+pod 'FTImageViewer'
 end
 
