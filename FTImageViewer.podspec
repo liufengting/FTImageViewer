@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "FTImageViewer"
-  s.version      = "1.1.1"
+  s.version      = "0.0.1"
   s.summary      = "A simple ImageViewer and ImageGrid. Preview images with just a few lines of code."
   s.description  = <<-DESC
     FTImageViewer. A simple ImageViewer and ImageGrid. Can preview images with just a few lines of code.
@@ -14,8 +14,9 @@ Pod::Spec.new do |s|
   s.social_media_url   = "http://twitter.com/liufengting"
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/liufengting/FTImageViewer.git", :tag => "#{s.version}" }
-  s.source_files  = "FTImageViewer", "FTImageViewer/*.{swift}"
-  s.resources = "FTImageViewer/*.{png}"
+  s.source_files  = "FTImageViewer/Classes/*.swift"
+  s.resource = 'FTImageViewer/Assets/*.png'
+  s.ios.deployment_target = '8.0'
   s.requires_arc = true
   s.framework = "UIKit"
   s.dependency 'SDWebImage', '~> 3.7.5'
