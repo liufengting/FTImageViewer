@@ -1,0 +1,6 @@
+framework module FTImageViewer {
+  umbrella header "FTImageViewer-umbrella.h"
+
+  export *
+  module * { export * }
+}

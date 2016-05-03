@@ -2,6 +2,6 @@ platform :ios, '8.0'
 
 target 'Demo', :exclusive => true do
     use_frameworks!
-    #pod 'FTImageViewer', :path => '../'
-    pod 'SDWebImage', '~> 3.7.3'
+    pod 'FTImageViewer', '~> 1.2.1'
+#    pod 'SDWebImage', '~> 3.7.3'
 end

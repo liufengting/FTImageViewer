@@ -8,8 +8,10 @@
 
 import UIKit
 
-private let FTImageGridViewImageMargin : CGFloat = 2.0
-private let KCOLOR_BACKGROUND_WHITE = UIColor(red:241/255.0, green:241/255.0, blue:241/255.0, alpha:1.0)
+
+
+//private let FTImageGridViewImageMargin : CGFloat = 2.0
+//private let KCOLOR_BACKGROUND_WHITE = UIColor(red:241/255.0, green:241/255.0, blue:241/255.0, alpha:1.0)
 
 class ViewController: UIViewController {
     
@@ -47,8 +49,9 @@ class ViewController: UIViewController {
          NOTICE : This is inconvenice. does anyone have a better idea ? Please let me know !
          
          */
-        
+        FTImageViewer.sharedInstance.showImages([], atIndex: 0 , fromSenderArray: [])
 
+        
         
         let height = FTImageGridView.getHeightWithWidth(self.view.bounds.width, imgCount: imageUrlArray.count)
         
