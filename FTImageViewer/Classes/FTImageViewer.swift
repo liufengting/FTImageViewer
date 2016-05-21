@@ -9,6 +9,7 @@
 import UIKit
 import SDWebImage
 
+
 //MARK: - Marcros -
 
 private let FTImageViewerAnimationDuriation : NSTimeInterval =  0.3

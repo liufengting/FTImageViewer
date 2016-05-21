@@ -4,6 +4,5 @@ use_frameworks!
 target 'Demo' do
 
 pod 'FTImageViewer'
-pod 'Alamofire', '~> 3.4'
 
 end

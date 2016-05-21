@@ -1,20 +1,17 @@
 PODS:
-  - Alamofire (3.4.0)
-  - FTImageViewer (1.2.1):
+  - FTImageViewer (1.2.2):
     - SDWebImage (~> 3.7.5)
   - SDWebImage (3.7.6):
     - SDWebImage/Core (= 3.7.6)
   - SDWebImage/Core (3.7.6)
 
 DEPENDENCIES:
-  - Alamofire (~> 3.4)
   - FTImageViewer
 
 SPEC CHECKSUMS:
-  Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
-  FTImageViewer: 0ec31003f94e2c2ac42bc1863017f5f17924380c
+  FTImageViewer: 6aaf9df7e7b79d91d3c752e200b2397063f0158b
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
 
-PODFILE CHECKSUM: c6715e00d2d1e5defd284e19817618bbda8a9d3f
+PODFILE CHECKSUM: cc265a91fddb5c6734d89cc76a2854326fde9441
 
 COCOAPODS: 1.0.0

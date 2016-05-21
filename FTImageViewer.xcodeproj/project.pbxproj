@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		340CA3BC378D242E17A04EBA /* Pods_FTImageViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7BB3D9DFB0E9CAE458B95C2 /* Pods_FTImageViewer.framework */; };
 		5A18F82F1CF08388007B710E /* FTImageViewer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A18F82E1CF08388007B710E /* FTImageViewer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5A18F8361CF08388007B710E /* FTImageViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A18F82B1CF08388007B710E /* FTImageViewer.framework */; };
 		5A18F83B1CF08388007B710E /* FTImageViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A18F83A1CF08388007B710E /* FTImageViewerTests.swift */; };
 		5A18F84A1CF0850A007B710E /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A18F8461CF0850A007B710E /* close.png */; };
 		5A18F84B1CF0850A007B710E /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A18F8471CF0850A007B710E /* save.png */; };
 		5A18F84C1CF0850A007B710E /* FTImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A18F8491CF0850A007B710E /* FTImageViewer.swift */; };
-		FEF78E596788318CBD9DBD63 /* libPods-FTImageViewer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BCF5AF879DB198B09CF6479 /* libPods-FTImageViewer.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +28,6 @@
 
 /* Begin PBXFileReference section */
 		0B58D3CEE10CF69F6943208E /* Pods-FTImageViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FTImageViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-FTImageViewer/Pods-FTImageViewer.release.xcconfig"; sourceTree = "<group>"; };
-		4BCF5AF879DB198B09CF6479 /* libPods-FTImageViewer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FTImageViewer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A18F82B1CF08388007B710E /* FTImageViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FTImageViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A18F82E1CF08388007B710E /* FTImageViewer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTImageViewer.h; sourceTree = "<group>"; };
 		5A18F8301CF08388007B710E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -39,6 +38,7 @@
 		5A18F8471CF0850A007B710E /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
 		5A18F8491CF0850A007B710E /* FTImageViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTImageViewer.swift; sourceTree = "<group>"; };
 		6E4B21F98256F741F7E6DDAC /* Pods-FTImageViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FTImageViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FTImageViewer/Pods-FTImageViewer.debug.xcconfig"; sourceTree = "<group>"; };
+		B7BB3D9DFB0E9CAE458B95C2 /* Pods_FTImageViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FTImageViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEF78E596788318CBD9DBD63 /* libPods-FTImageViewer.a in Frameworks */,
+				340CA3BC378D242E17A04EBA /* Pods_FTImageViewer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,7 +64,7 @@
 		01A9723A830D8C2411AAD0CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4BCF5AF879DB198B09CF6479 /* libPods-FTImageViewer.a */,
+				B7BB3D9DFB0E9CAE458B95C2 /* Pods_FTImageViewer.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -92,9 +92,9 @@
 		5A18F82D1CF08388007B710E /* FTImageViewer */ = {
 			isa = PBXGroup;
 			children = (
+				5A18F82E1CF08388007B710E /* FTImageViewer.h */,
 				5A18F8451CF0850A007B710E /* Assets */,
 				5A18F8481CF0850A007B710E /* Classes */,
-				5A18F82E1CF08388007B710E /* FTImageViewer.h */,
 				5A18F8301CF08388007B710E /* Info.plist */,
 			);
 			path = FTImageViewer;
@@ -398,6 +398,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6E4B21F98256F741F7E6DDAC /* Pods-FTImageViewer.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -408,6 +409,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.liufengting.FTImageViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -415,6 +417,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0B58D3CEE10CF69F6943208E /* Pods-FTImageViewer.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
