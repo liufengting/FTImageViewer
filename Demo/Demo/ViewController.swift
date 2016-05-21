@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import FTImageViewer
 
 
 //private let FTImageGridViewImageMargin : CGFloat = 2.0
