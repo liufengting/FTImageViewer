@@ -49,7 +49,10 @@ class ViewController: UIViewController {
          NOTICE : This is inconvenice. does anyone have a better idea ? Please let me know !
          
          */
-        FTImageViewer.sharedInstance.showImages([], atIndex: 0 , fromSenderArray: [])
+//        FTImageViewer.sharedInstance.showImages([], atIndex: 0 , fromSenderArray: [])
+        let ft = FTImageViewer
+        
+        
 
         
         

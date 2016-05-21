@@ -42,12 +42,17 @@ class FTImageViewer: NSObject , UIScrollViewDelegate,UIGestureRecognizerDelegate
 
     //MARK: - sharedInstance -
 
-    class var sharedInstance : FTImageViewer {
-        struct Static {
-            static let instance : FTImageViewer = FTImageViewer()
-        }
-        return Static.instance
-    }
+//    class var sharedInstance : FTImageViewer {
+//        struct Static {
+//            static let instance : FTImageViewer = FTImageViewer()
+//        }
+//        return Static.instance
+//    }
+    
+    internal static let sharedInstance: FTImageViewer = {
+        return FTImageViewer()
+    }()
+    
     
     //MARK: - showImages -
 
