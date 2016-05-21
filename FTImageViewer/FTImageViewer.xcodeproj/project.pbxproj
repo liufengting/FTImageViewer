@@ -94,7 +94,7 @@
 			children = (
 				5A18F82E1CF08388007B710E /* FTImageViewer.h */,
 				5A18F8451CF0850A007B710E /* Assets */,
-				5A18F8481CF0850A007B710E /* Classes */,
+				5A18F8481CF0850A007B710E /* Class */,
 				5A18F8301CF08388007B710E /* Info.plist */,
 			);
 			path = FTImageViewer;
@@ -118,11 +118,12 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		5A18F8481CF0850A007B710E /* Classes */ = {
+		5A18F8481CF0850A007B710E /* Class */ = {
 			isa = PBXGroup;
 			children = (
 				5A18F8491CF0850A007B710E /* FTImageViewer.swift */,
 			);
+			name = Class;
 			path = Classes;
 			sourceTree = "<group>";
 		};

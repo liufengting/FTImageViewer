@@ -1,5 +1,5 @@
 PODS:
-  - FTImageViewer (1.2.3):
+  - FTImageViewer (1.2.4):
     - SDWebImage (~> 3.7.5)
   - SDWebImage (3.7.6):
     - SDWebImage/Core (= 3.7.6)
@@ -9,9 +9,9 @@ DEPENDENCIES:
   - FTImageViewer
 
 SPEC CHECKSUMS:
-  FTImageViewer: 96e480b2241aa13964a2a24a0c5113dc8e568470
+  FTImageViewer: 81a12c24ae257344acfde4131453f40171f4be15
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
 
-PODFILE CHECKSUM: cc265a91fddb5c6734d89cc76a2854326fde9441
+PODFILE CHECKSUM: 4c13d53401e9fa435ed85bff6ea6e0c94d2a419a
 
 COCOAPODS: 1.0.0

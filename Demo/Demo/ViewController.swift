@@ -50,28 +50,32 @@ class ViewController: UIViewController {
          
          */
 //        FTImageViewer.sharedInstance.showImages([], atIndex: 0 , fromSenderArray: [])
-        let ft = FTImageViewer
+        
+//        let ft = FTImageViewer()
+        
+        
+        
         
         
 
         
         
-        let height = FTImageGridView.getHeightWithWidth(self.view.bounds.width, imgCount: imageUrlArray.count)
+//        let height = FTImageGridView.getHeightWithWidth(self.view.bounds.width, imgCount: imageUrlArray.count)
         
         /**
          initializer with block
          */
         
-        let imageGrid = FTImageGridView(frame: CGRectMake(0, 10, self.view.bounds.width, height), imageArray: imageUrlArray) { (buttonArray,buttonIndex) -> () in
-            
-            print(buttonIndex)
-            
-            FTImageViewer.sharedInstance.showImages(imageUrlArray, atIndex: buttonIndex , fromSenderArray: buttonArray)
-
-            
-        }
-        
-        self.view.addSubview(imageGrid);
+//        let imageGrid = FTImageGridView(frame: CGRectMake(0, 10, self.view.bounds.width, height), imageArray: imageUrlArray) { (buttonArray,buttonIndex) -> () in
+//            
+//            print(buttonIndex)
+//            
+////            FTImageViewer.sharedInstance.showImages(imageUrlArray, atIndex: buttonIndex , fromSenderArray: buttonArray)
+//
+//            
+//        }
+//        
+//        self.view.addSubview(imageGrid);
         
     }
     

@@ -1,8 +1,8 @@
 platform :ios, '8.0'
-use_frameworks!
 
 target 'Demo' do
 
 pod 'FTImageViewer'
+use_frameworks!
 
 end
