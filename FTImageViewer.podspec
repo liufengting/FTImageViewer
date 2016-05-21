@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "FTImageViewer"
-  s.version      = "1.2.1"
+  s.version      = "1.2.2"
   s.summary      = "A simple ImageViewer and ImageGrid. Preview images with just a few lines of code."
   s.description  = <<-DESC
     FTImageViewer. A simple ImageViewer and ImageGrid. Can preview images with just a few lines of code.
