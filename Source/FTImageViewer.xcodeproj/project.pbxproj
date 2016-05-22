@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		340CA3BC378D242E17A04EBA /* Pods_FTImageViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7BB3D9DFB0E9CAE458B95C2 /* Pods_FTImageViewer.framework */; };
-		5A18F82F1CF08388007B710E /* FTImageViewer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A18F82E1CF08388007B710E /* FTImageViewer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5A18F8361CF08388007B710E /* FTImageViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A18F82B1CF08388007B710E /* FTImageViewer.framework */; };
 		5A18F83B1CF08388007B710E /* FTImageViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A18F83A1CF08388007B710E /* FTImageViewerTests.swift */; };
 		5A18F84A1CF0850A007B710E /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A18F8461CF0850A007B710E /* close.png */; };
 		5A18F84B1CF0850A007B710E /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A18F8471CF0850A007B710E /* save.png */; };
-		5A18F84C1CF0850A007B710E /* FTImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A18F8491CF0850A007B710E /* FTImageViewer.swift */; };
+		5AB581A41CF1E84000A92E5C /* FTImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB581A11CF1E84000A92E5C /* FTImageViewer.swift */; };
+		5AB581A81CF1E8A500A92E5C /* FTImageViewer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AB581A61CF1E8A500A92E5C /* FTImageViewer.h */; };
+		5AB581A91CF1E8A500A92E5C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5AB581A71CF1E8A500A92E5C /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,14 +30,14 @@
 /* Begin PBXFileReference section */
 		0B58D3CEE10CF69F6943208E /* Pods-FTImageViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FTImageViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-FTImageViewer/Pods-FTImageViewer.release.xcconfig"; sourceTree = "<group>"; };
 		5A18F82B1CF08388007B710E /* FTImageViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FTImageViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5A18F82E1CF08388007B710E /* FTImageViewer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTImageViewer.h; sourceTree = "<group>"; };
-		5A18F8301CF08388007B710E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A18F8351CF08388007B710E /* FTImageViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FTImageViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A18F83A1CF08388007B710E /* FTImageViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTImageViewerTests.swift; sourceTree = "<group>"; };
 		5A18F83C1CF08388007B710E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A18F8461CF0850A007B710E /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		5A18F8471CF0850A007B710E /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
-		5A18F8491CF0850A007B710E /* FTImageViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTImageViewer.swift; sourceTree = "<group>"; };
+		5AB581A11CF1E84000A92E5C /* FTImageViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTImageViewer.swift; sourceTree = "<group>"; };
+		5AB581A61CF1E8A500A92E5C /* FTImageViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTImageViewer.h; sourceTree = "<group>"; };
+		5AB581A71CF1E8A500A92E5C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E4B21F98256F741F7E6DDAC /* Pods-FTImageViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FTImageViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FTImageViewer/Pods-FTImageViewer.debug.xcconfig"; sourceTree = "<group>"; };
 		B7BB3D9DFB0E9CAE458B95C2 /* Pods_FTImageViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FTImageViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -92,10 +93,10 @@
 		5A18F82D1CF08388007B710E /* FTImageViewer */ = {
 			isa = PBXGroup;
 			children = (
-				5A18F82E1CF08388007B710E /* FTImageViewer.h */,
+				5AB581A71CF1E8A500A92E5C /* Info.plist */,
+				5AB581A61CF1E8A500A92E5C /* FTImageViewer.h */,
+				5AB5819F1CF1E84000A92E5C /* Source */,
 				5A18F8451CF0850A007B710E /* Assets */,
-				5A18F8481CF0850A007B710E /* Class */,
-				5A18F8301CF08388007B710E /* Info.plist */,
 			);
 			path = FTImageViewer;
 			sourceTree = "<group>";
@@ -118,13 +119,12 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		5A18F8481CF0850A007B710E /* Class */ = {
+		5AB5819F1CF1E84000A92E5C /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				5A18F8491CF0850A007B710E /* FTImageViewer.swift */,
+				5AB581A11CF1E84000A92E5C /* FTImageViewer.swift */,
 			);
-			name = Class;
-			path = Classes;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		D0343A35AFDE998A0954CAC8 /* Pods */ = {
@@ -143,7 +143,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A18F82F1CF08388007B710E /* FTImageViewer.h in Headers */,
+				5AB581A81CF1E8A500A92E5C /* FTImageViewer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +231,7 @@
 			files = (
 				5A18F84B1CF0850A007B710E /* save.png in Resources */,
 				5A18F84A1CF0850A007B710E /* close.png in Resources */,
+				5AB581A91CF1E8A500A92E5C /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,7 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A18F84C1CF0850A007B710E /* FTImageViewer.swift in Sources */,
+				5AB581A41CF1E84000A92E5C /* FTImageViewer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
