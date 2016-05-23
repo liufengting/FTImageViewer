@@ -60,6 +60,13 @@ I wrote this for my future projects. Feel free to try it in your own projects!
 * Not supported yet.  
 
 
+# Bonus
+
+In `FTImageViewerDemo`, shows you how to use it in tableview, using pure `AutoLayout`. Here is the screenshot:
+
+![screenshot AutoLayout](/ScreenShots/autolayout.jpg)
+
+
 ## License
 
 FTImageViewer is available under the MIT license. See the LICENSE file for more info.
