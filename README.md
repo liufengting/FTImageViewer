@@ -13,9 +13,7 @@
 
 
 
-Preview images with just a few lines of code.     
-
-I wrote this for my future projects. Feel free to try it in your own projects!
+Preview images with just a few lines of code. I wrote this for my future projects. Feel free to try it in your own projects!
 
 
 ## ScreenShots
@@ -66,6 +64,9 @@ In `FTImageViewerDemo`, shows you how to use it in tableview, using pure `AutoLa
 
 ![screenshot AutoLayout](/ScreenShots/autolayout.jpg)
 
+# Asking for help
+
+I am having trouble making `FTImageViewer` into Pod. If anyone see this, and if you have made swift Pods, please contact me and give a hand. Much appreciated.
 
 ## License
 
