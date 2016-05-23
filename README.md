@@ -66,7 +66,7 @@ In `FTImageViewerDemo`, shows you how to use it in tableview, using pure `AutoLa
 
 # Asking for help
 
-I am having trouble making `FTImageViewer` into Pod. If anyone see this, and if you have made swift Pods, please contact me and give a hand. Much appreciated.
+I am having trouble making `FTImageViewer` into Pod. If anyone see this, and if you have made swift Pods, please contact me and give me a hand. Much appreciated.
 
 ## License
 
