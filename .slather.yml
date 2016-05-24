@@ -1,5 +1,6 @@
 coverage_service: coveralls
-xcodeproj: FTImageViewer.xcodeproj
+xcodeproj: FTImageViewerDemo/FTImageViewerDemo.xcodeproj
 scheme: FTImageViewer
 ignore:
-  - Tests/*
+  - FTImageViewerDemoTests/*
+  - FTImageViewerDemoUITests/*
