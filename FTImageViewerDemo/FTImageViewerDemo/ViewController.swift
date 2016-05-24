@@ -30,7 +30,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.rowHeight = UITableViewAutomaticDimension
         
     }
-
+    
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0.01
     }
