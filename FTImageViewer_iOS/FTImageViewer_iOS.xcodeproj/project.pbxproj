@@ -7,21 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5A8BEF241D3E617700EEBEFF /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A8BEF211D3E617700EEBEFF /* close.png */; };
 		5A8BEF251D3E617700EEBEFF /* FTImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8BEF221D3E617700EEBEFF /* FTImageViewer.swift */; };
-		5A8BEF261D3E617700EEBEFF /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A8BEF231D3E617700EEBEFF /* save.png */; };
 		5A96D7631D1BE87C0011877D /* FTImageViewer_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A96D7621D1BE87C0011877D /* FTImageViewer_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5AC852CE1D3E8A2C009F766E /* Resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5AC852CD1D3E8A2C009F766E /* Resource.bundle */; };
 		7DA1777CC17FA680658F0B6E /* Pods_FTImageViewer_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F13482F3EC91990D20058E43 /* Pods_FTImageViewer_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		508B57F04FCC76F3A158D005 /* Pods-FTImageViewer_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FTImageViewer_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-FTImageViewer_iOS/Pods-FTImageViewer_iOS.release.xcconfig"; sourceTree = "<group>"; };
-		5A8BEF211D3E617700EEBEFF /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		5A8BEF221D3E617700EEBEFF /* FTImageViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTImageViewer.swift; sourceTree = "<group>"; };
-		5A8BEF231D3E617700EEBEFF /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
 		5A96D75F1D1BE87C0011877D /* FTImageViewer_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FTImageViewer_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A96D7621D1BE87C0011877D /* FTImageViewer_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTImageViewer_iOS.h; sourceTree = "<group>"; };
 		5A96D7641D1BE87C0011877D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AC852CD1D3E8A2C009F766E /* Resource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Resource.bundle; sourceTree = "<group>"; };
 		E28394B292B56C978F997FE7 /* Pods-FTImageViewer_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FTImageViewer_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FTImageViewer_iOS/Pods-FTImageViewer_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		F13482F3EC91990D20058E43 /* Pods_FTImageViewer_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FTImageViewer_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -42,8 +40,7 @@
 			isa = PBXGroup;
 			children = (
 				5A8BEF221D3E617700EEBEFF /* FTImageViewer.swift */,
-				5A8BEF211D3E617700EEBEFF /* close.png */,
-				5A8BEF231D3E617700EEBEFF /* save.png */,
+				5AC852CD1D3E8A2C009F766E /* Resource.bundle */,
 			);
 			path = FTImageViewer;
 			sourceTree = "<group>";
@@ -163,8 +160,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A8BEF261D3E617700EEBEFF /* save.png in Resources */,
-				5A8BEF241D3E617700EEBEFF /* close.png in Resources */,
+				5AC852CE1D3E8A2C009F766E /* Resource.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

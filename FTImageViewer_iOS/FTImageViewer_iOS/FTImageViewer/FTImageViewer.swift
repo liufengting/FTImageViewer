@@ -42,16 +42,16 @@ public class FTImageViewer: NSObject , UIScrollViewDelegate,UIGestureRecognizerD
 
     //MARK: - sharedInstance -
 
-//    class var sharedInstance : FTImageViewer {
-//        struct Static {
-//            static let instance : FTImageViewer = FTImageViewer()
-//        }
-//        return Static.instance
-//    }
+    public class var sharedInstance : FTImageViewer {
+        struct Static {
+            static let instance : FTImageViewer = FTImageViewer()
+        }
+        return Static.instance
+    }
     
-    internal static let sharedInstance: FTImageViewer = {
-        return FTImageViewer()
-    }()
+//    internal static let sharedInstance: FTImageViewer = {
+//        return FTImageViewer()
+//    }()
     
     
     //MARK: - showImages -
@@ -64,7 +64,7 @@ public class FTImageViewer: NSObject , UIScrollViewDelegate,UIGestureRecognizerD
      - parameter fromSenderArray: fromSenderArray
      */
     
-    func showImages(images : [String] , atIndex : NSInteger , fromSenderArray: [UIView]){
+    public func showImages(images : [String] , atIndex : NSInteger , fromSenderArray: [UIView]){
         
         fromSenderRectArray = []
         
@@ -468,7 +468,7 @@ public class FTImageGridView: UIView{
         
     }
     
-    func showWithImageArray(imageArray : [String] , tapBlock : ((buttonsArray: [UIButton] , buttonIndex : NSInteger) ->())) {
+    public func showWithImageArray(imageArray : [String] , tapBlock : ((buttonsArray: [UIButton] , buttonIndex : NSInteger) ->())) {
         
         buttonArray = []
         
