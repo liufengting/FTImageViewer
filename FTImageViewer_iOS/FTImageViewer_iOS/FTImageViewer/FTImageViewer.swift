@@ -398,22 +398,22 @@ public class FTImageViewBar : UIView {
         closeButtonTapBlock = closeTapBlock
         
 
-//        let bundleURL : NSString = "Frameworks/FTImageViewer.framework/ImageAssets.bundle"
-//        let closeImagePath = bundleURL.stringByAppendingPathComponent("close.png")
-//        let saveImagePath = bundleURL.stringByAppendingPathComponent("save.png")
+        let bundleURL : NSString = "Frameworks/FTImageViewer.framework/Resource.bundle"
+        let closeImagePath = bundleURL.stringByAppendingPathComponent("close.png")
+        let saveImagePath = bundleURL.stringByAppendingPathComponent("save.png")
         
 
         closeButton = UIButton(frame: CGRectMake(FTImageViewBarDefaultMargin, (frame.height-FTImageViewBarButtonWidth)/2, FTImageViewBarButtonWidth, FTImageViewBarButtonWidth))
         closeButton.backgroundColor = UIColor.clearColor()
         closeButton.contentMode = UIViewContentMode.ScaleAspectFill
-        closeButton.setImage(UIImage(named: "close"), forState: UIControlState.Normal)
+        closeButton.setImage(UIImage(contentsOfFile:closeImagePath), forState: UIControlState.Normal)
         closeButton.addTarget(self, action: #selector(FTImageViewBar.onCloseButtonTapped), forControlEvents: UIControlEvents.TouchUpInside)
         self.addSubview(closeButton)
 
         saveButton = UIButton(frame: CGRectMake(frame.width-FTImageViewBarButtonWidth-FTImageViewBarDefaultMargin, (frame.height-FTImageViewBarButtonWidth)/2, FTImageViewBarButtonWidth, FTImageViewBarButtonWidth))
         saveButton.backgroundColor = UIColor.clearColor()
         saveButton.contentMode = UIViewContentMode.ScaleAspectFill
-        saveButton.setImage(UIImage(named: "save"), forState: UIControlState.Normal)
+        saveButton.setImage(UIImage(contentsOfFile:saveImagePath), forState: UIControlState.Normal)
         saveButton.addTarget(self, action: #selector(FTImageViewBar.onSaveButtonTapped), forControlEvents: UIControlEvents.TouchUpInside)
         self.addSubview(saveButton)
         
