@@ -27,7 +27,7 @@ private let KCOLOR_BACKGROUND_WHITE = UIColor(red:241/255.0, green:241/255.0, bl
 
 //MARK: - FTImageViewer -
 
-class FTImageViewer: NSObject , UIScrollViewDelegate,UIGestureRecognizerDelegate{
+public class FTImageViewer: NSObject , UIScrollViewDelegate,UIGestureRecognizerDelegate{
 
     var backgroundView: UIView!
     var scrollView: UIScrollView!
@@ -166,7 +166,7 @@ class FTImageViewer: NSObject , UIScrollViewDelegate,UIGestureRecognizerDelegate
     
     //MARK: - gestureRecognizerShouldBegin -
 
-    func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+    public func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
         if (gestureRecognizer.view!.isKindOfClass(FTImageView)){
             let translatedPoint = (gestureRecognizer as! UIPanGestureRecognizer).translationInView(gestureRecognizer.view)
             return fabs(translatedPoint.y) > fabs(translatedPoint.x);
@@ -219,7 +219,7 @@ class FTImageViewer: NSObject , UIScrollViewDelegate,UIGestureRecognizerDelegate
 
     //MARK: - scrollViewDidEndDecelerating -
 
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView){
+    public func scrollViewDidEndDecelerating(scrollView: UIScrollView){
         let page = NSInteger(scrollView.contentOffset.x / FTImageViewerScreenWidth)
         tabBar.countLabel.text = "\(page+1)/\(imageUrlArray.count)"
     }
@@ -281,7 +281,7 @@ class FTImageViewer: NSObject , UIScrollViewDelegate,UIGestureRecognizerDelegate
  FTImageView
  */
 
-class FTImageView: UIScrollView, UIScrollViewDelegate{
+public class FTImageView: UIScrollView, UIScrollViewDelegate{
     
     var imageView: UIImageView!
     var activityIndicator: UIActivityIndicatorView!
@@ -341,14 +341,14 @@ class FTImageView: UIScrollView, UIScrollViewDelegate{
 
 
     }
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView?{
+    public func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView?{
         return imageView
     }
-    func scrollViewDidEndZooming(scrollView: UIScrollView, withView view: UIView?, atScale scale: CGFloat){
+    public func scrollViewDidEndZooming(scrollView: UIScrollView, withView view: UIView?, atScale scale: CGFloat){
         let ws = scrollView.frame.size.width - scrollView.contentInset.left - scrollView.contentInset.right
         let hs = scrollView.frame.size.height - scrollView.contentInset.top - scrollView.contentInset.bottom
         let w = imageView.frame.size.width
@@ -378,7 +378,7 @@ class FTImageView: UIScrollView, UIScrollViewDelegate{
  */
 //MARK: - FTImageViewBar -
 
-class FTImageViewBar : UIView {
+public class FTImageViewBar : UIView {
     
     var closeButton : UIButton!
     var saveButton : UIButton!
@@ -444,7 +444,7 @@ class FTImageViewBar : UIView {
 
 //MARK: - FTImageGridView -
 
-class FTImageGridView: UIView{
+public class FTImageGridView: UIView{
     
     var FTImageGridViewTapBlock : ((buttonArray: [UIButton] , buttonIndex : NSInteger) ->())?
     var buttonArray : [UIButton] = []

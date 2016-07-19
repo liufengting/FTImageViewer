@@ -27,7 +27,7 @@ private let KCOLOR_BACKGROUND_WHITE = UIColor(red:241/255.0, green:241/255.0, bl
 
 //MARK: - FTImageViewer -
 
-class FTImageViewer: NSObject , UIScrollViewDelegate,UIGestureRecognizerDelegate{
+public class FTImageViewer: NSObject , UIScrollViewDelegate,UIGestureRecognizerDelegate{
 
     var backgroundView: UIView!
     var scrollView: UIScrollView!
@@ -281,7 +281,7 @@ class FTImageViewer: NSObject , UIScrollViewDelegate,UIGestureRecognizerDelegate
  FTImageView
  */
 
-class FTImageView: UIScrollView, UIScrollViewDelegate{
+public class FTImageView: UIScrollView, UIScrollViewDelegate{
     
     var imageView: UIImageView!
     var activityIndicator: UIActivityIndicatorView!
@@ -378,7 +378,7 @@ class FTImageView: UIScrollView, UIScrollViewDelegate{
  */
 //MARK: - FTImageViewBar -
 
-class FTImageViewBar : UIView {
+public class FTImageViewBar : UIView {
     
     var closeButton : UIButton!
     var saveButton : UIButton!
@@ -444,7 +444,7 @@ class FTImageViewBar : UIView {
 
 //MARK: - FTImageGridView -
 
-class FTImageGridView: UIView{
+public class FTImageGridView: UIView{
     
     var FTImageGridViewTapBlock : ((buttonArray: [UIButton] , buttonIndex : NSInteger) ->())?
     var buttonArray : [UIButton] = []
