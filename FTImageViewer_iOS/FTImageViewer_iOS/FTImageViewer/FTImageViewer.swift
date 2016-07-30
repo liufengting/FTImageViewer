@@ -390,30 +390,28 @@ public class FTImageViewBar : UIView {
     /**
      initializer
      */
-    convenience init(frame: CGRect , saveTapBlock: ()->() , closeTapBlock: ()->()) {
+    public convenience init(frame: CGRect , saveTapBlock: ()->() , closeTapBlock: ()->()) {
         self.init(frame: frame)
         self.backgroundColor = FTImageViewBarBackgroundColor
         
         saveButtonTapBlock = saveTapBlock
         closeButtonTapBlock = closeTapBlock
-        
 
-        let bundleURL : NSString = "Frameworks/FTImageViewer.framework/Resource.bundle"
-        let closeImagePath = bundleURL.stringByAppendingPathComponent("close.png")
-        let saveImagePath = bundleURL.stringByAppendingPathComponent("save.png")
         
+        let bundleURL : String = NSBundle.mainBundle().pathForResource("Resource", ofType: "bundle")!
+        let bundle : NSBundle = NSBundle(path: bundleURL)!;
 
         closeButton = UIButton(frame: CGRectMake(FTImageViewBarDefaultMargin, (frame.height-FTImageViewBarButtonWidth)/2, FTImageViewBarButtonWidth, FTImageViewBarButtonWidth))
         closeButton.backgroundColor = UIColor.clearColor()
         closeButton.contentMode = UIViewContentMode.ScaleAspectFill
-        closeButton.setImage(UIImage(contentsOfFile:closeImagePath), forState: UIControlState.Normal)
+        closeButton.setImage(UIImage(named: "close", inBundle: bundle, compatibleWithTraitCollection: nil), forState: UIControlState.Normal)
         closeButton.addTarget(self, action: #selector(FTImageViewBar.onCloseButtonTapped), forControlEvents: UIControlEvents.TouchUpInside)
         self.addSubview(closeButton)
 
         saveButton = UIButton(frame: CGRectMake(frame.width-FTImageViewBarButtonWidth-FTImageViewBarDefaultMargin, (frame.height-FTImageViewBarButtonWidth)/2, FTImageViewBarButtonWidth, FTImageViewBarButtonWidth))
         saveButton.backgroundColor = UIColor.clearColor()
         saveButton.contentMode = UIViewContentMode.ScaleAspectFill
-        saveButton.setImage(UIImage(contentsOfFile:saveImagePath), forState: UIControlState.Normal)
+        saveButton.setImage(UIImage(named: "save", inBundle: bundle, compatibleWithTraitCollection: nil), forState: UIControlState.Normal)
         saveButton.addTarget(self, action: #selector(FTImageViewBar.onSaveButtonTapped), forControlEvents: UIControlEvents.TouchUpInside)
         self.addSubview(saveButton)
         
@@ -461,7 +459,7 @@ public class FTImageGridView: UIView{
      - returns: FTImageGridView
      */
     
-    convenience init(frame : CGRect, imageArray : [String] , tapBlock : ((buttonsArray: [UIButton] , buttonIndex : NSInteger) ->())){
+    public convenience init(frame : CGRect, imageArray : [String] , tapBlock : ((buttonsArray: [UIButton] , buttonIndex : NSInteger) ->())){
         self.init(frame: frame)
         
         self.showWithImageArray(imageArray, tapBlock: tapBlock)
@@ -514,7 +512,7 @@ public class FTImageGridView: UIView{
      
      - returns: CGFloat Height
      */
-    class func getHeightWithWidth(width: CGFloat, imgCount: Int) -> CGFloat{
+    public class func getHeightWithWidth(width: CGFloat, imgCount: Int) -> CGFloat{
         let imgHeight: CGFloat = (width - FTImageGridViewImageMargin * 2) / 3
         let photoAlbumHeight : CGFloat = imgHeight * CGFloat(ceilf(Float(imgCount) / 3)) + FTImageGridViewImageMargin * CGFloat(ceilf(Float(imgCount) / 3)-1)
         return photoAlbumHeight

@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5A7FA7D31CF3453A0088B3B9 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A7FA7CF1CF3453A0088B3B9 /* close.png */; };
-		5A7FA7D41CF3453A0088B3B9 /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A7FA7D01CF3453A0088B3B9 /* save.png */; };
-		5A7FA7D51CF3453A0088B3B9 /* FTImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FA7D21CF3453A0088B3B9 /* FTImageViewer.swift */; };
+		5AC92BF71D4D132300949121 /* FTImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC92BF51D4D132300949121 /* FTImageViewer.swift */; };
+		5AC92BF81D4D132300949121 /* Resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5AC92BF61D4D132300949121 /* Resource.bundle */; };
 		5AE2A6C61CF2F8E400334804 /* DemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE2A6C51CF2F8E400334804 /* DemoTableViewCell.swift */; };
 		5AEFDF461CF0AD380081F07F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFDF451CF0AD380081F07F /* AppDelegate.swift */; };
 		5AEFDF481CF0AD380081F07F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFDF471CF0AD380081F07F /* ViewController.swift */; };
@@ -40,9 +39,8 @@
 
 /* Begin PBXFileReference section */
 		054E51CDB0EBD6F8938203C7 /* Pods-FTImageViewerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FTImageViewerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FTImageViewerDemo/Pods-FTImageViewerDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		5A7FA7CF1CF3453A0088B3B9 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
-		5A7FA7D01CF3453A0088B3B9 /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
-		5A7FA7D21CF3453A0088B3B9 /* FTImageViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTImageViewer.swift; sourceTree = "<group>"; };
+		5AC92BF51D4D132300949121 /* FTImageViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTImageViewer.swift; sourceTree = "<group>"; };
+		5AC92BF61D4D132300949121 /* Resource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Resource.bundle; sourceTree = "<group>"; };
 		5AE2A6C51CF2F8E400334804 /* DemoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoTableViewCell.swift; sourceTree = "<group>"; };
 		5AEFDF421CF0AD380081F07F /* FTImageViewerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FTImageViewerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AEFDF451CF0AD380081F07F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,30 +94,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		5A7FA7CD1CF3453A0088B3B9 /* FTImageViewer */ = {
+		5AC92BF41D4D132300949121 /* FTImageViewer */ = {
 			isa = PBXGroup;
 			children = (
-				5A7FA7CE1CF3453A0088B3B9 /* Assets */,
-				5A7FA7D11CF3453A0088B3B9 /* Source */,
+				5AC92BF51D4D132300949121 /* FTImageViewer.swift */,
+				5AC92BF61D4D132300949121 /* Resource.bundle */,
 			);
-			path = FTImageViewer;
-			sourceTree = "<group>";
-		};
-		5A7FA7CE1CF3453A0088B3B9 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				5A7FA7CF1CF3453A0088B3B9 /* close.png */,
-				5A7FA7D01CF3453A0088B3B9 /* save.png */,
-			);
-			path = Assets;
-			sourceTree = "<group>";
-		};
-		5A7FA7D11CF3453A0088B3B9 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				5A7FA7D21CF3453A0088B3B9 /* FTImageViewer.swift */,
-			);
-			path = Source;
+			name = FTImageViewer;
+			path = ../../FTImageViewer_iOS/FTImageViewer_iOS/FTImageViewer;
 			sourceTree = "<group>";
 		};
 		5AEFDF391CF0AD380081F07F = {
@@ -150,7 +132,7 @@
 				5AEFDF451CF0AD380081F07F /* AppDelegate.swift */,
 				5AEFDF471CF0AD380081F07F /* ViewController.swift */,
 				5AE2A6C51CF2F8E400334804 /* DemoTableViewCell.swift */,
-				5A7FA7CD1CF3453A0088B3B9 /* FTImageViewer */,
+				5AC92BF41D4D132300949121 /* FTImageViewer */,
 				5AEFDF491CF0AD380081F07F /* Main.storyboard */,
 				5AEFDF4C1CF0AD380081F07F /* Assets.xcassets */,
 				5AEFDF4E1CF0AD380081F07F /* LaunchScreen.storyboard */,
@@ -293,10 +275,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AEFDF501CF0AD380081F07F /* LaunchScreen.storyboard in Resources */,
-				5A7FA7D41CF3453A0088B3B9 /* save.png in Resources */,
 				5AEFDF4D1CF0AD380081F07F /* Assets.xcassets in Resources */,
-				5A7FA7D31CF3453A0088B3B9 /* close.png in Resources */,
 				5AEFDF4B1CF0AD380081F07F /* Main.storyboard in Resources */,
+				5AC92BF81D4D132300949121 /* Resource.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,7 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AEFDF481CF0AD380081F07F /* ViewController.swift in Sources */,
-				5A7FA7D51CF3453A0088B3B9 /* FTImageViewer.swift in Sources */,
+				5AC92BF71D4D132300949121 /* FTImageViewer.swift in Sources */,
 				5AE2A6C61CF2F8E400334804 /* DemoTableViewCell.swift in Sources */,
 				5AEFDF461CF0AD380081F07F /* AppDelegate.swift in Sources */,
 			);
