@@ -12,8 +12,6 @@
 
 
 
-
-
 Preview images with just a few lines of code. I wrote this for my future projects. Feel free to try it in your own projects!
 
 
@@ -56,18 +54,17 @@ Preview images with just a few lines of code. I wrote this for my future project
 
 ###Cocoapods
 
-* Not supported yet.  
+`FTImageViewer` is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
 
+```ruby
+pod 'FTImageViewer'
+```
 
 # Bonus
 
 In `FTImageViewerDemo`, shows you how to use it in tableview, using pure `AutoLayout`. Here is the screenshot:
 
 ![screenshot AutoLayout](/ScreenShots/autolayout.jpg)
-
-# Asking for help
-
-I am having trouble making `FTImageViewer` into Pod. If anyone see this, and if you have made swift Pods, please contact me and give me a hand. Much appreciated.
 
 ## License
 
