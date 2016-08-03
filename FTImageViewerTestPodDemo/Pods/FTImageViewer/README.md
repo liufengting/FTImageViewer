@@ -12,8 +12,6 @@
 
 
 
-
-
 Preview images with just a few lines of code. I wrote this for my future projects. Feel free to try it in your own projects!
 
 
@@ -27,24 +25,19 @@ Preview images with just a few lines of code. I wrote this for my future project
   </tr>
 </table>
 
+run the demo in `FTImageViewerDemo` to see more
+
 ##Usage
 
-* show images in  a grid
+* show images in  a grid and preview images with one line of code 
 
 ```swift
-        let imageGrid = FTImageGridView(frame: CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height), imageArray: imageUrlArray)
-                        { (buttonArray,buttonIndex) -> () in
-                                                    
+        imageGridView.showWithImageArray(imageArray) { (buttonsArray, buttonIndex) in
+            // in this tap block, preview images with one line of code
+            FTImageViewer.sharedInstance.showImages(self.imageArray, atIndex: buttonIndex, fromSenderArray: buttonsArray)
         }
-        self.view.addSubview(imageGrid);
 ```
-
-* Preview images with one line of code
-
-```swift
-	FTImageViewer.sharedInstance.showImages(imageUrlArray, atIndex: buttonIndex , fromSenderArray: buttonArray)
-```
-
+* see more docs in 'FTImageViewerDemo/DemoTableViewCell.swift' 
 
 ##Installation
 
@@ -56,18 +49,17 @@ Preview images with just a few lines of code. I wrote this for my future project
 
 ###Cocoapods
 
-* Not supported yet.  
+`FTImageViewer` is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
 
+```ruby
+pod 'FTImageViewer'
+```
 
 # Bonus
 
 In `FTImageViewerDemo`, shows you how to use it in tableview, using pure `AutoLayout`. Here is the screenshot:
 
 ![screenshot AutoLayout](/ScreenShots/autolayout.jpg)
-
-# Asking for help
-
-I am having trouble making `FTImageViewer` into Pod. If anyone see this, and if you have made swift Pods, please contact me and give me a hand. Much appreciated.
 
 ## License
 
