@@ -396,7 +396,7 @@ public class FTImageViewBar : UIView {
         
         saveButtonTapBlock = saveTapBlock
         closeButtonTapBlock = closeTapBlock
-        
+
         var imageBundle : NSBundle = NSBundle.mainBundle()
         
         if let bundleURL : String = NSBundle(forClass: FTImageViewer.classForCoder()).pathForResource("Resource", ofType: "bundle") {
@@ -405,13 +405,15 @@ public class FTImageViewBar : UIView {
             }
         }
         
+        
+
         closeButton = UIButton(frame: CGRectMake(FTImageViewBarDefaultMargin, (frame.height-FTImageViewBarButtonWidth)/2, FTImageViewBarButtonWidth, FTImageViewBarButtonWidth))
         closeButton.backgroundColor = UIColor.clearColor()
         closeButton.contentMode = UIViewContentMode.ScaleAspectFill
         closeButton.setImage(UIImage(named: "close", inBundle: imageBundle, compatibleWithTraitCollection: nil), forState: UIControlState.Normal)
         closeButton.addTarget(self, action: #selector(FTImageViewBar.onCloseButtonTapped), forControlEvents: UIControlEvents.TouchUpInside)
         self.addSubview(closeButton)
-        
+
         saveButton = UIButton(frame: CGRectMake(frame.width-FTImageViewBarButtonWidth-FTImageViewBarDefaultMargin, (frame.height-FTImageViewBarButtonWidth)/2, FTImageViewBarButtonWidth, FTImageViewBarButtonWidth))
         saveButton.backgroundColor = UIColor.clearColor()
         saveButton.contentMode = UIViewContentMode.ScaleAspectFill

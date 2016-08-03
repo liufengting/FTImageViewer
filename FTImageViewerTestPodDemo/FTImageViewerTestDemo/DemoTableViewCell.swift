@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FTImageViewer
 
 class DemoTableViewCell: UITableViewCell {
 

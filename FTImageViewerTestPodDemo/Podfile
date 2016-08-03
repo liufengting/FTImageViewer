@@ -1,0 +1,16 @@
+platform :ios, '8.0'
+
+target 'FTImageViewerTestDemo' do
+  use_frameworks!
+
+pod 'FTImageViewer'
+
+  target 'FTImageViewerTestDemoTests' do
+    inherit! :search_paths
+  end
+
+  target 'FTImageViewerTestDemoUITests' do
+    inherit! :search_paths
+  end
+
+end
