@@ -1,0 +1,4 @@
+target 'FTImageViewer' do
+pod 'SDWebImage'
+use_frameworks!
+end
