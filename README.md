@@ -68,9 +68,9 @@ In `FTImageViewerDemo`, shows you how to use it in tableview, using pure `AutoLa
 
 <table>
   <tr>
-    <th><img src="/ScreenShots/autolayout1.png" width="250"/></th>
-    <th><img src="/ScreenShots/autolayout2.png" width="250"/></th>
-    <th><img src="/ScreenShots/autolayout3.png" width="250"/></th>
+    <th><img src="/ScreenShots/autolayout1.PNG" width="250"/></th>
+    <th><img src="/ScreenShots/autolayout2.PNG" width="250"/></th>
+    <th><img src="/ScreenShots/autolayout3.PNG" width="250"/></th>
   </tr>
 </table>
 
