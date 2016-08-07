@@ -37,14 +37,14 @@ run the demo in `FTImageViewerDemo` to see more
             FTImageViewer.sharedInstance.showImages(self.imageArray, atIndex: buttonIndex, fromSenderArray: buttonsArray)
         }
 ```
-* see more docs in 'FTImageViewerDemo/DemoTableViewCell.swift' 
+* see more docs in `FTImageViewerDemo/DemoTableViewCell.swift` 
 
 ##Installation
 
 ###Manually
 
 * clone this repo.
-* Simply drop the 'FTImageViewer' folder into your project.
+* Simply drop the `FTImageViewer` folder into your project.
 * Enjoy！ 
 
 ###Cocoapods
@@ -63,5 +63,5 @@ In `FTImageViewerDemo`, shows you how to use it in tableview, using pure `AutoLa
 
 ## License
 
-FTImageViewer is available under the MIT license. See the LICENSE file for more info.
+`FTImageViewer` is available under the MIT license. See the `LICENSE` file for more info.
 
