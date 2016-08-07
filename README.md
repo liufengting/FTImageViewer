@@ -14,6 +14,13 @@
 
 Preview images with just a few lines of code. I wrote this for my future projects. Feel free to try it in your own projects!
 
+# Feathers
+
+* Double tap to zoom
+* pinch to zoom
+* pan up/down to dismiss
+* button tap to dismiss
+* save current image to system Photo Album
 
 ## ScreenShots
 
