@@ -11,16 +11,16 @@
 [![GitHub stars](https://img.shields.io/github/stars/liufengting/FTImageViewer.svg)](https://github.com/liufengting/FTImageViewer/stargazers)
 
 
-
-Preview images with just a few lines of code. I wrote this for my future projects. Feel free to try it in your own projects!
+`FTImageViewer` can preview images with just one lines of code. Also `FTImageViewGrid` is made for images to show in grid much easier. I wrote this for my future projects. Feel free to try it in your own projects!
 
 # Feathers
 
-* Double tap to zoom
-* pinch to zoom
-* pan up/down to dismiss
-* button tap to dismiss
-* save current image to system Photo Album
+* [x] Double tap to zoom in and double tap again to zoom out
+* [x] Pinch to zoom in/out
+* [x] Button tap to dismiss
+* [x] Button tap to save current image to system Photo Album
+* [x] Pan up/down to dismiss (like Facebook or QQZone)
+* [ ] Pan left/right to dismiss at first/last page
 
 ## ScreenShots
 
@@ -66,7 +66,13 @@ pod 'FTImageViewer'
 
 In `FTImageViewerDemo`, shows you how to use it in tableview, using pure `AutoLayout`. Here is the screenshot:
 
-![screenshot AutoLayout](/ScreenShots/autolayout.jpg)
+<table>
+  <tr>
+    <th><img src="/ScreenShots/autolayout1.png" width="250"/></th>
+    <th><img src="/ScreenShots/autolayout2.png" width="250"/></th>
+    <th><img src="/ScreenShots/autolayout3.png" width="250"/></th>
+  </tr>
+</table>
 
 ## License
 
