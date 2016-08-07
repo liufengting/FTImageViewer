@@ -11,7 +11,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/liufengting/FTImageViewer.svg)](https://github.com/liufengting/FTImageViewer/stargazers)
 
 
-`FTImageViewer` can preview images with just one lines of code. Also `FTImageViewGrid` is made for images to show in grid much easier. I wrote this for my future projects. Feel free to try it in your own projects!
+`FTImageViewer` can preview images with just one lines of code. Also `FTImageViewGrid` has make showing images in a grid much easier. I wrote this for my future projects. Feel free to try it in your own projects!
 
 # Feathers
 
