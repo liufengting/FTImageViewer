@@ -26,9 +26,8 @@
 
 <table>
   <tr>
-    <th><img src="/ScreenShots/Demo1.gif" width="250"/></th>
-    <th><img src="/ScreenShots/Demo2.gif" width="250"/></th>
-    <th><img src="/ScreenShots/Demo3.gif" width="250"/></th>
+    <th><img src="/ScreenShots/Demo1.gif" width="300"/></th>
+    <th><img src="/ScreenShots/Demo2.gif" width="300"/></th>
   </tr>
 </table>
 

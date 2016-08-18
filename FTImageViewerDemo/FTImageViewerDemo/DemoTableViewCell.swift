@@ -43,6 +43,16 @@ class DemoTableViewCell: UITableViewCell {
             FTImageViewer.sharedInstance.showImages(self.imageArray, atIndex: buttonIndex, fromSenderArray: buttonsArray)
         }
     }
+    var name : String = "" {
+        didSet {
+            nameLabel.text = name
+        }
+    }
+    var content : String = "" {
+        didSet {
+            contentLabel.text = content
+        }
+    }
     
 
 }
