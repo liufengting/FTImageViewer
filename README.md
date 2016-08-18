@@ -15,12 +15,13 @@
 
 # Feathers
 
-* [x] Double tap to zoom in and double tap again to zoom out
-* [x] Pinch to zoom in/out
-* [x] Button tap to dismiss
-* [x] Button tap to save current image to system Photo Album
-* [x] Pan up/down to dismiss (like Facebook or QQZone)
-* [ ] Pan left/right to dismiss at first/last page
+- [x] Single tap to dismiss and auto return to the current index
+- [x] Double tap to zoom in and double tap again to zoom out
+- [x] Pinch to zoom in/out
+- [x] Button tap to dismiss
+- [x] Button tap to save current image to system Photo Album
+- [x] Pan up/down to dismiss (like Facebook or QQZone)
+- [ ] Pan left/right to dismiss at first/last page
 
 ## ScreenShots
 
