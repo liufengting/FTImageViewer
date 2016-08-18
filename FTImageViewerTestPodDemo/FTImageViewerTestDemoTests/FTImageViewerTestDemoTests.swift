@@ -2,7 +2,7 @@
 //  FTImageViewerTestDemoTests.swift
 //  FTImageViewerTestDemoTests
 //
-//  Created by liufengting on 16/8/3.
+//  Created by liufengting https://github.com/liufengting on 16/8/3.
 //  Copyright © 2016年 liufengting. All rights reserved.
 //
 

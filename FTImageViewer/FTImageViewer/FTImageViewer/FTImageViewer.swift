@@ -2,7 +2,7 @@
 //  FTImageViewer.swift
 //  FTImageViewer
 //
-//  Created by liufengting on 15/12/17.
+//  Created by liufengting https://github.com/liufengting on 15/12/17.
 //  Copyright © 2015年 liufengting. All rights reserved.
 //
 
