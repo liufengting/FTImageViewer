@@ -1,4 +1,4 @@
 target 'FTImageViewer' do
-pod 'SDWebImage'
+pod 'AlamofireImage'
 use_frameworks!
 end

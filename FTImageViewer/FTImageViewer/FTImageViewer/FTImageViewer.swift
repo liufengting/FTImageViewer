@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SDWebImage
+import AlamofireImage
 
 
 //MARK: - Marcros -
@@ -89,13 +89,13 @@ public class FTImageViewer: NSObject , UIScrollViewDelegate,UIGestureRecognizerD
 
         
         beginAnimationView = UIImageView(frame : fromRect)
-        beginAnimationView.sd_setImageWithURL(NSURL(string: images[atIndex]))
         beginAnimationView.clipsToBounds = true
         beginAnimationView.userInteractionEnabled = false
         beginAnimationView.contentMode = UIViewContentMode.ScaleAspectFit
         beginAnimationView.backgroundColor = UIColor.clearColor();
         backgroundView.addSubview(beginAnimationView)
-        
+        beginAnimationView.af_setImageWithURL(NSURL(string: images[atIndex])!)
+ 
         UIView.animateWithDuration(FTImageViewerAnimationDuriation,
             animations: { () -> Void in
                 self.beginAnimationView.layer.frame = UIScreen.mainScreen().bounds;
@@ -308,14 +308,22 @@ public class FTImageView: UIScrollView, UIScrollViewDelegate{
         
         activityIndicator = UIActivityIndicatorView(frame: CGRectMake((frame.width - FTImageViewBarHeight)/2, (frame.height - FTImageViewBarHeight)/2, FTImageViewBarHeight, FTImageViewBarHeight))
         activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
+        activityIndicator.hidesWhenStopped = true
         self.addSubview(activityIndicator)
         
         imageView = UIImageView(frame: CGRectMake(0, 0, self.frame.width, self.frame.height))
         imageView.contentMode = UIViewContentMode.ScaleAspectFit
-        imageView.sd_setImageWithURL(NSURL(string: imageURL)) { (image, error, _, _) -> Void in
-            if (image != nil){
-                self.activityIndicator.hidden = true
-            }
+
+        imageView.af_setImageWithURL(NSURL(string: imageURL)!,
+                                     placeholderImage: nil,
+                                     filter: nil,
+                                     progress: nil,
+                                     progressQueue: dispatch_get_main_queue(),
+                                     imageTransition: .None,
+                                     runImageTransitionIfCached: true) { (response) in
+                                        if (response.result.error != nil || response.result.value  != nil) {
+                                            self.activityIndicator.stopAnimating()
+                                        }
         }
         self.addSubview(imageView)
         
@@ -490,7 +498,7 @@ public class FTImageGridView: UIView{
                 imageButton.frame = CGRectMake(x, y, imgHeight, imgHeight)
                 imageButton.backgroundColor = KCOLOR_BACKGROUND_WHITE
                 imageButton.imageView?.contentMode = UIViewContentMode.ScaleAspectFill
-                imageButton.sd_setImageWithURL(NSURL(string: imageArray[i]), forState: UIControlState.Normal)
+                imageButton.af_setImageForState(UIControlState.Normal, URL: NSURL(string: imageArray[i])!)
                 imageButton.tag = i
                 imageButton.clipsToBounds = true
                 imageButton.addTarget(self, action: #selector(FTImageGridView.onClickImage(_:)), forControlEvents: UIControlEvents.TouchUpInside)
