@@ -11,17 +11,24 @@
 [![GitHub stars](https://img.shields.io/github/stars/liufengting/FTImageViewer.svg)](https://github.com/liufengting/FTImageViewer/stargazers)
 
 
+`FTImageViewer` can preview images with just one lines of code. Also `FTImageViewGrid` has make showing images in a grid much easier. I wrote this for my future projects. Feel free to try it in your own projects!
 
-Preview images with just a few lines of code. I wrote this for my future projects. Feel free to try it in your own projects!
+# Feathers
 
+- [x] Single tap to dismiss and auto return to the current index
+- [x] Double tap to zoom in and double tap again to zoom out
+- [x] Pinch to zoom in/out
+- [x] Button tap to dismiss
+- [x] Button tap to save current image to system Photo Album
+- [x] Pan up/down to dismiss (like Facebook or QQZone)
+- [ ] Pan left/right to dismiss at first/last page
 
 ## ScreenShots
 
 <table>
   <tr>
-    <th><img src="/ScreenShots/Demo1.gif" width="250"/></th>
-    <th><img src="/ScreenShots/Demo2.gif" width="250"/></th>
-    <th><img src="/ScreenShots/Demo3.gif" width="250"/></th>
+    <th><img src="/ScreenShots/Demo1.gif" width="300"/></th>
+    <th><img src="/ScreenShots/Demo2.gif" width="300"/></th>
   </tr>
 </table>
 
@@ -37,14 +44,14 @@ run the demo in `FTImageViewerDemo` to see more
             FTImageViewer.sharedInstance.showImages(self.imageArray, atIndex: buttonIndex, fromSenderArray: buttonsArray)
         }
 ```
-* see more docs in 'FTImageViewerDemo/DemoTableViewCell.swift' 
+* see more docs in `FTImageViewerDemo/DemoTableViewCell.swift` 
 
 ##Installation
 
 ###Manually
 
 * clone this repo.
-* Simply drop the 'FTImageViewer' folder into your project.
+* Simply drop the `FTImageViewer` folder into your project.
 * Enjoy！ 
 
 ###Cocoapods
@@ -59,9 +66,15 @@ pod 'FTImageViewer'
 
 In `FTImageViewerDemo`, shows you how to use it in tableview, using pure `AutoLayout`. Here is the screenshot:
 
-![screenshot AutoLayout](/ScreenShots/autolayout.jpg)
+<table>
+  <tr>
+    <th><img src="/ScreenShots/autolayout1.PNG" width="250"/></th>
+    <th><img src="/ScreenShots/autolayout2.PNG" width="250"/></th>
+    <th><img src="/ScreenShots/autolayout3.PNG" width="250"/></th>
+  </tr>
+</table>
 
 ## License
 
-FTImageViewer is available under the MIT license. See the LICENSE file for more info.
+`FTImageViewer` is available under the MIT license. See the `LICENSE` file for more info.
 
