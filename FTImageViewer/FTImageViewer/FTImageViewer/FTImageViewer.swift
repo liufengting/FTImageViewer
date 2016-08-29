@@ -255,10 +255,21 @@ public class FTImageViewer: NSObject , UIScrollViewDelegate,UIGestureRecognizerD
 
     private func saveCurrentImage(){
         let page = NSInteger(scrollView.contentOffset.x / FTImageViewerScreenWidth)
+
         
         for img in scrollView.subviews{
             if (img is FTImageView) && ((img as! FTImageView).tag == page) {
                 if ((img as! FTImageView).imageView.image != nil) {
+                    
+//                    image = (img as! FTImageView).imageView.image!
+//                    let text = "images"
+//                    let activatyVC = UIActivityViewController(activityItems: [text,image], applicationActivities: nil)
+//                    let delss = UIApplication.sharedApplication().delegate as! AppDelegate
+//                    
+//                    delss.window!.rootViewController?.presentViewController(activatyVC, animated: true, completion: {
+//                        
+//                    })
+//                    break
                     UIImageWriteToSavedPhotosAlbum((img as! FTImageView).imageView.image!, nil, nil, nil)
                     self.tabBar.countLabel.text = "Save image done."
                     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1.0 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {

@@ -1,0 +1,6 @@
+framework module FTIndicator {
+  umbrella header "FTIndicator-umbrella.h"
+
+  export *
+  module * { export * }
+}
