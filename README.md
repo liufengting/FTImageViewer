@@ -1,5 +1,6 @@
-# FTImageViewer
+![FTImageViewer](https://raw.githubusercontent.com/liufengting/FTResourceRepo/master/Resource/FTImageViewer/FTImageViewer.jpg)
 
+# FTImageViewer
 
 [![Twitter](https://img.shields.io/badge/twitter-@liufengting-blue.svg?style=flat)](http://twitter.com/liufengting) 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/liufengting/FTImageViewer/master/LICENSE)
