@@ -60,9 +60,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 "http://ww4.sinaimg.cn/mw600/c0679ecagw1f6ff69na87j20gt08a3z2.jpg",
                 "http://ww1.sinaimg.cn/mw600/c0679ecagw1f6ff6ar7v7j20gt0me3yy.jpg"]]
         
-        data.appendContentsOf(data)
-        data.appendContentsOf(data)
-        data.appendContentsOf(data)
+        data.append(contentsOf: data)
+        data.append(contentsOf: data)
+        data.append(contentsOf: data)
 
 
         tableView.delegate = self
@@ -72,27 +72,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0.01
     }
-    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.01
     }
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell : DemoTableViewCell = tableView.dequeueReusableCellWithIdentifier("DemoTableViewCellIdentifier", forIndexPath: indexPath) as! DemoTableViewCell
-        cell.name = "Person \(indexPath.row)"
-        cell.content = "Person \(indexPath.row) said this is a great demo, if you like it, please give me a 'star' or fork the project. I will continue making some more Liberary for you."
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell : DemoTableViewCell = tableView.dequeueReusableCell(withIdentifier: "DemoTableViewCellIdentifier", for: indexPath) as! DemoTableViewCell
+        cell.name = "Person \((indexPath as NSIndexPath).row)"
+        cell.content = "Person \((indexPath as NSIndexPath).row) said this is a great demo, if you like it, please give me a 'star' or fork the project. I will continue making some more Liberary for you."
         
-        cell.imageArray = data[indexPath.row]
-        
+        cell.imageArray = data[(indexPath as NSIndexPath).row]
 
         return cell;
     }
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     

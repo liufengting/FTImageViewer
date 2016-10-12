@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "FTImageViewer"
-  s.version      = "1.4.0"
+  s.version      = "1.5.0"
   s.summary      = "A simple ImageViewer and ImageGrid. Preview images with just a few lines of code."
   s.description  = <<-DESC
     FTImageViewer. A simple ImageViewer and ImageGrid. Can preview images with just a few lines of code.
@@ -19,6 +19,6 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '8.0'
   s.requires_arc = true
   s.framework = "UIKit"
-  s.dependency 'AlamofireImage'
+  s.dependency 'Kingfisher'
 
 end

@@ -7,16 +7,17 @@
 //
 
 import UIKit
-import AlamofireImage
+import Kingfisher
+
 
 
 //MARK: - Marcros -
 
-private let FTImageViewerAnimationDuriation : NSTimeInterval =  0.3
-private let FTImageViewerScreenWidth =  UIScreen.mainScreen().bounds.width
-private let FTImageViewerScreenHeight =  UIScreen.mainScreen().bounds.height
-private let FTImageViewerBackgroundColor =  UIColor.blackColor()
-private let FTImageViewBarBackgroundColor =  UIColor.blackColor().colorWithAlphaComponent(0.3)
+private let FTImageViewerAnimationDuriation : TimeInterval =  0.3
+private let FTImageViewerScreenWidth =  UIScreen.main.bounds.width
+private let FTImageViewerScreenHeight =  UIScreen.main.bounds.height
+private let FTImageViewerBackgroundColor =  UIColor.black
+private let FTImageViewBarBackgroundColor =  UIColor.black.withAlphaComponent(0.3)
 private let FTImageViewBarHeight : CGFloat =  40.0
 private let FTImageViewBarButtonWidth : CGFloat =  30.0
 private let FTImageViewBarDefaultMargin : CGFloat =  5.0
@@ -27,7 +28,7 @@ private let KCOLOR_BACKGROUND_WHITE = UIColor(red:241/255.0, green:241/255.0, bl
 
 //MARK: - FTImageViewer -
 
-public class FTImageViewer: NSObject , UIScrollViewDelegate,UIGestureRecognizerDelegate{
+open class FTImageViewer: NSObject , UIScrollViewDelegate,UIGestureRecognizerDelegate{
 
     var backgroundView: UIView!
     var scrollView: UIScrollView!
@@ -42,78 +43,62 @@ public class FTImageViewer: NSObject , UIScrollViewDelegate,UIGestureRecognizerD
 
     //MARK: - sharedInstance -
 
-    public class var sharedInstance : FTImageViewer {
+    open class var sharedInstance : FTImageViewer {
         struct Static {
             static let instance : FTImageViewer = FTImageViewer()
         }
         return Static.instance
     }
     
-//    internal static let sharedInstance: FTImageViewer = {
-//        return FTImageViewer()
-//    }()
-    
-    
+
     //MARK: - showImages -
 
-    /**
-     showImages
-     
-     - parameter images:          images
-     - parameter atIndex:         atIndex
-     - parameter fromSenderArray: fromSenderArray
-     */
-    
-    public func showImages(images : [String] , atIndex : NSInteger , fromSenderArray: [UIView]){
+    open func showImages(_ images : [String] , atIndex : NSInteger , fromSenderArray: [UIView]){
         
         fromSenderRectArray = []
         
         for i in 0 ... fromSenderArray.count-1 {
-            let rect : CGRect = fromSenderArray[i].superview!.convertRect(fromSenderArray[i].frame, toView:UIApplication.sharedApplication().keyWindow)
+            let rect : CGRect = fromSenderArray[i].superview!.convert(fromSenderArray[i].frame, to:UIApplication.shared.keyWindow)
             fromSenderRectArray.append(rect)
         }
-        
-        
 
-        
         fromIndex = atIndex
         imageUrlArray = images
         fromRect = fromSenderRectArray[atIndex]
 
-        
         if backgroundView == nil {
-            backgroundView = UIView(frame: UIScreen.mainScreen().bounds)
+            backgroundView = UIView(frame: UIScreen.main.bounds)
         }
         backgroundView.backgroundColor = FTImageViewerBackgroundColor
-        UIApplication.sharedApplication().keyWindow?.addSubview(backgroundView);
+        UIApplication.shared.keyWindow?.addSubview(backgroundView);
 
         
         beginAnimationView = UIImageView(frame : fromRect)
         beginAnimationView.clipsToBounds = true
-        beginAnimationView.userInteractionEnabled = false
-        beginAnimationView.contentMode = UIViewContentMode.ScaleAspectFit
-        beginAnimationView.backgroundColor = UIColor.clearColor();
+        beginAnimationView.isUserInteractionEnabled = false
+        beginAnimationView.contentMode = UIViewContentMode.scaleAspectFit
+        beginAnimationView.backgroundColor = UIColor.clear;
         backgroundView.addSubview(beginAnimationView)
-        beginAnimationView.af_setImageWithURL(NSURL(string: images[atIndex])!)
+        beginAnimationView.kf.setImage(with: URL(string: images[atIndex])!)
  
-        UIView.animateWithDuration(FTImageViewerAnimationDuriation,
+        UIView.animate(withDuration: FTImageViewerAnimationDuriation,
             animations: { () -> Void in
-                self.beginAnimationView.layer.frame = UIScreen.mainScreen().bounds;
-            }) { (finished) -> Void in
+                self.beginAnimationView.layer.frame = UIScreen.main.bounds;
+            }, completion: { (finished) -> Void in
                 if (finished == true){
                     self.setupView()
                 }
-        }
+        }) 
     }
 
     //MARK: - setupView -
 
-    private func setupView(){
+    fileprivate func setupView(){
         if (scrollView == nil){
             
-            scrollView = UIScrollView(frame: UIScreen.mainScreen().bounds)
-            scrollView.backgroundColor = UIColor.clearColor()
-            scrollView.pagingEnabled = true
+            scrollView = UIScrollView(frame: UIScreen.main.bounds)
+            scrollView.backgroundColor = UIColor.clear
+            scrollView.isPagingEnabled = true
             scrollView.alpha = 0.0
             scrollView.bounces = true
             scrollView.showsHorizontalScrollIndicator = false
@@ -122,7 +107,7 @@ public class FTImageViewer: NSObject , UIScrollViewDelegate,UIGestureRecognizerD
             scrollView.delegate = self
             
             
-            tabBar = FTImageViewBar(frame: CGRectMake(0 ,  FTImageViewerScreenHeight ,  FTImageViewerScreenWidth, FTImageViewBarHeight) ,
+            tabBar = FTImageViewBar(frame: CGRect(x: 0 ,  y: FTImageViewerScreenHeight ,  width: FTImageViewerScreenWidth, height: FTImageViewBarHeight) ,
                                     saveTapBlock: {
                                         self.saveCurrentImage();
                     },
@@ -135,14 +120,14 @@ public class FTImageViewer: NSObject , UIScrollViewDelegate,UIGestureRecognizerD
             backgroundView.addSubview(tabBar)
 
         }
-        scrollView.frame = UIScreen.mainScreen().bounds
+        scrollView.frame = UIScreen.main.bounds
 
         
         for v in scrollView.subviews{
             v.removeFromSuperview()
         }
         for i in 0 ..< imageUrlArray.count {
-            let imageView: FTImageView = FTImageView(frame: CGRectMake(FTImageViewerScreenWidth * CGFloat(i), 0, FTImageViewerScreenWidth, FTImageViewerScreenHeight), imageURL: imageUrlArray[i], atIndex: i)
+            let imageView: FTImageView = FTImageView(frame: CGRect(x: FTImageViewerScreenWidth * CGFloat(i), y: 0, width: FTImageViewerScreenWidth, height: FTImageViewerScreenHeight), imageURL: imageUrlArray[i], atIndex: i)
             imageView.FTImageViewHandleTap = {
                 self.animationOut()
             }
@@ -150,25 +135,25 @@ public class FTImageViewer: NSObject , UIScrollViewDelegate,UIGestureRecognizerD
             imageView.panGesture.addTarget(self, action: #selector(self.panGestureRecognized(_:)))
             scrollView.addSubview(imageView)
         }
-        scrollView.contentSize = CGSizeMake(UIScreen.mainScreen().bounds.width * CGFloat(imageUrlArray.count), UIScreen.mainScreen().bounds.height)
-        scrollView.scrollRectToVisible(CGRectMake(FTImageViewerScreenWidth*CGFloat(fromIndex), 0, FTImageViewerScreenWidth, FTImageViewerScreenHeight), animated: false)
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width * CGFloat(imageUrlArray.count), height: UIScreen.main.bounds.height)
+        scrollView.scrollRectToVisible(CGRect(x: FTImageViewerScreenWidth*CGFloat(fromIndex), y: 0, width: FTImageViewerScreenWidth, height: FTImageViewerScreenHeight), animated: false)
         
         tabBar.countLabel.text = "\(fromIndex+1)/\(imageUrlArray.count)"
         
-        UIView.animateWithDuration(FTImageViewerAnimationDuriation, animations: { () -> Void in
+        UIView.animate(withDuration: FTImageViewerAnimationDuriation, animations: { () -> Void in
             self.scrollView.alpha = 1.0
             self.tabBar.alpha = 1
-            self.tabBar.frame = CGRectMake(0, FTImageViewerScreenHeight-FTImageViewBarHeight, FTImageViewerScreenWidth, FTImageViewBarHeight)
-            }) { (finished: Bool) -> Void in
-                self.beginAnimationView.hidden = true
-        }
+            self.tabBar.frame = CGRect(x: 0, y: FTImageViewerScreenHeight-FTImageViewBarHeight, width: FTImageViewerScreenWidth, height: FTImageViewBarHeight)
+            }, completion: { (finished: Bool) -> Void in
+                self.beginAnimationView.isHidden = true
+        }) 
     }
     
     //MARK: - gestureRecognizerShouldBegin -
 
-    public func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
-        if (gestureRecognizer.view!.isKindOfClass(FTImageView)){
-            let translatedPoint = (gestureRecognizer as! UIPanGestureRecognizer).translationInView(gestureRecognizer.view)
+    open func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        if (gestureRecognizer.view!.isKind(of: FTImageView.self)){
+            let translatedPoint = (gestureRecognizer as! UIPanGestureRecognizer).translation(in: gestureRecognizer.view)
             return fabs(translatedPoint.y) > fabs(translatedPoint.x);
         }
         return true
@@ -176,42 +161,42 @@ public class FTImageViewer: NSObject , UIScrollViewDelegate,UIGestureRecognizerD
     
     //MARK: - panGestureRecognized -
 
-    func panGestureRecognized(gesture : UIPanGestureRecognizer){
+    func panGestureRecognized(_ gesture : UIPanGestureRecognizer){
         let currentItem : UIView = gesture.view!
-        let translatedPoint = gesture.translationInView(currentItem)
+        let translatedPoint = gesture.translation(in: currentItem)
         let newAlpha = CGFloat(1 - fabsf(Float(translatedPoint.y/FTImageViewerScreenHeight)))
 
-        if (gesture.state == UIGestureRecognizerState.Began || gesture.state == UIGestureRecognizerState.Changed){
-            scrollView.scrollEnabled = false
-            currentItem.frame = CGRectMake(currentItem.frame.origin.x, translatedPoint.y, currentItem.frame.size.width, currentItem.frame.size.height)
-            self.tabBar.frame = CGRectMake(0, FTImageViewerScreenHeight-FTImageViewBarHeight*newAlpha, FTImageViewerScreenWidth, FTImageViewBarHeight)
-            backgroundView.backgroundColor = FTImageViewerBackgroundColor.colorWithAlphaComponent(newAlpha)
-        }else if (gesture.state == UIGestureRecognizerState.Ended ){
+        if (gesture.state == UIGestureRecognizerState.began || gesture.state == UIGestureRecognizerState.changed){
+            scrollView.isScrollEnabled = false
+            currentItem.frame = CGRect(x: currentItem.frame.origin.x, y: translatedPoint.y, width: currentItem.frame.size.width, height: currentItem.frame.size.height)
+            self.tabBar.frame = CGRect(x: 0, y: FTImageViewerScreenHeight-FTImageViewBarHeight*newAlpha, width: FTImageViewerScreenWidth, height: FTImageViewBarHeight)
+            backgroundView.backgroundColor = FTImageViewerBackgroundColor.withAlphaComponent(newAlpha)
+        }else if (gesture.state == UIGestureRecognizerState.ended ){
             
-            scrollView.scrollEnabled = true
+            scrollView.isScrollEnabled = true
             if (fabs(translatedPoint.y) >= FTImageViewerScreenHeight*0.2){
-                UIView.animateWithDuration(FTImageViewerAnimationDuriation, animations: { () -> Void in
-                    self.backgroundView.backgroundColor = UIColor.clearColor()
+                UIView.animate(withDuration: FTImageViewerAnimationDuriation, animations: { () -> Void in
+                    self.backgroundView.backgroundColor = UIColor.clear
                     if (translatedPoint.y > 0){
-                        currentItem.frame = CGRectMake(currentItem.frame.origin.x, FTImageViewerScreenHeight, currentItem.frame.size.width, currentItem.frame.size.height)
+                        currentItem.frame = CGRect(x: currentItem.frame.origin.x, y: FTImageViewerScreenHeight, width: currentItem.frame.size.width, height: currentItem.frame.size.height)
                     }else{
-                        currentItem.frame = CGRectMake(currentItem.frame.origin.x, -FTImageViewerScreenHeight, currentItem.frame.size.width, currentItem.frame.size.height)
+                        currentItem.frame = CGRect(x: currentItem.frame.origin.x, y: -FTImageViewerScreenHeight, width: currentItem.frame.size.width, height: currentItem.frame.size.height)
                     }
 
-                    self.tabBar.frame = CGRectMake(0, FTImageViewerScreenHeight, FTImageViewerScreenWidth, FTImageViewBarHeight)
-                    }) { (finished: Bool) -> Void in
+                    self.tabBar.frame = CGRect(x: 0, y: FTImageViewerScreenHeight, width: FTImageViewerScreenWidth, height: FTImageViewBarHeight)
+                    }, completion: { (finished: Bool) -> Void in
                         if  (finished == true){
                             self.backgroundView.removeFromSuperview()
                         }
-                }
+                }) 
             }else{
-                UIView.animateWithDuration(FTImageViewerAnimationDuriation, animations: { () -> Void in
+                UIView.animate(withDuration: FTImageViewerAnimationDuriation, animations: { () -> Void in
                     self.backgroundView.backgroundColor = FTImageViewerBackgroundColor
-                    currentItem.frame = CGRectMake(currentItem.frame.origin.x, 0, currentItem.frame.size.width, currentItem.frame.size.height)
-                    self.tabBar.frame = CGRectMake(0, FTImageViewerScreenHeight-FTImageViewBarHeight, FTImageViewerScreenWidth, FTImageViewBarHeight)
-                    }) { (finished: Bool) -> Void in
+                    currentItem.frame = CGRect(x: currentItem.frame.origin.x, y: 0, width: currentItem.frame.size.width, height: currentItem.frame.size.height)
+                    self.tabBar.frame = CGRect(x: 0, y: FTImageViewerScreenHeight-FTImageViewBarHeight, width: FTImageViewerScreenWidth, height: FTImageViewBarHeight)
+                    }, completion: { (finished: Bool) -> Void in
 
-                }
+                }) 
             }
         }
     }
@@ -219,14 +204,14 @@ public class FTImageViewer: NSObject , UIScrollViewDelegate,UIGestureRecognizerD
 
     //MARK: - scrollViewDidEndDecelerating -
 
-    public func scrollViewDidEndDecelerating(scrollView: UIScrollView){
+    open func scrollViewDidEndDecelerating(_ scrollView: UIScrollView){
         let page = NSInteger(scrollView.contentOffset.x / FTImageViewerScreenWidth)
         tabBar.countLabel.text = "\(page+1)/\(imageUrlArray.count)"
     }
 
     //MARK: - animationOut -
 
-    private func animationOut(){
+    fileprivate func animationOut(){
         let page = NSInteger(scrollView.contentOffset.x / FTImageViewerScreenWidth)
         
         for img in scrollView.subviews{
@@ -237,42 +222,33 @@ public class FTImageViewer: NSObject , UIScrollViewDelegate,UIGestureRecognizerD
                 }
             }
         }
-        self.beginAnimationView.hidden = false
-        UIView.animateWithDuration(FTImageViewerAnimationDuriation, animations: { () -> Void in
+        self.beginAnimationView.isHidden = false
+        UIView.animate(withDuration: FTImageViewerAnimationDuriation, animations: { () -> Void in
             self.beginAnimationView.frame = self.fromSenderRectArray[page]
             self.scrollView.alpha = 0
-            self.backgroundView.backgroundColor = UIColor.clearColor();
-            self.tabBar.frame = CGRectMake(0, FTImageViewerScreenHeight, FTImageViewerScreenWidth, FTImageViewBarHeight)
-            }) { (finished: Bool) -> Void in
+            self.backgroundView.backgroundColor = UIColor.clear;
+            self.tabBar.frame = CGRect(x: 0, y: FTImageViewerScreenHeight, width: FTImageViewerScreenWidth, height: FTImageViewBarHeight)
+            }, completion: { (finished: Bool) -> Void in
                 if  (finished == true){
-                    self.beginAnimationView.hidden = true
+                    self.beginAnimationView.isHidden = true
                     self.backgroundView.removeFromSuperview()
                 }
-        }
+        }) 
     }
 
     //MARK: - saveCurrentImage -
 
-    private func saveCurrentImage(){
+    fileprivate func saveCurrentImage(){
         let page = NSInteger(scrollView.contentOffset.x / FTImageViewerScreenWidth)
 
         
         for img in scrollView.subviews{
             if (img is FTImageView) && ((img as! FTImageView).tag == page) {
                 if ((img as! FTImageView).imageView.image != nil) {
-                    
-//                    image = (img as! FTImageView).imageView.image!
-//                    let text = "images"
-//                    let activatyVC = UIActivityViewController(activityItems: [text,image], applicationActivities: nil)
-//                    let delss = UIApplication.sharedApplication().delegate as! AppDelegate
-//                    
-//                    delss.window!.rootViewController?.presentViewController(activatyVC, animated: true, completion: {
-//                        
-//                    })
-//                    break
+
                     UIImageWriteToSavedPhotosAlbum((img as! FTImageView).imageView.image!, nil, nil, nil)
                     self.tabBar.countLabel.text = "Save image done."
-                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1.0 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(1.0 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
                         let page = NSInteger(self.scrollView.contentOffset.x / FTImageViewerScreenWidth)
                         self.tabBar.countLabel.text = "\(page+1)/\(self.imageUrlArray.count)"
                     })
@@ -292,7 +268,7 @@ public class FTImageViewer: NSObject , UIScrollViewDelegate,UIGestureRecognizerD
  FTImageView
  */
 
-public class FTImageView: UIScrollView, UIScrollViewDelegate{
+open class FTImageView: UIScrollView, UIScrollViewDelegate{
     
     var imageView: UIImageView!
     var activityIndicator: UIActivityIndicatorView!
@@ -307,35 +283,34 @@ public class FTImageView: UIScrollView, UIScrollViewDelegate{
     internal init(frame : CGRect, imageURL : String, atIndex : NSInteger){
         super.init(frame: frame)
         
-        self.backgroundColor = UIColor.clearColor()
+        self.backgroundColor = UIColor.clear
         self.showsHorizontalScrollIndicator = false
         self.showsVerticalScrollIndicator = false
         self.decelerationRate = UIScrollViewDecelerationRateFast
-        self.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
+        self.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
         self.minimumZoomScale = 1.0
         self.maximumZoomScale = 3.0
         self.delegate = self
         self.tag = atIndex
         
-        activityIndicator = UIActivityIndicatorView(frame: CGRectMake((frame.width - FTImageViewBarHeight)/2, (frame.height - FTImageViewBarHeight)/2, FTImageViewBarHeight, FTImageViewBarHeight))
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
+        activityIndicator = UIActivityIndicatorView(frame: CGRect(x: (frame.width - FTImageViewBarHeight)/2, y: (frame.height - FTImageViewBarHeight)/2, width: FTImageViewBarHeight, height: FTImageViewBarHeight))
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.white
         activityIndicator.hidesWhenStopped = true
         self.addSubview(activityIndicator)
         
-        imageView = UIImageView(frame: CGRectMake(0, 0, self.frame.width, self.frame.height))
-        imageView.contentMode = UIViewContentMode.ScaleAspectFit
-
-        imageView.af_setImageWithURL(NSURL(string: imageURL)!,
-                                     placeholderImage: nil,
-                                     filter: nil,
-                                     progress: nil,
-                                     progressQueue: dispatch_get_main_queue(),
-                                     imageTransition: .None,
-                                     runImageTransitionIfCached: true) { (response) in
-                                        if (response.result.error != nil || response.result.value  != nil) {
-                                            self.activityIndicator.stopAnimating()
-                                        }
+        imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height))
+        imageView.contentMode = UIViewContentMode.scaleAspectFit
+        imageView.kf.setImage(with: URL(string: imageURL)!,
+                              placeholder: nil,
+                              options: nil,
+                              progressBlock: { (done, total) in
+                                
+        }) { (image, error, cashType, url) in
+            if image != nil && error == nil {
+                self.activityIndicator.stopAnimating()
+            }
         }
+
         self.addSubview(imageView)
         
 
@@ -351,7 +326,7 @@ public class FTImageView: UIScrollView, UIScrollViewDelegate{
         doubleTap.delaysTouchesBegan = true
         self.addGestureRecognizer(doubleTap)
 
-        singleTap.requireGestureRecognizerToFail(doubleTap)
+        singleTap.require(toFail: doubleTap)
         
         panGesture = UIPanGestureRecognizer()
         panGesture.maximumNumberOfTouches = 1
@@ -364,10 +339,10 @@ public class FTImageView: UIScrollView, UIScrollViewDelegate{
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView?{
+    open func viewForZooming(in scrollView: UIScrollView) -> UIView?{
         return imageView
     }
-    public func scrollViewDidEndZooming(scrollView: UIScrollView, withView view: UIView?, atScale scale: CGFloat){
+    open func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat){
         let ws = scrollView.frame.size.width - scrollView.contentInset.left - scrollView.contentInset.right
         let hs = scrollView.frame.size.height - scrollView.contentInset.top - scrollView.contentInset.bottom
         let w = imageView.frame.size.width
@@ -377,16 +352,16 @@ public class FTImageView: UIScrollView, UIScrollViewDelegate{
         rct.origin.y = (hs > h) ? (hs-h)/2 : 0
         imageView.frame = rct;
     }
-    func handleSingleTap(sender: UITapGestureRecognizer){
+    func handleSingleTap(_ sender: UITapGestureRecognizer){
         self.FTImageViewHandleTap?()
     }
     
-    func handleDoubleTap(sender: UITapGestureRecognizer){
-        let touchPoint = sender.locationInView(self)
+    func handleDoubleTap(_ sender: UITapGestureRecognizer){
+        let touchPoint = sender.location(in: self)
         if (self.zoomScale == self.maximumZoomScale){
             self.setZoomScale(self.minimumZoomScale, animated: true)
         }else{
-            self.zoomToRect(CGRectMake(touchPoint.x, touchPoint.y, 1, 1), animated: true)
+            self.zoom(to: CGRect(x: touchPoint.x, y: touchPoint.y, width: 1, height: 1), animated: true)
         }
     }
 
@@ -397,7 +372,7 @@ public class FTImageView: UIScrollView, UIScrollViewDelegate{
  */
 //MARK: - FTImageViewBar -
 
-public class FTImageViewBar : UIView {
+open class FTImageViewBar : UIView {
     
     var closeButton : UIButton!
     var saveButton : UIButton!
@@ -409,40 +384,40 @@ public class FTImageViewBar : UIView {
     /**
      initializer
      */
-    public convenience init(frame: CGRect , saveTapBlock: ()->() , closeTapBlock: ()->()) {
+    public convenience init(frame: CGRect , saveTapBlock: @escaping ()->() , closeTapBlock: @escaping ()->()) {
         self.init(frame: frame)
         self.backgroundColor = FTImageViewBarBackgroundColor
         
         saveButtonTapBlock = saveTapBlock
         closeButtonTapBlock = closeTapBlock
         
-        var imageBundle : NSBundle = NSBundle.mainBundle()
+        var imageBundle : Bundle = Bundle.main
         
-        if let bundleURL : String = NSBundle(forClass: FTImageViewer.classForCoder()).pathForResource("FTResource", ofType: "bundle") {
-            if let bundle : NSBundle = NSBundle(path: bundleURL){
+        if let bundleURL : String = Bundle(for: FTImageViewer.classForCoder()).path(forResource: "FTResource", ofType: "bundle") {
+            if let bundle : Bundle = Bundle(path: bundleURL){
                 imageBundle = bundle;
             }
         }
         
-        closeButton = UIButton(frame: CGRectMake(FTImageViewBarDefaultMargin, (frame.height-FTImageViewBarButtonWidth)/2, FTImageViewBarButtonWidth, FTImageViewBarButtonWidth))
-        closeButton.backgroundColor = UIColor.clearColor()
-        closeButton.contentMode = UIViewContentMode.ScaleAspectFill
-        closeButton.setImage(UIImage(named: "close", inBundle: imageBundle, compatibleWithTraitCollection: nil), forState: UIControlState.Normal)
-        closeButton.addTarget(self, action: #selector(FTImageViewBar.onCloseButtonTapped), forControlEvents: UIControlEvents.TouchUpInside)
+        closeButton = UIButton(frame: CGRect(x: FTImageViewBarDefaultMargin, y: (frame.height-FTImageViewBarButtonWidth)/2, width: FTImageViewBarButtonWidth, height: FTImageViewBarButtonWidth))
+        closeButton.backgroundColor = UIColor.clear
+        closeButton.contentMode = UIViewContentMode.scaleAspectFill
+        closeButton.setImage(UIImage(named: "close", in: imageBundle, compatibleWith: nil), for: UIControlState())
+        closeButton.addTarget(self, action: #selector(FTImageViewBar.onCloseButtonTapped), for: UIControlEvents.touchUpInside)
         self.addSubview(closeButton)
         
-        saveButton = UIButton(frame: CGRectMake(frame.width-FTImageViewBarButtonWidth-FTImageViewBarDefaultMargin, (frame.height-FTImageViewBarButtonWidth)/2, FTImageViewBarButtonWidth, FTImageViewBarButtonWidth))
-        saveButton.backgroundColor = UIColor.clearColor()
-        saveButton.contentMode = UIViewContentMode.ScaleAspectFill
-        saveButton.setImage(UIImage(named: "save", inBundle: imageBundle, compatibleWithTraitCollection: nil), forState: UIControlState.Normal)
-        saveButton.addTarget(self, action: #selector(FTImageViewBar.onSaveButtonTapped), forControlEvents: UIControlEvents.TouchUpInside)
+        saveButton = UIButton(frame: CGRect(x: frame.width-FTImageViewBarButtonWidth-FTImageViewBarDefaultMargin, y: (frame.height-FTImageViewBarButtonWidth)/2, width: FTImageViewBarButtonWidth, height: FTImageViewBarButtonWidth))
+        saveButton.backgroundColor = UIColor.clear
+        saveButton.contentMode = UIViewContentMode.scaleAspectFill
+        saveButton.setImage(UIImage(named: "save", in: imageBundle, compatibleWith: nil), for: UIControlState())
+        saveButton.addTarget(self, action: #selector(FTImageViewBar.onSaveButtonTapped), for: UIControlEvents.touchUpInside)
         self.addSubview(saveButton)
         
-        countLabel = UILabel(frame: CGRectMake(FTImageViewBarButtonWidth+FTImageViewBarDefaultMargin*2, 0, frame.width-(FTImageViewBarButtonWidth+FTImageViewBarDefaultMargin*2)*2, frame.height))
-        countLabel.backgroundColor = UIColor.clearColor()
-        countLabel.textColor = UIColor.whiteColor()
-        countLabel.font = UIFont.systemFontOfSize(13)
-        countLabel.textAlignment = NSTextAlignment.Center
+        countLabel = UILabel(frame: CGRect(x: FTImageViewBarButtonWidth+FTImageViewBarDefaultMargin*2, y: 0, width: frame.width-(FTImageViewBarButtonWidth+FTImageViewBarDefaultMargin*2)*2, height: frame.height))
+        countLabel.backgroundColor = UIColor.clear
+        countLabel.textColor = UIColor.white
+        countLabel.font = UIFont.systemFont(ofSize: 13)
+        countLabel.textAlignment = NSTextAlignment.center
         countLabel.text = "-/-"
         self.addSubview(countLabel)
     }
@@ -465,9 +440,9 @@ public class FTImageViewBar : UIView {
 
 //MARK: - FTImageGridView -
 
-public class FTImageGridView: UIView{
+open class FTImageGridView: UIView{
     
-    var FTImageGridViewTapBlock : ((buttonArray: [UIButton] , buttonIndex : NSInteger) ->())?
+    var FTImageGridViewTapBlock : ((_ buttonArray: [UIButton] , _ buttonIndex : NSInteger) ->())?
     var buttonArray : [UIButton] = []
     
     //MARK: - internal init frame imageArray tapBlock -
@@ -482,19 +457,19 @@ public class FTImageGridView: UIView{
      - returns: FTImageGridView
      */
     
-    public convenience init(frame : CGRect, imageArray : [String] , tapBlock : ((buttonsArray: [UIButton] , buttonIndex : NSInteger) ->())){
+    public convenience init(frame : CGRect, imageArray : [String] , tapBlock : @escaping ((_ buttonsArray: [UIButton] , _ buttonIndex : NSInteger) ->())){
         self.init(frame: frame)
         
         self.showWithImageArray(imageArray, tapBlock: tapBlock)
         
     }
     
-    public func showWithImageArray(imageArray : [String] , tapBlock : ((buttonsArray: [UIButton] , buttonIndex : NSInteger) ->())) {
+    open func showWithImageArray(_ imageArray : [String] , tapBlock : @escaping ((_ buttonsArray: [UIButton] , _ buttonIndex : NSInteger) ->())) {
         
         buttonArray = []
         
         for views in self.subviews {
-            if views.isKindOfClass(UIButton.classForCoder()){
+            if views.isKind(of: UIButton.classForCoder()){
                 views.removeFromSuperview();
             }
         }
@@ -506,13 +481,14 @@ public class FTImageGridView: UIView{
                 let x = CGFloat(i % 3) * (imgHeight + FTImageGridViewImageMargin)
                 let y = CGFloat(i / 3) * (imgHeight + FTImageGridViewImageMargin)
                 let imageButton  = UIButton()
-                imageButton.frame = CGRectMake(x, y, imgHeight, imgHeight)
+                imageButton.frame = CGRect(x: x, y: y, width: imgHeight, height: imgHeight)
                 imageButton.backgroundColor = KCOLOR_BACKGROUND_WHITE
-                imageButton.imageView?.contentMode = UIViewContentMode.ScaleAspectFill
-                imageButton.af_setImageForState(UIControlState.Normal, URL: NSURL(string: imageArray[i])!)
+                imageButton.imageView?.contentMode = UIViewContentMode.scaleAspectFill
+                imageButton.kf.setImage(with: URL(string: imageArray[i])!, for: UIControlState.normal)
+                
                 imageButton.tag = i
                 imageButton.clipsToBounds = true
-                imageButton.addTarget(self, action: #selector(FTImageGridView.onClickImage(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+                imageButton.addTarget(self, action: #selector(FTImageGridView.onClickImage(_:)), for: UIControlEvents.touchUpInside)
                 self.addSubview(imageButton)
                 
                 self.buttonArray.append(imageButton)
@@ -535,7 +511,7 @@ public class FTImageGridView: UIView{
      
      - returns: CGFloat Height
      */
-    public class func getHeightWithWidth(width: CGFloat, imgCount: Int) -> CGFloat{
+    open class func getHeightWithWidth(_ width: CGFloat, imgCount: Int) -> CGFloat{
         let imgHeight: CGFloat = (width - FTImageGridViewImageMargin * 2) / 3
         let photoAlbumHeight : CGFloat = imgHeight * CGFloat(ceilf(Float(imgCount) / 3)) + FTImageGridViewImageMargin * CGFloat(ceilf(Float(imgCount) / 3)-1)
         return photoAlbumHeight
@@ -548,8 +524,8 @@ public class FTImageGridView: UIView{
      
      - parameter sender: UIButton
      */
-    func onClickImage(sender: UIButton){
-        FTImageGridViewTapBlock?(buttonArray: self.buttonArray , buttonIndex: sender.tag)
+    func onClickImage(_ sender: UIButton){
+        FTImageGridViewTapBlock?(self.buttonArray , sender.tag)
     }
     
 }

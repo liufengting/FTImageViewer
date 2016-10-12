@@ -4,7 +4,7 @@ target 'FTImageViewerTestDemo' do
   use_frameworks!
 
 pod 'FTImageViewer'
-pod 'FTIndicator/FTProgressIndicator'
+pod 'FTIndicator'
 
   target 'FTImageViewerTestDemoTests' do
     inherit! :search_paths

@@ -14,6 +14,9 @@
 
 `FTImageViewer` can preview images with just one lines of code. Also `FTImageViewGrid` has make showing images in a grid much easier. I wrote this for my future projects. Feel free to try it in your own projects!
 
+[TOC]
+
+
 # Feathers
 
 - [x] Single tap to dismiss and auto return to the current index
@@ -63,7 +66,7 @@ run the demo in `FTImageViewerDemo` to see more
 pod 'FTImageViewer'
 ```
 
-# Bonus
+# Bouns
 
 In `FTImageViewerDemo`, shows you how to use it in tableview, using pure `AutoLayout`. Here is the screenshot:
 
