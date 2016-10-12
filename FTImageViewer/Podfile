@@ -1,4 +1,4 @@
 target 'FTImageViewer' do
-pod 'AlamofireImage'
+pod 'Kingfisher'
 use_frameworks!
 end
