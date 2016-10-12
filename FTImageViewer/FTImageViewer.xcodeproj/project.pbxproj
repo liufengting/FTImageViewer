@@ -8,29 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		5A1AD1671D524FCB00DF6FEA /* FTImageViewer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A1AD1661D524FCB00DF6FEA /* FTImageViewer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5A1AD16E1D524FCB00DF6FEA /* FTImageViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A1AD1631D524FCB00DF6FEA /* FTImageViewer.framework */; };
-		5A1AD1731D524FCB00DF6FEA /* FTImageViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1AD1721D524FCB00DF6FEA /* FTImageViewerTests.swift */; };
 		5A1AD1801D524FE300DF6FEA /* FTImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1AD17E1D524FE300DF6FEA /* FTImageViewer.swift */; };
 		5A1AD1811D524FE300DF6FEA /* FTResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5A1AD17F1D524FE300DF6FEA /* FTResource.bundle */; };
 		9FE60CEC265C985AF567C1F3 /* Pods_FTImageViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF3894099F782F9BAD161B31 /* Pods_FTImageViewer.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		5A1AD16F1D524FCB00DF6FEA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5A1AD15A1D524FCB00DF6FEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5A1AD1621D524FCB00DF6FEA;
-			remoteInfo = FTImageViewer;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		375672954CD8EA6363CFE81B /* Pods-FTImageViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FTImageViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-FTImageViewer/Pods-FTImageViewer.release.xcconfig"; sourceTree = "<group>"; };
 		5A1AD1631D524FCB00DF6FEA /* FTImageViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FTImageViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A1AD1661D524FCB00DF6FEA /* FTImageViewer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTImageViewer.h; sourceTree = "<group>"; };
 		5A1AD1681D524FCB00DF6FEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5A1AD16D1D524FCB00DF6FEA /* FTImageViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FTImageViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A1AD1721D524FCB00DF6FEA /* FTImageViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTImageViewerTests.swift; sourceTree = "<group>"; };
 		5A1AD1741D524FCB00DF6FEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A1AD17E1D524FE300DF6FEA /* FTImageViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTImageViewer.swift; sourceTree = "<group>"; };
@@ -45,14 +32,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FE60CEC265C985AF567C1F3 /* Pods_FTImageViewer.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5A1AD16A1D524FCB00DF6FEA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5A1AD16E1D524FCB00DF6FEA /* FTImageViewer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,7 +53,6 @@
 			isa = PBXGroup;
 			children = (
 				5A1AD1631D524FCB00DF6FEA /* FTImageViewer.framework */,
-				5A1AD16D1D524FCB00DF6FEA /* FTImageViewerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -158,24 +136,6 @@
 			productReference = 5A1AD1631D524FCB00DF6FEA /* FTImageViewer.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		5A1AD16C1D524FCB00DF6FEA /* FTImageViewerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5A1AD17A1D524FCB00DF6FEA /* Build configuration list for PBXNativeTarget "FTImageViewerTests" */;
-			buildPhases = (
-				5A1AD1691D524FCB00DF6FEA /* Sources */,
-				5A1AD16A1D524FCB00DF6FEA /* Frameworks */,
-				5A1AD16B1D524FCB00DF6FEA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5A1AD1701D524FCB00DF6FEA /* PBXTargetDependency */,
-			);
-			name = FTImageViewerTests;
-			productName = FTImageViewerTests;
-			productReference = 5A1AD16D1D524FCB00DF6FEA /* FTImageViewerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -188,9 +148,7 @@
 				TargetAttributes = {
 					5A1AD1621D524FCB00DF6FEA = {
 						CreatedOnToolsVersion = 7.3.1;
-					};
-					5A1AD16C1D524FCB00DF6FEA = {
-						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -207,7 +165,6 @@
 			projectRoot = "";
 			targets = (
 				5A1AD1621D524FCB00DF6FEA /* FTImageViewer */,
-				5A1AD16C1D524FCB00DF6FEA /* FTImageViewerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -218,13 +175,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A1AD1811D524FE300DF6FEA /* FTResource.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5A1AD16B1D524FCB00DF6FEA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,23 +222,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5A1AD1691D524FCB00DF6FEA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5A1AD1731D524FCB00DF6FEA /* FTImageViewerTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		5A1AD1701D524FCB00DF6FEA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5A1AD1621D524FCB00DF6FEA /* FTImageViewer */;
-			targetProxy = 5A1AD16F1D524FCB00DF6FEA /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		5A1AD1751D524FCB00DF6FEA /* Debug */ = {
@@ -397,6 +331,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.liufengting.FTImageViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -415,26 +350,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.liufengting.FTImageViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		5A1AD17B1D524FCB00DF6FEA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = FTImageViewerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.liufengting.FTImageViewerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		5A1AD17C1D524FCB00DF6FEA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = FTImageViewerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.liufengting.FTImageViewerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -455,15 +371,6 @@
 			buildConfigurations = (
 				5A1AD1781D524FCB00DF6FEA /* Debug */,
 				5A1AD1791D524FCB00DF6FEA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5A1AD17A1D524FCB00DF6FEA /* Build configuration list for PBXNativeTarget "FTImageViewerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5A1AD17B1D524FCB00DF6FEA /* Debug */,
-				5A1AD17C1D524FCB00DF6FEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
