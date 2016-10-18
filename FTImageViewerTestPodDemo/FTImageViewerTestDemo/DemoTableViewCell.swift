@@ -25,7 +25,7 @@ class DemoTableViewCell: UITableViewCell {
             // 56 is the leading constraint for the grid in storyboard
             // 8 is the trailing constraint for the grid in storyboard
             // or set the width to a certain value in storyboard and leave the calculation to `FTImageGridView`
-            let gridWidth = UIScreen.mainScreen().bounds.size.width - 56 - 8
+            let gridWidth = UIScreen.main.bounds.size.width - 56 - 8
             
             
             // get height for the image grid
