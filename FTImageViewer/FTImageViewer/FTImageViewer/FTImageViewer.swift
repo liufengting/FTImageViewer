@@ -2,14 +2,12 @@
 //  FTImageViewer.swift
 //  FTImageViewer
 //
-//  Created by liufengting https://github.com/liufengting on 15/12/17.
-//  Copyright © 2015年 liufengting. All rights reserved.
+//  Created by liufengting on 15/12/17.
+//  Copyright © 2015年 liufengting ( https://github.com/liufengting ). All rights reserved.
 //
 
 import UIKit
 import Kingfisher
-
-
 
 //MARK: - Marcros -
 
@@ -24,11 +22,9 @@ private let FTImageViewBarDefaultMargin : CGFloat =  5.0
 private let FTImageGridViewImageMargin : CGFloat = 2.0
 private let KCOLOR_BACKGROUND_WHITE = UIColor(red:241/255.0, green:241/255.0, blue:241/255.0, alpha:1.0)
 
-
-
 //MARK: - FTImageViewer -
 
-open class FTImageViewer: NSObject , UIScrollViewDelegate,UIGestureRecognizerDelegate{
+open class FTImageViewer: NSObject, UIScrollViewDelegate, UIGestureRecognizerDelegate {
 
     var backgroundView: UIView!
     var scrollView: UIScrollView!
@@ -41,7 +37,7 @@ open class FTImageViewer: NSObject , UIScrollViewDelegate,UIGestureRecognizerDel
     var isPanRecognize: Bool = false
 
 
-    //MARK: - sharedInstance -
+    //MARK: - sharedInstance
 
     open class var sharedInstance : FTImageViewer {
         struct Static {
@@ -49,9 +45,8 @@ open class FTImageViewer: NSObject , UIScrollViewDelegate,UIGestureRecognizerDel
         }
         return Static.instance
     }
-    
 
-    //MARK: - showImages -
+    //MARK: - showImages
 
     open func showImages(_ images : [String] , atIndex : NSInteger , fromSenderArray: [UIView]){
         
@@ -91,7 +86,7 @@ open class FTImageViewer: NSObject , UIScrollViewDelegate,UIGestureRecognizerDel
         }) 
     }
 
-    //MARK: - setupView -
+    //MARK: - setupView
 
     fileprivate func setupView(){
         if (scrollView == nil){
@@ -149,7 +144,7 @@ open class FTImageViewer: NSObject , UIScrollViewDelegate,UIGestureRecognizerDel
         }) 
     }
     
-    //MARK: - gestureRecognizerShouldBegin -
+    //MARK: - gestureRecognizerShouldBegin
 
     open func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         if (gestureRecognizer.view!.isKind(of: FTImageView.self)){
@@ -159,7 +154,7 @@ open class FTImageViewer: NSObject , UIScrollViewDelegate,UIGestureRecognizerDel
         return true
     }
     
-    //MARK: - panGestureRecognized -
+    //MARK: - panGestureRecognized
 
     func panGestureRecognized(_ gesture : UIPanGestureRecognizer){
         let currentItem : UIView = gesture.view!
@@ -202,14 +197,14 @@ open class FTImageViewer: NSObject , UIScrollViewDelegate,UIGestureRecognizerDel
     }
     
 
-    //MARK: - scrollViewDidEndDecelerating -
+    //MARK: - UIScrollViewDelegate
 
     open func scrollViewDidEndDecelerating(_ scrollView: UIScrollView){
         let page = NSInteger(scrollView.contentOffset.x / FTImageViewerScreenWidth)
         tabBar.countLabel.text = "\(page+1)/\(imageUrlArray.count)"
     }
 
-    //MARK: - animationOut -
+    //MARK: - animationOut
 
     fileprivate func animationOut(){
         let page = NSInteger(scrollView.contentOffset.x / FTImageViewerScreenWidth)
@@ -236,27 +231,33 @@ open class FTImageViewer: NSObject , UIScrollViewDelegate,UIGestureRecognizerDel
         }) 
     }
 
-    //MARK: - saveCurrentImage -
+    //MARK: - saveCurrentImage
 
     fileprivate func saveCurrentImage(){
         let page = NSInteger(scrollView.contentOffset.x / FTImageViewerScreenWidth)
-
+        var imageToSave : UIImage? = nil;
         
         for img in scrollView.subviews{
             if (img is FTImageView) && ((img as! FTImageView).tag == page) {
                 if ((img as! FTImageView).imageView.image != nil) {
-
-                    UIImageWriteToSavedPhotosAlbum((img as! FTImageView).imageView.image!, nil, nil, nil)
-                    self.tabBar.countLabel.text = "Save image done."
-                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(1.0 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
-                        let page = NSInteger(self.scrollView.contentOffset.x / FTImageViewerScreenWidth)
-                        self.tabBar.countLabel.text = "\(page+1)/\(self.imageUrlArray.count)"
-                    })
+                    imageToSave = (img as! FTImageView).imageView.image!
                 }
             }
         }
+        if imageToSave != nil {
+            UIImageWriteToSavedPhotosAlbum(imageToSave!, self, #selector(self.saveImageDone(_:error:context:)), nil)
+        }
     }
 
+    //MARK: - saveImageDone
+
+    @objc func saveImageDone(_ image : UIImage, error: Error, context: UnsafeMutableRawPointer?) {
+        self.tabBar.countLabel.text = NSLocalizedString("Save image done.", comment: "Save image done.")
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(1.0 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
+            let page = NSInteger(self.scrollView.contentOffset.x / FTImageViewerScreenWidth)
+            self.tabBar.countLabel.text = "\(page+1)/\(self.imageUrlArray.count)"
+        })
+    }
     
 
 }
@@ -278,7 +279,7 @@ open class FTImageView: UIScrollView, UIScrollViewDelegate{
     var panGesture : UIPanGestureRecognizer!
     
     
-    //MARK: - FTImageViewBar -
+    //MARK: - FTImageViewBar
 
     internal init(frame : CGRect, imageURL : String, atIndex : NSInteger){
         super.init(frame: frame)
@@ -312,9 +313,15 @@ open class FTImageView: UIScrollView, UIScrollViewDelegate{
         }
 
         self.addSubview(imageView)
-        
 
-
+        self.setupGestures()
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    fileprivate func setupGestures() {
         //gesture
         singleTap = UITapGestureRecognizer(target: self, action: #selector(self.handleSingleTap(_:)))
         singleTap.numberOfTapsRequired = 1
@@ -325,19 +332,16 @@ open class FTImageView: UIScrollView, UIScrollViewDelegate{
         doubleTap.numberOfTapsRequired = 2
         doubleTap.delaysTouchesBegan = true
         self.addGestureRecognizer(doubleTap)
-
+        
         singleTap.require(toFail: doubleTap)
         
         panGesture = UIPanGestureRecognizer()
         panGesture.maximumNumberOfTouches = 1
         panGesture.minimumNumberOfTouches = 1
         self.addGestureRecognizer(panGesture)
-
-
     }
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    
+    //MARK: - UIScrollViewDelegate
     
     open func viewForZooming(in scrollView: UIScrollView) -> UIView?{
         return imageView
@@ -352,9 +356,14 @@ open class FTImageView: UIScrollView, UIScrollViewDelegate{
         rct.origin.y = (hs > h) ? (hs-h)/2 : 0
         imageView.frame = rct;
     }
+
+    //MARK: - handleSingleTap
+
     func handleSingleTap(_ sender: UITapGestureRecognizer){
         self.FTImageViewHandleTap?()
     }
+    
+    //MARK: - handleDoubleTap
     
     func handleDoubleTap(_ sender: UITapGestureRecognizer){
         let touchPoint = sender.location(in: self)
@@ -367,9 +376,6 @@ open class FTImageView: UIScrollView, UIScrollViewDelegate{
 
 }
 
-/**
- FTImageViewBar
- */
 //MARK: - FTImageViewBar -
 
 open class FTImageViewBar : UIView {
@@ -381,9 +387,8 @@ open class FTImageViewBar : UIView {
     var saveButtonTapBlock : (() ->())!
     var closeButtonTapBlock : (() ->())!
     
-    /**
-     initializer
-     */
+    //MARK: - convenience init
+
     public convenience init(frame: CGRect , saveTapBlock: @escaping ()->() , closeTapBlock: @escaping ()->()) {
         self.init(frame: frame)
         self.backgroundColor = FTImageViewBarBackgroundColor
@@ -422,16 +427,14 @@ open class FTImageViewBar : UIView {
         self.addSubview(countLabel)
     }
 
-    /**
-     onCloseButtonTapped
-     */
+    //MARK: - onCloseButtonTapped
+
     func onCloseButtonTapped(){
         self.closeButtonTapBlock();
     }
-    
-    /**
-     onSaveButtonTapped
-     */
+
+    //MARK: - onSaveButtonTapped
+
     func onSaveButtonTapped(){
         self.saveButtonTapBlock();
     }
@@ -440,23 +443,13 @@ open class FTImageViewBar : UIView {
 
 //MARK: - FTImageGridView -
 
-open class FTImageGridView: UIView{
+open class FTImageGridView: UIView {
     
     var FTImageGridViewTapBlock : ((_ buttonArray: [UIButton] , _ buttonIndex : NSInteger) ->())?
     var buttonArray : [UIButton] = []
     
-    //MARK: - internal init frame imageArray tapBlock -
+    //MARK: - internal init frame imageArray tapBlock
 
-    /**
-     internal init frame imageArray tapBlock
-     
-     - parameter frame:        frame
-     - parameter withImgArray: withImgArray
-     - parameter tapBlock:     FTImageGridViewTapBlock
-     
-     - returns: FTImageGridView
-     */
-    
     public convenience init(frame : CGRect, imageArray : [String] , tapBlock : @escaping ((_ buttonsArray: [UIButton] , _ buttonIndex : NSInteger) ->())){
         self.init(frame: frame)
         
@@ -497,33 +490,17 @@ open class FTImageGridView: UIView{
         
 
     }
-    
-    
-    
-    
-    //MARK: - get Height With Width -
 
-    /**
-     get Height With Width
-     
-     - parameter width:    width
-     - parameter imgCount: imgCount
-     
-     - returns: CGFloat Height
-     */
+    //MARK: - get Height With Width
+
     open class func getHeightWithWidth(_ width: CGFloat, imgCount: Int) -> CGFloat{
         let imgHeight: CGFloat = (width - FTImageGridViewImageMargin * 2) / 3
         let photoAlbumHeight : CGFloat = imgHeight * CGFloat(ceilf(Float(imgCount) / 3)) + FTImageGridViewImageMargin * CGFloat(ceilf(Float(imgCount) / 3)-1)
         return photoAlbumHeight
     }
     
-    //MARK: - onClickImage -
+    //MARK: - onClickImage
 
-    /**
-     onClickImage
-     
-     - parameter sender: UIButton
-     */
     func onClickImage(_ sender: UIButton){
         FTImageGridViewTapBlock?(self.buttonArray , sender.tag)
     }

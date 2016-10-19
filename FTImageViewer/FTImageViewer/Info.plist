@@ -20,6 +20,8 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER) would like to use your photo library.</string>
 	<key>NSPrincipalClass</key>
 	<string></string>
 </dict>
