@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "FTImageViewer"
-  s.version      = "1.8.6"
+  s.version      = "1.8.7"
   s.summary      = "A simple ImageViewer and ImageGrid. Preview images with just a few lines of code."
   s.description  = <<-DESC
     FTImageViewer. A simple ImageViewer and ImageGrid. Can preview images with just a few lines of code.
@@ -14,10 +14,12 @@ Pod::Spec.new do |s|
   s.social_media_url   = "http://twitter.com/liufengting"
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/liufengting/FTImageViewer.git", :tag => "#{s.version}" }
-  s.source_files = "Source/FTImageViewer/**/*.{h,swift}"
-  s.resources = "Source/FTImageViewer/**/*.{bundle}"
+  s.source_files = ["FTImageViewer/*.swift", "FTImageViewer/FTImageViewer.h"]
+  s.resources    = "FTImageViewer/*.{bundle}"
+  s.public_header_files = ["Sources/Kingfisher.h"]
   s.requires_arc = true
-  s.framework = "UIKit"
+  s.framework    = "UIKit"
+  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3.0' }
   s.dependency 'Kingfisher'
 
 end

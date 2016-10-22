@@ -7,125 +7,105 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5A1AD1671D524FCB00DF6FEA /* FTImageViewer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A1AD1661D524FCB00DF6FEA /* FTImageViewer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5A1AD1801D524FE300DF6FEA /* FTImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1AD17E1D524FE300DF6FEA /* FTImageViewer.swift */; };
-		5A1AD1811D524FE300DF6FEA /* FTResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5A1AD17F1D524FE300DF6FEA /* FTResource.bundle */; };
-		9FE60CEC265C985AF567C1F3 /* Pods_FTImageViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF3894099F782F9BAD161B31 /* Pods_FTImageViewer.framework */; };
+		2A9CEB721DBBB602009B91DE /* FTImageViewer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A9CEB701DBBB602009B91DE /* FTImageViewer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2A9CEB7A1DBBB694009B91DE /* FTImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CEB781DBBB694009B91DE /* FTImageViewer.swift */; };
+		2A9CEB7B1DBBB694009B91DE /* FTResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2A9CEB791DBBB694009B91DE /* FTResource.bundle */; };
+		87F5951D11D9A13831375F58 /* Pods_FTImageViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72955B9CF8D8532A94040D82 /* Pods_FTImageViewer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		375672954CD8EA6363CFE81B /* Pods-FTImageViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FTImageViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-FTImageViewer/Pods-FTImageViewer.release.xcconfig"; sourceTree = "<group>"; };
-		5A1AD1631D524FCB00DF6FEA /* FTImageViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FTImageViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5A1AD1661D524FCB00DF6FEA /* FTImageViewer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTImageViewer.h; sourceTree = "<group>"; };
-		5A1AD1681D524FCB00DF6FEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5A1AD1721D524FCB00DF6FEA /* FTImageViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTImageViewerTests.swift; sourceTree = "<group>"; };
-		5A1AD1741D524FCB00DF6FEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5A1AD17E1D524FE300DF6FEA /* FTImageViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTImageViewer.swift; sourceTree = "<group>"; };
-		5A1AD17F1D524FE300DF6FEA /* FTResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FTResource.bundle; sourceTree = "<group>"; };
-		A94D47670CC565C366D53825 /* Pods-FTImageViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FTImageViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FTImageViewer/Pods-FTImageViewer.debug.xcconfig"; sourceTree = "<group>"; };
-		DF3894099F782F9BAD161B31 /* Pods_FTImageViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FTImageViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		049109D23629E8DCA5BBD488 /* Pods-FTImageViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FTImageViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FTImageViewer/Pods-FTImageViewer.debug.xcconfig"; sourceTree = "<group>"; };
+		2A9CEB6D1DBBB602009B91DE /* FTImageViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FTImageViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A9CEB701DBBB602009B91DE /* FTImageViewer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTImageViewer.h; sourceTree = "<group>"; };
+		2A9CEB711DBBB602009B91DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A9CEB781DBBB694009B91DE /* FTImageViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTImageViewer.swift; sourceTree = "<group>"; };
+		2A9CEB791DBBB694009B91DE /* FTResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FTResource.bundle; sourceTree = "<group>"; };
+		6A55F937DCDCC4697A60CF93 /* Pods-FTImageViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FTImageViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-FTImageViewer/Pods-FTImageViewer.release.xcconfig"; sourceTree = "<group>"; };
+		72955B9CF8D8532A94040D82 /* Pods_FTImageViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FTImageViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5A1AD15F1D524FCB00DF6FEA /* Frameworks */ = {
+		2A9CEB691DBBB602009B91DE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FE60CEC265C985AF567C1F3 /* Pods_FTImageViewer.framework in Frameworks */,
+				87F5951D11D9A13831375F58 /* Pods_FTImageViewer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5A1AD1591D524FCB00DF6FEA = {
+		2A9CEB631DBBB602009B91DE = {
 			isa = PBXGroup;
 			children = (
-				5A1AD1651D524FCB00DF6FEA /* FTImageViewer */,
-				5A1AD1711D524FCB00DF6FEA /* FTImageViewerTests */,
-				5A1AD1641D524FCB00DF6FEA /* Products */,
-				7884B8ED85A66C2DBBE01F75 /* Pods */,
-				D2046C9FA47D9522EE12B4A0 /* Frameworks */,
+				2A9CEB6F1DBBB602009B91DE /* FTImageViewer */,
+				2A9CEB6E1DBBB602009B91DE /* Products */,
+				FD7630DC586335BA7CBC5520 /* Pods */,
+				7A0AB73BD24CD7923BDADF95 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		5A1AD1641D524FCB00DF6FEA /* Products */ = {
+		2A9CEB6E1DBBB602009B91DE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5A1AD1631D524FCB00DF6FEA /* FTImageViewer.framework */,
+				2A9CEB6D1DBBB602009B91DE /* FTImageViewer.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5A1AD1651D524FCB00DF6FEA /* FTImageViewer */ = {
+		2A9CEB6F1DBBB602009B91DE /* FTImageViewer */ = {
 			isa = PBXGroup;
 			children = (
-				5A1AD17D1D524FE300DF6FEA /* FTImageViewer */,
-				5A1AD1661D524FCB00DF6FEA /* FTImageViewer.h */,
-				5A1AD1681D524FCB00DF6FEA /* Info.plist */,
+				2A9CEB781DBBB694009B91DE /* FTImageViewer.swift */,
+				2A9CEB791DBBB694009B91DE /* FTResource.bundle */,
+				2A9CEB701DBBB602009B91DE /* FTImageViewer.h */,
+				2A9CEB711DBBB602009B91DE /* Info.plist */,
 			);
 			path = FTImageViewer;
 			sourceTree = "<group>";
 		};
-		5A1AD1711D524FCB00DF6FEA /* FTImageViewerTests */ = {
+		7A0AB73BD24CD7923BDADF95 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5A1AD1721D524FCB00DF6FEA /* FTImageViewerTests.swift */,
-				5A1AD1741D524FCB00DF6FEA /* Info.plist */,
-			);
-			path = FTImageViewerTests;
-			sourceTree = "<group>";
-		};
-		5A1AD17D1D524FE300DF6FEA /* FTImageViewer */ = {
-			isa = PBXGroup;
-			children = (
-				5A1AD17E1D524FE300DF6FEA /* FTImageViewer.swift */,
-				5A1AD17F1D524FE300DF6FEA /* FTResource.bundle */,
-			);
-			path = FTImageViewer;
-			sourceTree = "<group>";
-		};
-		7884B8ED85A66C2DBBE01F75 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				A94D47670CC565C366D53825 /* Pods-FTImageViewer.debug.xcconfig */,
-				375672954CD8EA6363CFE81B /* Pods-FTImageViewer.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		D2046C9FA47D9522EE12B4A0 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DF3894099F782F9BAD161B31 /* Pods_FTImageViewer.framework */,
+				72955B9CF8D8532A94040D82 /* Pods_FTImageViewer.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FD7630DC586335BA7CBC5520 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				049109D23629E8DCA5BBD488 /* Pods-FTImageViewer.debug.xcconfig */,
+				6A55F937DCDCC4697A60CF93 /* Pods-FTImageViewer.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		5A1AD1601D524FCB00DF6FEA /* Headers */ = {
+		2A9CEB6A1DBBB602009B91DE /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A1AD1671D524FCB00DF6FEA /* FTImageViewer.h in Headers */,
+				2A9CEB721DBBB602009B91DE /* FTImageViewer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		5A1AD1621D524FCB00DF6FEA /* FTImageViewer */ = {
+		2A9CEB6C1DBBB602009B91DE /* FTImageViewer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5A1AD1771D524FCB00DF6FEA /* Build configuration list for PBXNativeTarget "FTImageViewer" */;
+			buildConfigurationList = 2A9CEB751DBBB602009B91DE /* Build configuration list for PBXNativeTarget "FTImageViewer" */;
 			buildPhases = (
-				8CF6D6A76EE5D446F7FE1CEE /* [CP] Check Pods Manifest.lock */,
-				5A1AD15E1D524FCB00DF6FEA /* Sources */,
-				5A1AD15F1D524FCB00DF6FEA /* Frameworks */,
-				5A1AD1601D524FCB00DF6FEA /* Headers */,
-				5A1AD1611D524FCB00DF6FEA /* Resources */,
-				E800EE72D1A8A32A48CF8740 /* [CP] Copy Pods Resources */,
+				C237196986B71A6A69533A33 /* [CP] Check Pods Manifest.lock */,
+				2A9CEB681DBBB602009B91DE /* Sources */,
+				2A9CEB691DBBB602009B91DE /* Frameworks */,
+				2A9CEB6A1DBBB602009B91DE /* Headers */,
+				2A9CEB6B1DBBB602009B91DE /* Resources */,
+				39BEF03E7CAF9799AFDE1DAA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -133,70 +113,55 @@
 			);
 			name = FTImageViewer;
 			productName = FTImageViewer;
-			productReference = 5A1AD1631D524FCB00DF6FEA /* FTImageViewer.framework */;
+			productReference = 2A9CEB6D1DBBB602009B91DE /* FTImageViewer.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		5A1AD15A1D524FCB00DF6FEA /* Project object */ = {
+		2A9CEB641DBBB602009B91DE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0800;
-				ORGANIZATIONNAME = liufengting;
+				ORGANIZATIONNAME = LiuFengting;
 				TargetAttributes = {
-					5A1AD1621D524FCB00DF6FEA = {
-						CreatedOnToolsVersion = 7.3.1;
+					2A9CEB6C1DBBB602009B91DE = {
+						CreatedOnToolsVersion = 8.0;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 5A1AD15D1D524FCB00DF6FEA /* Build configuration list for PBXProject "FTImageViewer" */;
+			buildConfigurationList = 2A9CEB671DBBB602009B91DE /* Build configuration list for PBXProject "FTImageViewer" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 5A1AD1591D524FCB00DF6FEA;
-			productRefGroup = 5A1AD1641D524FCB00DF6FEA /* Products */;
+			mainGroup = 2A9CEB631DBBB602009B91DE;
+			productRefGroup = 2A9CEB6E1DBBB602009B91DE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5A1AD1621D524FCB00DF6FEA /* FTImageViewer */,
+				2A9CEB6C1DBBB602009B91DE /* FTImageViewer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		5A1AD1611D524FCB00DF6FEA /* Resources */ = {
+		2A9CEB6B1DBBB602009B91DE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A1AD1811D524FE300DF6FEA /* FTResource.bundle in Resources */,
+				2A9CEB7B1DBBB694009B91DE /* FTResource.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8CF6D6A76EE5D446F7FE1CEE /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		E800EE72D1A8A32A48CF8740 /* [CP] Copy Pods Resources */ = {
+		39BEF03E7CAF9799AFDE1DAA /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -211,21 +176,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FTImageViewer/Pods-FTImageViewer-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C237196986B71A6A69533A33 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		5A1AD15E1D524FCB00DF6FEA /* Sources */ = {
+		2A9CEB681DBBB602009B91DE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A1AD1801D524FE300DF6FEA /* FTImageViewer.swift in Sources */,
+				2A9CEB7A1DBBB694009B91DE /* FTImageViewer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		5A1AD1751D524FCB00DF6FEA /* Debug */ = {
+		2A9CEB731DBBB602009B91DE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -237,12 +217,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -265,10 +247,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -276,7 +259,7 @@
 			};
 			name = Debug;
 		};
-		5A1AD1761D524FCB00DF6FEA /* Release */ = {
+		2A9CEB741DBBB602009B91DE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -288,12 +271,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -310,7 +295,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -321,40 +306,39 @@
 			};
 			name = Release;
 		};
-		5A1AD1781D524FCB00DF6FEA /* Debug */ = {
+		2A9CEB761DBBB602009B91DE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A94D47670CC565C366D53825 /* Pods-FTImageViewer.debug.xcconfig */;
+			baseConfigurationReference = 049109D23629E8DCA5BBD488 /* Pods-FTImageViewer.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = FTImageViewer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liufengting.FTImageViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		5A1AD1791D524FCB00DF6FEA /* Release */ = {
+		2A9CEB771DBBB602009B91DE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 375672954CD8EA6363CFE81B /* Pods-FTImageViewer.release.xcconfig */;
+			baseConfigurationReference = 6A55F937DCDCC4697A60CF93 /* Pods-FTImageViewer.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = FTImageViewer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liufengting.FTImageViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -366,25 +350,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5A1AD15D1D524FCB00DF6FEA /* Build configuration list for PBXProject "FTImageViewer" */ = {
+		2A9CEB671DBBB602009B91DE /* Build configuration list for PBXProject "FTImageViewer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5A1AD1751D524FCB00DF6FEA /* Debug */,
-				5A1AD1761D524FCB00DF6FEA /* Release */,
+				2A9CEB731DBBB602009B91DE /* Debug */,
+				2A9CEB741DBBB602009B91DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5A1AD1771D524FCB00DF6FEA /* Build configuration list for PBXNativeTarget "FTImageViewer" */ = {
+		2A9CEB751DBBB602009B91DE /* Build configuration list for PBXNativeTarget "FTImageViewer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5A1AD1781D524FCB00DF6FEA /* Debug */,
-				5A1AD1791D524FCB00DF6FEA /* Release */,
+				2A9CEB761DBBB602009B91DE /* Debug */,
+				2A9CEB771DBBB602009B91DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 5A1AD15A1D524FCB00DF6FEA /* Project object */;
+	rootObject = 2A9CEB641DBBB602009B91DE /* Project object */;
 }
