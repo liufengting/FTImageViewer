@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5ADA4B9F1D5745E1009CE887 /* FTImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA4B9D1D5745E1009CE887 /* FTImageViewer.swift */; };
-		5ADA4BA01D5745E1009CE887 /* FTResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5ADA4B9E1D5745E1009CE887 /* FTResource.bundle */; };
+		2A9CEB291DBBADCB009B91DE /* FTImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CEB271DBBADCB009B91DE /* FTImageViewer.swift */; };
+		2A9CEB2A1DBBADCC009B91DE /* FTResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2A9CEB281DBBADCB009B91DE /* FTResource.bundle */; };
 		5AE2A6C61CF2F8E400334804 /* DemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE2A6C51CF2F8E400334804 /* DemoTableViewCell.swift */; };
 		5AEFDF461CF0AD380081F07F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFDF451CF0AD380081F07F /* AppDelegate.swift */; };
 		5AEFDF481CF0AD380081F07F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFDF471CF0AD380081F07F /* ViewController.swift */; };
@@ -20,8 +20,8 @@
 
 /* Begin PBXFileReference section */
 		054E51CDB0EBD6F8938203C7 /* Pods-FTImageViewerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FTImageViewerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FTImageViewerDemo/Pods-FTImageViewerDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		5ADA4B9D1D5745E1009CE887 /* FTImageViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTImageViewer.swift; sourceTree = "<group>"; };
-		5ADA4B9E1D5745E1009CE887 /* FTResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FTResource.bundle; sourceTree = "<group>"; };
+		2A9CEB271DBBADCB009B91DE /* FTImageViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTImageViewer.swift; sourceTree = "<group>"; };
+		2A9CEB281DBBADCB009B91DE /* FTResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FTResource.bundle; sourceTree = "<group>"; };
 		5AE2A6C51CF2F8E400334804 /* DemoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoTableViewCell.swift; sourceTree = "<group>"; };
 		5AEFDF421CF0AD380081F07F /* FTImageViewerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FTImageViewerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AEFDF451CF0AD380081F07F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +50,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A9CEB261DBBADCB009B91DE /* FTImageViewer */ = {
+			isa = PBXGroup;
+			children = (
+				2A9CEB271DBBADCB009B91DE /* FTImageViewer.swift */,
+				2A9CEB281DBBADCB009B91DE /* FTResource.bundle */,
+			);
+			path = FTImageViewer;
+			sourceTree = "<group>";
+		};
 		3CAC87B7E0B3D25DAADBB6C4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -57,16 +66,6 @@
 				9739679F62DB5C3B822BF688 /* Pods-FTImageViewerDemo.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		5ADA4B9C1D5745E1009CE887 /* FTImageViewer */ = {
-			isa = PBXGroup;
-			children = (
-				5ADA4B9D1D5745E1009CE887 /* FTImageViewer.swift */,
-				5ADA4B9E1D5745E1009CE887 /* FTResource.bundle */,
-			);
-			name = FTImageViewer;
-			path = ../../FTImageViewer/FTImageViewer/FTImageViewer;
 			sourceTree = "<group>";
 		};
 		5AEFDF391CF0AD380081F07F = {
@@ -95,7 +94,7 @@
 				5AEFDF451CF0AD380081F07F /* AppDelegate.swift */,
 				5AEFDF471CF0AD380081F07F /* ViewController.swift */,
 				5AE2A6C51CF2F8E400334804 /* DemoTableViewCell.swift */,
-				5ADA4B9C1D5745E1009CE887 /* FTImageViewer */,
+				2A9CEB261DBBADCB009B91DE /* FTImageViewer */,
 				5AEFDF491CF0AD380081F07F /* Main.storyboard */,
 				5AEFDF4C1CF0AD380081F07F /* Assets.xcassets */,
 				5AEFDF4E1CF0AD380081F07F /* LaunchScreen.storyboard */,
@@ -196,7 +195,7 @@
 				5AEFDF501CF0AD380081F07F /* LaunchScreen.storyboard in Resources */,
 				5AEFDF4D1CF0AD380081F07F /* Assets.xcassets in Resources */,
 				5AEFDF4B1CF0AD380081F07F /* Main.storyboard in Resources */,
-				5ADA4BA01D5745E1009CE887 /* FTResource.bundle in Resources */,
+				2A9CEB2A1DBBADCC009B91DE /* FTResource.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AEFDF481CF0AD380081F07F /* ViewController.swift in Sources */,
-				5ADA4B9F1D5745E1009CE887 /* FTImageViewer.swift in Sources */,
+				2A9CEB291DBBADCB009B91DE /* FTImageViewer.swift in Sources */,
 				5AE2A6C61CF2F8E400334804 /* DemoTableViewCell.swift in Sources */,
 				5AEFDF461CF0AD380081F07F /* AppDelegate.swift in Sources */,
 			);
