@@ -1,6 +1,6 @@
 target 'FTImageViewer' do
   
 pod 'Kingfisher'
-use_frameworks!
+#use_frameworks!
 
 end
