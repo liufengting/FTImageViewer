@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "FTImageViewer"
-  s.version      = "1.9.1"
+  s.version      = "1.9.2"
   s.summary      = "A simple ImageViewer and ImageGrid. Preview images with just a few lines of code."
   s.description  = <<-DESC
     FTImageViewer. A simple ImageViewer and ImageGrid. Can preview images with just a few lines of code.
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author             = { "liufengting" => "wo157121900@me.com" }
   s.social_media_url   = "http://twitter.com/liufengting"
-  s.platform     = :ios, "8.0"
+  s.platform     = :ios, "10.0"
   s.source       = { :git => "https://github.com/liufengting/FTImageViewer.git", :tag => "#{s.version}" }
   s.source_files = ["FTImageViewer/*.swift", "FTImageViewer/FTImageViewer.h"]
   s.resources    = "FTImageViewer/*.{bundle}"
