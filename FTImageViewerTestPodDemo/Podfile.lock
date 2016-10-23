@@ -1,3 +1,18 @@
-PODFILE CHECKSUM: e77df72c4cfe07f9cf19d820fa5c857209209879
+PODS:
+  - Alamofire (3.5.1)
+  - AlamofireImage (2.5.0):
+    - Alamofire (~> 3.5)
+  - FTImageViewer (1.4.0):
+    - AlamofireImage
 
-COCOAPODS: 1.1.0.rc.3
+DEPENDENCIES:
+  - FTImageViewer
+
+SPEC CHECKSUMS:
+  Alamofire: 0dfba1184a543e2aa160f4e39cac4e8aba48d223
+  AlamofireImage: 2d34936e5201270bb17a316a786e90e83b4a249d
+  FTImageViewer: 9ef96d64238f7094812a4b336babaf65d37eca82
+
+PODFILE CHECKSUM: 953f328cb31ddffeee8c9e88cbf7043d07710968
+
+COCOAPODS: 1.1.1

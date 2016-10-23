@@ -1,6 +1,0 @@
-framework module Pods_FTImageViewerTestDemoTests {
-  umbrella header "Pods-FTImageViewerTestDemoTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

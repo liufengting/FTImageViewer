@@ -1,6 +1,0 @@
-framework module Pods_FTImageViewer {
-  umbrella header "Pods-FTImageViewer-umbrella.h"
-
-  export *
-  module * { export * }
-}
