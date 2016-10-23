@@ -31,8 +31,8 @@
 
 <table>
   <tr>
-    <th><img src="/ScreenShots/Demo1.gif" width="300"/></th>
-    <th><img src="/ScreenShots/Demo2.gif" width="300"/></th>
+    <th><img src="https://raw.githubusercontent.com/liufengting/FTResourceRepo/master/Resource/FTImageViewer/Demo1.gif" width="300"/></th>
+    <th><img src="https://raw.githubusercontent.com/liufengting/FTResourceRepo/master/Resource/FTImageViewer/Demo2.gif" width="300"/></th>
   </tr>
 </table>
 
@@ -72,9 +72,9 @@ In `FTImageViewerDemo`, shows you how to use it in tableview, using pure `AutoLa
 
 <table>
   <tr>
-    <th><img src="/ScreenShots/autolayout1.PNG" width="250"/></th>
-    <th><img src="/ScreenShots/autolayout2.PNG" width="250"/></th>
-    <th><img src="/ScreenShots/autolayout3.PNG" width="250"/></th>
+    <th><img src="https://raw.githubusercontent.com/liufengting/FTResourceRepo/master/Resource/FTImageViewer/autolayout1.PNG" width="250"/></th>
+    <th><img src="https://raw.githubusercontent.com/liufengting/FTResourceRepo/master/Resource/FTImageViewer/autolayout2.PNG" width="250"/></th>
+    <th><img src="https://raw.githubusercontent.com/liufengting/FTResourceRepo/master/Resource/FTImageViewer/autolayout3.PNG" width="250"/></th>
   </tr>
 </table>
 
