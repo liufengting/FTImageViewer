@@ -1,5 +1,6 @@
-# FTImageViewer
+![FTImageViewer](https://raw.githubusercontent.com/liufengting/FTResourceRepo/master/Resource/FTImageViewer/FTImageViewer.jpg)
 
+# FTImageViewer
 
 [![Twitter](https://img.shields.io/badge/twitter-@liufengting-blue.svg?style=flat)](http://twitter.com/liufengting) 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/liufengting/FTImageViewer/master/LICENSE)
@@ -12,6 +13,9 @@
 
 
 `FTImageViewer` can preview images with just one lines of code. Also `FTImageViewGrid` has make showing images in a grid much easier. I wrote this for my future projects. Feel free to try it in your own projects!
+
+[TOC]
+
 
 # Feathers
 
@@ -62,7 +66,7 @@ run the demo in `FTImageViewerDemo` to see more
 pod 'FTImageViewer'
 ```
 
-# Bonus
+# Bouns
 
 In `FTImageViewerDemo`, shows you how to use it in tableview, using pure `AutoLayout`. Here is the screenshot:
 

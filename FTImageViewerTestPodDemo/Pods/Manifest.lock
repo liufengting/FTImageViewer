@@ -1,18 +1,15 @@
 PODS:
-  - Alamofire (3.5.1)
-  - AlamofireImage (2.5.0):
-    - Alamofire (~> 3.5)
-  - FTImageViewer (1.4.0):
-    - AlamofireImage
+  - FTImageViewer (1.9.5):
+    - Kingfisher
+  - Kingfisher (3.1.4)
 
 DEPENDENCIES:
-  - FTImageViewer
+  - FTImageViewer (~> 1.9.4)
 
 SPEC CHECKSUMS:
-  Alamofire: 0dfba1184a543e2aa160f4e39cac4e8aba48d223
-  AlamofireImage: 2d34936e5201270bb17a316a786e90e83b4a249d
-  FTImageViewer: 9ef96d64238f7094812a4b336babaf65d37eca82
+  FTImageViewer: 4986310e5353af1a6f60a544315f883adc12aea4
+  Kingfisher: 6c67e3e57f2d81a9cfdfa25052cd86f33ceac9bb
 
-PODFILE CHECKSUM: 953f328cb31ddffeee8c9e88cbf7043d07710968
+PODFILE CHECKSUM: 3e9b4d7ae72b214df0accdf37ac0c29bf4a6173d
 
 COCOAPODS: 1.1.1
