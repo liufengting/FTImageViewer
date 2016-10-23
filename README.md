@@ -31,8 +31,8 @@
 
 <table>
   <tr>
-    <th><img src="https://raw.githubusercontent.com/liufengting/FTResourceRepo/master/Resource/FTImageViewer/Demo1.gif" width="300"/></th>
-    <th><img src="https://raw.githubusercontent.com/liufengting/FTResourceRepo/master/Resource/FTImageViewer/Demo2.gif" width="300"/></th>
+    <th><img src="https://raw.githubusercontent.com/liufengting/FTResourceRepo/master/Resource/FTImageViewer/demo1.gif" width="300"/></th>
+    <th><img src="https://raw.githubusercontent.com/liufengting/FTResourceRepo/master/Resource/FTImageViewer/demo2.gif" width="300"/></th>
   </tr>
 </table>
 
