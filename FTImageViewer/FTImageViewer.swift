@@ -99,8 +99,7 @@ open class FTImageViewer: NSObject, UIScrollViewDelegate, UIGestureRecognizerDel
         
     }
 
-    @available(*, deprecated)
-//    @available(*, deprecated: 1.0, obsoleted: 2.0, message: "Because !")
+    @available(*, message: "Because now it supports both images and imageurls")
     open func showImages(_ images : [String] , atIndex : NSInteger , fromSenderArray: [UIView]) {
         
         var resources : [FTImageResource] = []
