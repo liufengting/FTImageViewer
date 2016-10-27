@@ -24,6 +24,13 @@ private let KCOLOR_BACKGROUND_WHITE = UIColor(red:241/255.0, green:241/255.0, bl
 
 //MARK: - FTImageViewer -
 
+
+public struct FTImageResource {
+    var image: UIImage?
+    var imageURLstring: String?
+}
+
+
 open class FTImageViewer: NSObject, UIScrollViewDelegate, UIGestureRecognizerDelegate {
 
     var backgroundView: UIView!
@@ -32,7 +39,7 @@ open class FTImageViewer: NSObject, UIScrollViewDelegate, UIGestureRecognizerDel
     var beginAnimationView: UIImageView!
     var fromRect: CGRect!
     var fromIndex: NSInteger = 0
-    var imageUrlArray: [String]!
+    var imageUrlArray: [FTImageResource]!
     var fromSenderRectArray: [CGRect] = []
     var isPanRecognize: Bool = false
 
@@ -47,26 +54,25 @@ open class FTImageViewer: NSObject, UIScrollViewDelegate, UIGestureRecognizerDel
     }
 
     //MARK: - showImages
-
-    open func showImages(_ images : [String] , atIndex : NSInteger , fromSenderArray: [UIView]){
+    
+    open func showImages(_ images : [FTImageResource] , atIndex : NSInteger , fromSenderArray: [UIView]){
         
         fromSenderRectArray = []
-        
         for i in 0 ... fromSenderArray.count-1 {
             let rect : CGRect = fromSenderArray[i].superview!.convert(fromSenderArray[i].frame, to:UIApplication.shared.keyWindow)
             fromSenderRectArray.append(rect)
         }
-
+        
         fromIndex = atIndex
         imageUrlArray = images
         fromRect = fromSenderRectArray[atIndex]
-
+        
         if backgroundView == nil {
             backgroundView = UIView(frame: UIScreen.main.bounds)
         }
         backgroundView.backgroundColor = FTImageViewerBackgroundColor
         UIApplication.shared.keyWindow?.addSubview(backgroundView);
-
+        
         
         beginAnimationView = UIImageView(frame : fromRect)
         beginAnimationView.clipsToBounds = true
@@ -74,16 +80,35 @@ open class FTImageViewer: NSObject, UIScrollViewDelegate, UIGestureRecognizerDel
         beginAnimationView.contentMode = UIViewContentMode.scaleAspectFit
         beginAnimationView.backgroundColor = UIColor.clear;
         backgroundView.addSubview(beginAnimationView)
-        beginAnimationView.kf.setImage(with: URL(string: images[atIndex])!)
- 
+        
+        if let img : UIImage = (images[atIndex]).image {
+            beginAnimationView.image = img
+        }else if let imageURL : String = (images[atIndex]).imageURLstring {
+            beginAnimationView.kf.setImage(with: URL(string: imageURL)!)
+        }
+        
+        
         UIView.animate(withDuration: FTImageViewerAnimationDuriation,
-            animations: { () -> Void in
-                self.beginAnimationView.layer.frame = UIScreen.main.bounds;
+                       animations: { () -> Void in
+                        self.beginAnimationView.layer.frame = UIScreen.main.bounds;
             }, completion: { (finished) -> Void in
                 if (finished == true){
                     self.setupView()
                 }
-        }) 
+        })
+        
+    }
+
+    @available(*, deprecated)
+//    @available(*, deprecated: 1.0, obsoleted: 2.0, message: "Because !")
+    open func showImages(_ images : [String] , atIndex : NSInteger , fromSenderArray: [UIView]) {
+        
+        var resources : [FTImageResource] = []
+        for imageURL in images {
+            let resource : FTImageResource = FTImageResource.init(image: nil, imageURLstring:imageURL)
+            resources.append(resource)
+        }
+        self.showImages(resources, atIndex: atIndex, fromSenderArray: fromSenderArray)
     }
 
     //MARK: - setupView
@@ -122,7 +147,7 @@ open class FTImageViewer: NSObject, UIScrollViewDelegate, UIGestureRecognizerDel
             v.removeFromSuperview()
         }
         for i in 0 ..< imageUrlArray.count {
-            let imageView: FTImageView = FTImageView(frame: CGRect(x: FTImageViewerScreenWidth * CGFloat(i), y: 0, width: FTImageViewerScreenWidth, height: FTImageViewerScreenHeight), imageURL: imageUrlArray[i], atIndex: i)
+            let imageView: FTImageView = FTImageView(frame: CGRect(x: FTImageViewerScreenWidth * CGFloat(i), y: 0, width: FTImageViewerScreenWidth, height: FTImageViewerScreenHeight), imageResource: imageUrlArray[i], atIndex: i)
             imageView.FTImageViewHandleTap = {
                 self.animationOut()
             }
@@ -281,7 +306,7 @@ open class FTImageView: UIScrollView, UIScrollViewDelegate{
     
     //MARK: - FTImageViewBar
 
-    internal init(frame : CGRect, imageURL : String, atIndex : NSInteger){
+    internal init(frame : CGRect, imageResource : FTImageResource, atIndex : NSInteger){
         super.init(frame: frame)
         
         self.backgroundColor = UIColor.clear
@@ -301,16 +326,22 @@ open class FTImageView: UIScrollView, UIScrollViewDelegate{
         
         imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height))
         imageView.contentMode = UIViewContentMode.scaleAspectFit
-        imageView.kf.setImage(with: URL(string: imageURL)!,
-                              placeholder: nil,
-                              options: nil,
-                              progressBlock: { (done, total) in
-                                
-        }) { (image, error, cashType, url) in
-            if image != nil && error == nil {
-                self.activityIndicator.stopAnimating()
+        
+        if let img : UIImage = imageResource.image {
+            imageView.image = img
+        }else if let imageURL : String = imageResource.imageURLstring {
+            imageView.kf.setImage(with: URL(string: imageURL)!,
+                                  placeholder: nil,
+                                  options: nil,
+                                  progressBlock: { (done, total) in
+                                    
+            }) { (image, error, cashType, url) in
+                if image != nil && error == nil {
+                    self.activityIndicator.stopAnimating()
+                }
             }
         }
+        
 
         self.addSubview(imageView)
 

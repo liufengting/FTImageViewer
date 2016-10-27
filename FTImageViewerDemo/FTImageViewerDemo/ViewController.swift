@@ -59,9 +59,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                    "http://ww4.sinaimg.cn/mw600/c0679ecagw1f6ff69na87j20gt08a3z2.jpg",
                    "http://ww1.sinaimg.cn/mw600/c0679ecagw1f6ff6ar7v7j20gt0me3yy.jpg" ] ]
         
-        data.append(contentsOf: data)
-        data.append(contentsOf: data)
-        data.append(contentsOf: data)
+//        data.append(contentsOf: data)
+//        data.append(contentsOf: data)
+//        data.append(contentsOf: data)
 
 
         tableView.delegate = self
