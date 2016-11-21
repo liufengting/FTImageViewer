@@ -299,6 +299,8 @@ open class FTImageView: UIScrollView, UIScrollViewDelegate{
         activityIndicator.hidesWhenStopped = true
         self.addSubview(activityIndicator)
         
+        activityIndicator.startAnimating()
+        
         imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height))
         imageView.contentMode = UIViewContentMode.scaleAspectFit
         imageView.kf.setImage(with: URL(string: imageURL)!,

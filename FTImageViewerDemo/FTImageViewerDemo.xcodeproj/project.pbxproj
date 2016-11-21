@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A6C1ADA1DE299D500880F70 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C1AD91DE299D500880F70 /* WebViewController.swift */; };
+		2A6C1ADC1DE2B22C00880F70 /* JSTools.js in Resources */ = {isa = PBXBuildFile; fileRef = 2A6C1ADB1DE2B22C00880F70 /* JSTools.js */; };
 		2A9CEB811DBBB87C009B91DE /* FTImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CEB7E1DBBB87C009B91DE /* FTImageViewer.swift */; };
 		2A9CEB821DBBB87C009B91DE /* FTResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2A9CEB7F1DBBB87C009B91DE /* FTResource.bundle */; };
 		5AE2A6C61CF2F8E400334804 /* DemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE2A6C51CF2F8E400334804 /* DemoTableViewCell.swift */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		054E51CDB0EBD6F8938203C7 /* Pods-FTImageViewerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FTImageViewerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FTImageViewerDemo/Pods-FTImageViewerDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		2A6C1AD91DE299D500880F70 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		2A6C1ADB1DE2B22C00880F70 /* JSTools.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = JSTools.js; sourceTree = "<group>"; };
 		2A9CEB7E1DBBB87C009B91DE /* FTImageViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTImageViewer.swift; sourceTree = "<group>"; };
 		2A9CEB7F1DBBB87C009B91DE /* FTResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FTResource.bundle; sourceTree = "<group>"; };
 		5AE2A6C51CF2F8E400334804 /* DemoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoTableViewCell.swift; sourceTree = "<group>"; };
@@ -94,7 +98,9 @@
 			children = (
 				5AEFDF451CF0AD380081F07F /* AppDelegate.swift */,
 				5AEFDF471CF0AD380081F07F /* ViewController.swift */,
+				2A6C1AD91DE299D500880F70 /* WebViewController.swift */,
 				5AE2A6C51CF2F8E400334804 /* DemoTableViewCell.swift */,
+				2A6C1ADB1DE2B22C00880F70 /* JSTools.js */,
 				2A9CEB7C1DBBB87C009B91DE /* FTImageViewer */,
 				5AEFDF491CF0AD380081F07F /* Main.storyboard */,
 				5AEFDF4C1CF0AD380081F07F /* Assets.xcassets */,
@@ -194,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AEFDF501CF0AD380081F07F /* LaunchScreen.storyboard in Resources */,
+				2A6C1ADC1DE2B22C00880F70 /* JSTools.js in Resources */,
 				5AEFDF4D1CF0AD380081F07F /* Assets.xcassets in Resources */,
 				5AEFDF4B1CF0AD380081F07F /* Main.storyboard in Resources */,
 				2A9CEB821DBBB87C009B91DE /* FTResource.bundle in Resources */,
@@ -258,6 +265,7 @@
 				5AEFDF481CF0AD380081F07F /* ViewController.swift in Sources */,
 				2A9CEB811DBBB87C009B91DE /* FTImageViewer.swift in Sources */,
 				5AE2A6C61CF2F8E400334804 /* DemoTableViewCell.swift in Sources */,
+				2A6C1ADA1DE299D500880F70 /* WebViewController.swift in Sources */,
 				5AEFDF461CF0AD380081F07F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

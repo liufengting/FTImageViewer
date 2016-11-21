@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C41b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZOA-Cy-ThF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C48b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZOA-Cy-ThF">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -108,7 +108,13 @@
                             <constraint firstAttribute="trailing" secondItem="Fen-MB-UQY" secondAttribute="trailing" id="uwh-B4-81R"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="FTImageViewerDemo" id="o2a-dy-YsR"/>
+                    <navigationItem key="navigationItem" title="FTImageViewerDemo" id="o2a-dy-YsR">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ah6-Iv-m14">
+                            <connections>
+                                <segue destination="WdS-om-Hm6" kind="show" id="MXz-eR-fN1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Fen-MB-UQY" id="e3l-X6-Il1"/>
                     </connections>
@@ -116,6 +122,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1402" y="337"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="DlG-NP-csy">
+            <objects>
+                <viewController id="WdS-om-Hm6" customClass="WebViewController" customModule="FTImageViewerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aLC-hy-nGU"/>
+                        <viewControllerLayoutGuide type="bottom" id="NRD-G6-Hp9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0Cl-Id-i0V">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uQS-ny-hsu">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="WdS-om-Hm6" id="1IJ-hY-0LK"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uQS-ny-hsu" firstAttribute="leading" secondItem="0Cl-Id-i0V" secondAttribute="leading" id="Tdq-55-HZN"/>
+                            <constraint firstAttribute="trailing" secondItem="uQS-ny-hsu" secondAttribute="trailing" id="U4b-4P-Fk0"/>
+                            <constraint firstItem="NRD-G6-Hp9" firstAttribute="top" secondItem="uQS-ny-hsu" secondAttribute="bottom" id="emG-w5-frZ"/>
+                            <constraint firstItem="uQS-ny-hsu" firstAttribute="top" secondItem="aLC-hy-nGU" secondAttribute="bottom" id="gCt-1g-Gpj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="uQS-ny-hsu" id="146-Yb-FTG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qFt-zh-89y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2096.8000000000002" y="336.88155922038982"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QpC-YY-BX5">
