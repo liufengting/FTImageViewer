@@ -61,22 +61,22 @@ class WebViewController: UIViewController, UIWebViewDelegate{
 
 }
 
-extension UIWebView {
-
-    var windowSize : CGSize {
-        var size = CGSize.zero
-        size.width = CGFloat(NSString(string: (self.stringByEvaluatingJavaScript(from: "window.innerWidth"))!).floatValue)
-        size.height = CGFloat(NSString(string: (self.stringByEvaluatingJavaScript(from: "window.innerHeight"))!).floatValue)
-        return size
-    }
-    var scrollOffset : CGPoint {
-        var point = CGPoint.zero
-        point.x = CGFloat(NSString(string: (self.stringByEvaluatingJavaScript(from: "window.pageXOffset"))!).floatValue)
-        point.y = CGFloat(NSString(string: (self.stringByEvaluatingJavaScript(from: "window.pageYOffset"))!).floatValue)
-        return point
-    }
-}
-
+//extension UIWebView {
+//
+//    var windowSize : CGSize {
+//        var size = CGSize.zero
+//        size.width = CGFloat(NSString(string: (self.stringByEvaluatingJavaScript(from: "window.innerWidth"))!).floatValue)
+//        size.height = CGFloat(NSString(string: (self.stringByEvaluatingJavaScript(from: "window.innerHeight"))!).floatValue)
+//        return size
+//    }
+//    var scrollOffset : CGPoint {
+//        var point = CGPoint.zero
+//        point.x = CGFloat(NSString(string: (self.stringByEvaluatingJavaScript(from: "window.pageXOffset"))!).floatValue)
+//        point.y = CGFloat(NSString(string: (self.stringByEvaluatingJavaScript(from: "window.pageYOffset"))!).floatValue)
+//        return point
+//    }
+//}
+//
 
 
 
