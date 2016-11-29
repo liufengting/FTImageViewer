@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		2A6C1ADA1DE299D500880F70 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C1AD91DE299D500880F70 /* WebViewController.swift */; };
 		2A6C1ADC1DE2B22C00880F70 /* JSTools.js in Resources */ = {isa = PBXBuildFile; fileRef = 2A6C1ADB1DE2B22C00880F70 /* JSTools.js */; };
+		2A7663721DED48C30068C6FF /* FTImageViewer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A7663701DED48C30068C6FF /* FTImageViewer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2A7663751DED48C30068C6FF /* FTImageViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A76636E1DED48C30068C6FF /* FTImageViewer.framework */; };
+		2A7663761DED48C30068C6FF /* FTImageViewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A76636E1DED48C30068C6FF /* FTImageViewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2A76637B1DED48DE0068C6FF /* FTImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CEB7E1DBBB87C009B91DE /* FTImageViewer.swift */; };
+		2A76637C1DED48EE0068C6FF /* FTResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2A9CEB7F1DBBB87C009B91DE /* FTResource.bundle */; };
 		2A9CEB811DBBB87C009B91DE /* FTImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CEB7E1DBBB87C009B91DE /* FTImageViewer.swift */; };
 		2A9CEB821DBBB87C009B91DE /* FTResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2A9CEB7F1DBBB87C009B91DE /* FTResource.bundle */; };
 		5AE2A6C61CF2F8E400334804 /* DemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE2A6C51CF2F8E400334804 /* DemoTableViewCell.swift */; };
@@ -20,10 +25,37 @@
 		A0C6083F9109D2867CF18AC5 /* Pods_FTImageViewerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1AF93BE5CE17D827B77329C /* Pods_FTImageViewerDemo.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2A7663731DED48C30068C6FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AEFDF3A1CF0AD380081F07F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A76636D1DED48C30068C6FF;
+			remoteInfo = FTImageViewer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2A76637A1DED48C30068C6FF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2A7663761DED48C30068C6FF /* FTImageViewer.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		054E51CDB0EBD6F8938203C7 /* Pods-FTImageViewerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FTImageViewerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FTImageViewerDemo/Pods-FTImageViewerDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		2A6C1AD91DE299D500880F70 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		2A6C1ADB1DE2B22C00880F70 /* JSTools.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = JSTools.js; sourceTree = "<group>"; };
+		2A76636E1DED48C30068C6FF /* FTImageViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FTImageViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A7663701DED48C30068C6FF /* FTImageViewer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTImageViewer.h; sourceTree = "<group>"; };
+		2A7663711DED48C30068C6FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A9CEB7E1DBBB87C009B91DE /* FTImageViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTImageViewer.swift; sourceTree = "<group>"; };
 		2A9CEB7F1DBBB87C009B91DE /* FTResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FTResource.bundle; sourceTree = "<group>"; };
 		5AE2A6C51CF2F8E400334804 /* DemoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoTableViewCell.swift; sourceTree = "<group>"; };
@@ -43,10 +75,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2A76636A1DED48C30068C6FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5AEFDF3F1CF0AD380081F07F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A7663751DED48C30068C6FF /* FTImageViewer.framework in Frameworks */,
 				A0C6083F9109D2867CF18AC5 /* Pods_FTImageViewerDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -54,6 +94,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A76636F1DED48C30068C6FF /* FTImageViewer */ = {
+			isa = PBXGroup;
+			children = (
+				2A7663701DED48C30068C6FF /* FTImageViewer.h */,
+				2A7663711DED48C30068C6FF /* Info.plist */,
+			);
+			path = FTImageViewer;
+			sourceTree = "<group>";
+		};
 		2A9CEB7C1DBBB87C009B91DE /* FTImageViewer */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +128,7 @@
 				5AEFDF441CF0AD380081F07F /* FTImageViewerDemo */,
 				5AEFDF591CF0AD380081F07F /* FTImageViewerDemoTests */,
 				5AEFDF641CF0AD380081F07F /* FTImageViewerDemoUITests */,
+				2A76636F1DED48C30068C6FF /* FTImageViewer */,
 				5AEFDF431CF0AD380081F07F /* Products */,
 				3CAC87B7E0B3D25DAADBB6C4 /* Pods */,
 				D97588C9B0AC1458FCE773A8 /* Frameworks */,
@@ -89,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				5AEFDF421CF0AD380081F07F /* FTImageViewerDemo.app */,
+				2A76636E1DED48C30068C6FF /* FTImageViewer.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -138,7 +189,36 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		2A76636B1DED48C30068C6FF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A7663721DED48C30068C6FF /* FTImageViewer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		2A76636D1DED48C30068C6FF /* FTImageViewer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A7663771DED48C30068C6FF /* Build configuration list for PBXNativeTarget "FTImageViewer" */;
+			buildPhases = (
+				2A7663691DED48C30068C6FF /* Sources */,
+				2A76636A1DED48C30068C6FF /* Frameworks */,
+				2A76636B1DED48C30068C6FF /* Headers */,
+				2A76636C1DED48C30068C6FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FTImageViewer;
+			productName = FTImageViewer;
+			productReference = 2A76636E1DED48C30068C6FF /* FTImageViewer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		5AEFDF411CF0AD380081F07F /* FTImageViewerDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5AEFDF6A1CF0AD380081F07F /* Build configuration list for PBXNativeTarget "FTImageViewerDemo" */;
@@ -149,10 +229,12 @@
 				5AEFDF401CF0AD380081F07F /* Resources */,
 				798DF1AC33FB1ED5B45AE4F4 /* [CP] Embed Pods Frameworks */,
 				335FC7A9782676F5B3CF43F9 /* [CP] Copy Pods Resources */,
+				2A76637A1DED48C30068C6FF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2A7663741DED48C30068C6FF /* PBXTargetDependency */,
 			);
 			name = FTImageViewerDemo;
 			productName = FTImageViewerDemo;
@@ -169,10 +251,15 @@
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = liufengting;
 				TargetAttributes = {
+					2A76636D1DED48C30068C6FF = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = E83AC9WR2F;
+						ProvisioningStyle = Automatic;
+					};
 					5AEFDF411CF0AD380081F07F = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = E83AC9WR2F;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -190,11 +277,20 @@
 			projectRoot = "";
 			targets = (
 				5AEFDF411CF0AD380081F07F /* FTImageViewerDemo */,
+				2A76636D1DED48C30068C6FF /* FTImageViewer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2A76636C1DED48C30068C6FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A76637C1DED48EE0068C6FF /* FTResource.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5AEFDF401CF0AD380081F07F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -237,7 +333,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		798DF1AC33FB1ED5B45AE4F4 /* [CP] Embed Pods Frameworks */ = {
@@ -258,6 +354,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2A7663691DED48C30068C6FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A76637B1DED48DE0068C6FF /* FTImageViewer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5AEFDF3E1CF0AD380081F07F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -271,6 +375,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2A7663741DED48C30068C6FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A76636D1DED48C30068C6FF /* FTImageViewer */;
+			targetProxy = 2A7663731DED48C30068C6FF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5AEFDF491CF0AD380081F07F /* Main.storyboard */ = {
@@ -292,6 +404,59 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2A7663781DED48C30068C6FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = E83AC9WR2F;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = FTImageViewer/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.liufengting.FTImageViewer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2A7663791DED48C30068C6FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = E83AC9WR2F;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = FTImageViewer/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.liufengting.FTImageViewer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		5AEFDF681CF0AD380081F07F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -386,12 +551,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = E83AC9WR2F;
 				INFOPLIST_FILE = FTImageViewerDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liufengting.FTImageViewerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -402,12 +570,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = E83AC9WR2F;
 				INFOPLIST_FILE = FTImageViewerDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liufengting.FTImageViewerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -415,6 +585,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2A7663771DED48C30068C6FF /* Build configuration list for PBXNativeTarget "FTImageViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A7663781DED48C30068C6FF /* Debug */,
+				2A7663791DED48C30068C6FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		5AEFDF3D1CF0AD380081F07F /* Build configuration list for PBXProject "FTImageViewerDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

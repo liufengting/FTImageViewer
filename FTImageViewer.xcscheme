@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0730"
+   LastUpgradeVersion = "0810"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2A9CEB6C1DBBB602009B91DE"
+               BlueprintIdentifier = "2A76636D1DED48C30068C6FF"
                BuildableName = "FTImageViewer.framework"
                BlueprintName = "FTImageViewer"
-               ReferencedContainer = "container:FTImageViewer.xcodeproj">
+               ReferencedContainer = "container:FTImageViewerDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,10 +45,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2A9CEB6C1DBBB602009B91DE"
+            BlueprintIdentifier = "2A76636D1DED48C30068C6FF"
             BuildableName = "FTImageViewer.framework"
             BlueprintName = "FTImageViewer"
-            ReferencedContainer = "container:FTImageViewer.xcodeproj">
+            ReferencedContainer = "container:FTImageViewerDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -63,10 +63,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2A9CEB6C1DBBB602009B91DE"
+            BlueprintIdentifier = "2A76636D1DED48C30068C6FF"
             BuildableName = "FTImageViewer.framework"
             BlueprintName = "FTImageViewer"
-            ReferencedContainer = "container:FTImageViewer.xcodeproj">
+            ReferencedContainer = "container:FTImageViewerDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
