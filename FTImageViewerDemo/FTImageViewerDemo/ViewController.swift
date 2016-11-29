@@ -82,10 +82,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : DemoTableViewCell = tableView.dequeueReusableCell(withIdentifier: "DemoTableViewCellIdentifier", for: indexPath) as! DemoTableViewCell
-        cell.name = "Person \((indexPath as NSIndexPath).row)"
-        cell.content = "Person \((indexPath as NSIndexPath).row) said this is a great demo, if you like it, please give me a 'star' or fork the project. I will continue making some more Liberary for you."
+        cell.name = "Person \(indexPath.row)"
+        cell.content = "Person \(indexPath.row) said this is a great demo, if you like it, please give me a 'star' or fork the project. I will continue making some more Liberary for you."
         
-        cell.imageArray = data[(indexPath as NSIndexPath).row]
+        cell.imageArray = data[indexPath.row]
 
         return cell;
     }
