@@ -72,9 +72,9 @@ In `FTImageViewerDemo`, shows you how to use it in tableview, using pure `AutoLa
 
 <table>
   <tr>
-    <th><img src="https://raw.githubusercontent.com/liufengting/FTResourceRepo/master/Resource/FTImageViewer/autolayout1.PNG" width="250"/></th>
-    <th><img src="https://raw.githubusercontent.com/liufengting/FTResourceRepo/master/Resource/FTImageViewer/autolayout2.PNG" width="250"/></th>
-    <th><img src="https://raw.githubusercontent.com/liufengting/FTResourceRepo/master/Resource/FTImageViewer/autolayout3.PNG" width="250"/></th>
+    <th><img src="https://raw.githubusercontent.com/liufengting/FTResourceRepo/master/Resource/FTImageViewer/autolayout1.png" width="250"/></th>
+    <th><img src="https://raw.githubusercontent.com/liufengting/FTResourceRepo/master/Resource/FTImageViewer/autolayout2.png" width="250"/></th>
+    <th><img src="https://raw.githubusercontent.com/liufengting/FTResourceRepo/master/Resource/FTImageViewer/autolayout3.png" width="250"/></th>
   </tr>
 </table>
 
