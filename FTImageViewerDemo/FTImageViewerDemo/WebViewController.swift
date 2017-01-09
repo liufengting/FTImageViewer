@@ -3,7 +3,7 @@
 //  FTImageViewerDemo
 //
 //  Created by liufengting on 21/11/2016.
-//  Copyright © 2016 liufengting. All rights reserved.
+//  Copyright © 2016 <https://github.com/liufengting>. All rights reserved.
 //
 
 import UIKit
@@ -17,7 +17,7 @@ class WebViewController: UIViewController, UIWebViewDelegate{
         
         
         // a link from my blog
-        self.webView.loadRequest(URLRequest(url: URL(string: "http://liufengting.github.io/2016/08/15/Project/Project-FTIndicator/")!))
+        self.webView.loadRequest(URLRequest(url: URL(string: "http://<https://github.com/liufengting>.github.io/2016/08/15/Project/Project-FTIndicator/")!))
 
     }
 

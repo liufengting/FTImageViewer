@@ -14,11 +14,9 @@
 
 `FTImageViewer` can preview images with just one lines of code. Also `FTImageViewGrid` has make showing images in a grid much easier. I wrote this for my future projects. Feel free to try it in your own projects!
 
-[TOC]
-
 
 # Feathers
-
+- [x] ❤️ Supports both `portrait` and `landscape`
 - [x] Single tap to dismiss and auto return to the current index
 - [x] Double tap to zoom in and double tap again to zoom out
 - [x] Pinch to zoom in/out

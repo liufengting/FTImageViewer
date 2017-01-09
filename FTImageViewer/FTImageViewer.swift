@@ -3,7 +3,7 @@
 //  FTImageViewer
 //
 //  Created by liufengting on 15/12/17.
-//  Copyright © 2015年 liufengting ( https://github.com/liufengting ). All rights reserved.
+//  Copyright © 2015年 liufengting <https://github.com/liufengting>. All rights reserved.
 //
 
 import UIKit
@@ -12,8 +12,6 @@ import Kingfisher
 //MARK: - Marcros -
 
 private let FTImageViewerAnimationDuriation : TimeInterval =  0.3
-private let FTImageViewerScreenWidth =  UIScreen.main.bounds.width
-private let FTImageViewerScreenHeight =  UIScreen.main.bounds.height
 private let FTImageViewerBackgroundColor =  UIColor.black
 private let FTImageViewBarBackgroundColor =  UIColor.black.withAlphaComponent(0.3)
 private let FTImageViewBarHeight : CGFloat =  40.0
@@ -21,34 +19,34 @@ private let FTImageViewBarButtonWidth : CGFloat =  30.0
 private let FTImageViewBarDefaultMargin : CGFloat =  5.0
 private let FTImageGridViewImageMargin : CGFloat = 2.0
 private let KCOLOR_BACKGROUND_WHITE = UIColor(red:241/255.0, green:241/255.0, blue:241/255.0, alpha:1.0)
+private var FTImageViewerScreenWidth : CGFloat { return UIScreen.main.bounds.width }
+private var FTImageViewerScreenHeight : CGFloat { return UIScreen.main.bounds.height }
+
 
 //MARK: - FTImageViewer -
 
-open class FTImageViewer: NSObject, UIScrollViewDelegate, UIGestureRecognizerDelegate {
+public class FTImageViewer: NSObject, UIScrollViewDelegate, UIGestureRecognizerDelegate {
 
-    var backgroundView: UIView!
-    var scrollView: UIScrollView!
-    var tabBar: FTImageViewBar!
-    var beginAnimationView: UIImageView!
-    var fromRect: CGRect!
-    var fromIndex: NSInteger = 0
-    var imageUrlArray: [String]!
-    var fromSenderRectArray: [CGRect] = []
-    var isPanRecognize: Bool = false
+    private var beginAnimationView: UIImageView!
+    private var fromRect: CGRect!
+    private var fromIndex: NSInteger = 0
+    private var imageUrlArray: [String]!
+    private var fromSenderRectArray: [CGRect] = []
+    private var isPanRecognize: Bool = false
 
 
     //MARK: - sharedInstance
 
-    open class var sharedInstance : FTImageViewer {
+    public class var sharedInstance : FTImageViewer {
         struct Static {
             static let instance : FTImageViewer = FTImageViewer()
         }
         return Static.instance
     }
-
+    
     //MARK: - showImages
 
-    open func showImages(_ images : [String] , atIndex : NSInteger , fromSenderArray: [UIView]){
+    public func showImages(_ images : [String] , atIndex : NSInteger , fromSenderArray: [UIView]){
         
         fromSenderRectArray = []
         
@@ -61,12 +59,10 @@ open class FTImageViewer: NSObject, UIScrollViewDelegate, UIGestureRecognizerDel
         imageUrlArray = images
         fromRect = fromSenderRectArray[atIndex]
 
-        if backgroundView == nil {
-            backgroundView = UIView(frame: UIScreen.main.bounds)
-        }
         backgroundView.backgroundColor = FTImageViewerBackgroundColor
         UIApplication.shared.keyWindow?.addSubview(backgroundView);
-
+        backgroundView.addSubview(scrollView)
+        backgroundView.addSubview(tabBar)
         
         beginAnimationView = UIImageView(frame : fromRect)
         beginAnimationView.clipsToBounds = true
@@ -75,47 +71,55 @@ open class FTImageViewer: NSObject, UIScrollViewDelegate, UIGestureRecognizerDel
         beginAnimationView.backgroundColor = UIColor.clear;
         backgroundView.addSubview(beginAnimationView)
         beginAnimationView.kf.setImage(with: URL(string: images[atIndex])!)
- 
+
         UIView.animate(withDuration: FTImageViewerAnimationDuriation,
             animations: { () -> Void in
                 self.beginAnimationView.layer.frame = UIScreen.main.bounds;
             }, completion: { (finished) -> Void in
                 if (finished == true){
-                    self.setupView()
+                    self.setupView(shouldAnimate: true)
                 }
         }) 
     }
 
+    fileprivate lazy var backgroundView : UIView = {
+        let view = UIView(frame: UIScreen.main.bounds)
+        return view
+    }()
+
+    fileprivate lazy var scrollView : UIScrollView = {
+        let sView = UIScrollView(frame: UIScreen.main.bounds)
+        sView.backgroundColor = UIColor.clear
+        sView.isPagingEnabled = true
+        sView.alpha = 0.0
+        sView.bounces = true
+        sView.showsHorizontalScrollIndicator = false
+        sView.showsVerticalScrollIndicator = false
+        sView.alwaysBounceHorizontal = true
+        sView.delegate = self
+        return sView
+    }()
+
+    fileprivate lazy var tabBar : FTImageViewBar = {
+        let view = FTImageViewBar(frame: CGRect(x: 0 ,  y: FTImageViewerScreenHeight ,  width: FTImageViewerScreenWidth, height: FTImageViewBarHeight) ,
+                                           saveTapBlock: {
+                                            self.saveCurrentImage();
+        },
+                                           closeTapBlock: {
+                                            self.animationOut()
+        })
+        view.alpha = 0
+        return view
+    }()
+    
     //MARK: - setupView
 
-    fileprivate func setupView(){
-        if (scrollView == nil){
-            
-            scrollView = UIScrollView(frame: UIScreen.main.bounds)
-            scrollView.backgroundColor = UIColor.clear
-            scrollView.isPagingEnabled = true
-            scrollView.alpha = 0.0
-            scrollView.bounces = true
-            scrollView.showsHorizontalScrollIndicator = false
-            scrollView.showsVerticalScrollIndicator = false
-            scrollView.alwaysBounceHorizontal = true
-            scrollView.delegate = self
-            
-            
-            tabBar = FTImageViewBar(frame: CGRect(x: 0 ,  y: FTImageViewerScreenHeight ,  width: FTImageViewerScreenWidth, height: FTImageViewBarHeight) ,
-                                    saveTapBlock: {
-                                        self.saveCurrentImage();
-                    },
-                                    closeTapBlock: {
-                                        self.animationOut()
-                    })
-            tabBar.alpha = 0
-            
-            backgroundView.addSubview(scrollView)
-            backgroundView.addSubview(tabBar)
+    fileprivate func setupView(shouldAnimate: Bool){
 
-        }
+        backgroundView.frame = UIScreen.main.bounds
         scrollView.frame = UIScreen.main.bounds
+        tabBar.frame = CGRect(x: 0 ,  y: FTImageViewerScreenHeight ,  width: FTImageViewerScreenWidth, height: FTImageViewBarHeight)
+
 
         
         for v in scrollView.subviews{
@@ -132,17 +136,31 @@ open class FTImageViewer: NSObject, UIScrollViewDelegate, UIGestureRecognizerDel
         }
         scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width * CGFloat(imageUrlArray.count), height: UIScreen.main.bounds.height)
         scrollView.scrollRectToVisible(CGRect(x: FTImageViewerScreenWidth*CGFloat(fromIndex), y: 0, width: FTImageViewerScreenWidth, height: FTImageViewerScreenHeight), animated: false)
-        
         tabBar.countLabel.text = "\(fromIndex+1)/\(imageUrlArray.count)"
+        
+        if shouldAnimate {
+            self.show()
+        }else{
+            self.scrollView.alpha = 1.0
+            self.tabBar.alpha = 1
+            self.tabBar.frame = CGRect(x: 0, y: FTImageViewerScreenHeight-FTImageViewBarHeight, width: FTImageViewerScreenWidth, height: FTImageViewBarHeight)
+            self.tabBar.layoutIfNeeded()
+        }
+    }
+    
+    func show() {
+        
+        self.addOrientationChangeNotification()
         
         UIView.animate(withDuration: FTImageViewerAnimationDuriation, animations: { () -> Void in
             self.scrollView.alpha = 1.0
             self.tabBar.alpha = 1
             self.tabBar.frame = CGRect(x: 0, y: FTImageViewerScreenHeight-FTImageViewBarHeight, width: FTImageViewerScreenWidth, height: FTImageViewBarHeight)
-            }, completion: { (finished: Bool) -> Void in
-                self.beginAnimationView.isHidden = true
-        }) 
+        }, completion: { (finished: Bool) -> Void in
+            self.beginAnimationView.isHidden = true
+        })
     }
+    
     
     //MARK: - gestureRecognizerShouldBegin
 
@@ -181,6 +199,9 @@ open class FTImageViewer: NSObject, UIScrollViewDelegate, UIGestureRecognizerDel
                     self.tabBar.frame = CGRect(x: 0, y: FTImageViewerScreenHeight, width: FTImageViewerScreenWidth, height: FTImageViewBarHeight)
                     }, completion: { (finished: Bool) -> Void in
                         if  (finished == true){
+                            self.removeOrientationChangeNotification()
+                            self.scrollView.removeFromSuperview()
+                            self.tabBar.removeFromSuperview()
                             self.backgroundView.removeFromSuperview()
                         }
                 }) 
@@ -207,6 +228,9 @@ open class FTImageViewer: NSObject, UIScrollViewDelegate, UIGestureRecognizerDel
     //MARK: - animationOut
 
     fileprivate func animationOut(){
+        
+        self.removeOrientationChangeNotification()
+        
         let page = NSInteger(scrollView.contentOffset.x / FTImageViewerScreenWidth)
         
         for img in scrollView.subviews{
@@ -226,6 +250,8 @@ open class FTImageViewer: NSObject, UIScrollViewDelegate, UIGestureRecognizerDel
             }, completion: { (finished: Bool) -> Void in
                 if  (finished == true){
                     self.beginAnimationView.isHidden = true
+                    self.scrollView.removeFromSuperview()
+                    self.tabBar.removeFromSuperview()
                     self.backgroundView.removeFromSuperview()
                 }
         }) 
@@ -261,7 +287,26 @@ open class FTImageViewer: NSObject, UIScrollViewDelegate, UIGestureRecognizerDel
     
 
 }
-
+extension FTImageViewer {
+    
+    fileprivate func addOrientationChangeNotification() {
+        NotificationCenter.default.addObserver(self,selector: #selector(onChangeStatusBarOrientationNotification(notification:)),
+                                               name: NSNotification.Name.UIApplicationDidChangeStatusBarOrientation,
+                                               object: nil)
+        
+    }
+    
+    fileprivate func removeOrientationChangeNotification() {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc fileprivate func onChangeStatusBarOrientationNotification(notification : Notification) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(0.1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
+            self.setupView(shouldAnimate: false)
+        })
+    }
+    
+}
 
 //MARK: - FTImageView -
 
@@ -381,13 +426,36 @@ open class FTImageView: UIScrollView, UIScrollViewDelegate{
 //MARK: - FTImageViewBar -
 
 open class FTImageViewBar : UIView {
-    
-    var closeButton : UIButton!
-    var saveButton : UIButton!
-    var countLabel : UILabel!
-    
+
     var saveButtonTapBlock : (() ->())!
     var closeButtonTapBlock : (() ->())!
+
+    fileprivate lazy var closeButton : UIButton = {
+        let button = UIButton(frame: CGRect(x: FTImageViewBarDefaultMargin, y: (self.frame.height-FTImageViewBarButtonWidth)/2, width: FTImageViewBarButtonWidth, height: FTImageViewBarButtonWidth))
+        button.backgroundColor = UIColor.clear
+        button.contentMode = UIViewContentMode.scaleAspectFill
+        button.addTarget(self, action: #selector(FTImageViewBar.onCloseButtonTapped), for: UIControlEvents.touchUpInside)
+        return button
+    }()
+    
+    
+    fileprivate lazy var saveButton : UIButton = {
+        let button = UIButton(frame: CGRect(x: self.frame.width-FTImageViewBarButtonWidth-FTImageViewBarDefaultMargin, y: (self.frame.height-FTImageViewBarButtonWidth)/2, width: FTImageViewBarButtonWidth, height: FTImageViewBarButtonWidth))
+        button.backgroundColor = UIColor.clear
+        button.contentMode = UIViewContentMode.scaleAspectFill
+        button.addTarget(self, action: #selector(FTImageViewBar.onSaveButtonTapped), for: UIControlEvents.touchUpInside)
+        return button
+    }()
+    
+    fileprivate lazy var countLabel : UILabel = {
+        let label = UILabel(frame: CGRect(x: FTImageViewBarButtonWidth+FTImageViewBarDefaultMargin*2, y: 0, width: self.frame.width-(FTImageViewBarButtonWidth+FTImageViewBarDefaultMargin*2)*2, height: self.frame.height))
+        label.backgroundColor = UIColor.clear
+        label.textColor = UIColor.white
+        label.font = UIFont.systemFont(ofSize: 13)
+        label.textAlignment = NSTextAlignment.center
+        label.text = "-/-"
+        return label
+    }()
     
     //MARK: - convenience init
 
@@ -405,30 +473,23 @@ open class FTImageViewBar : UIView {
                 imageBundle = bundle;
             }
         }
-        
-        closeButton = UIButton(frame: CGRect(x: FTImageViewBarDefaultMargin, y: (frame.height-FTImageViewBarButtonWidth)/2, width: FTImageViewBarButtonWidth, height: FTImageViewBarButtonWidth))
-        closeButton.backgroundColor = UIColor.clear
-        closeButton.contentMode = UIViewContentMode.scaleAspectFill
         closeButton.setImage(UIImage(named: "close", in: imageBundle, compatibleWith: nil), for: UIControlState())
-        closeButton.addTarget(self, action: #selector(FTImageViewBar.onCloseButtonTapped), for: UIControlEvents.touchUpInside)
         self.addSubview(closeButton)
         
-        saveButton = UIButton(frame: CGRect(x: frame.width-FTImageViewBarButtonWidth-FTImageViewBarDefaultMargin, y: (frame.height-FTImageViewBarButtonWidth)/2, width: FTImageViewBarButtonWidth, height: FTImageViewBarButtonWidth))
-        saveButton.backgroundColor = UIColor.clear
-        saveButton.contentMode = UIViewContentMode.scaleAspectFill
         saveButton.setImage(UIImage(named: "save", in: imageBundle, compatibleWith: nil), for: UIControlState())
-        saveButton.addTarget(self, action: #selector(FTImageViewBar.onSaveButtonTapped), for: UIControlEvents.touchUpInside)
         self.addSubview(saveButton)
-        
-        countLabel = UILabel(frame: CGRect(x: FTImageViewBarButtonWidth+FTImageViewBarDefaultMargin*2, y: 0, width: frame.width-(FTImageViewBarButtonWidth+FTImageViewBarDefaultMargin*2)*2, height: frame.height))
-        countLabel.backgroundColor = UIColor.clear
-        countLabel.textColor = UIColor.white
-        countLabel.font = UIFont.systemFont(ofSize: 13)
-        countLabel.textAlignment = NSTextAlignment.center
-        countLabel.text = "-/-"
+
         self.addSubview(countLabel)
     }
 
+    open override func layoutIfNeeded() {
+        super.layoutIfNeeded()
+        
+        self.closeButton.frame = CGRect(x: FTImageViewBarDefaultMargin, y: (self.frame.height-FTImageViewBarButtonWidth)/2, width: FTImageViewBarButtonWidth, height: FTImageViewBarButtonWidth)
+        self.saveButton.frame = CGRect(x: self.frame.width-FTImageViewBarButtonWidth-FTImageViewBarDefaultMargin, y: (self.frame.height-FTImageViewBarButtonWidth)/2, width: FTImageViewBarButtonWidth, height: FTImageViewBarButtonWidth)
+        self.countLabel.frame = CGRect(x: FTImageViewBarButtonWidth+FTImageViewBarDefaultMargin*2, y: 0, width: self.frame.width-(FTImageViewBarButtonWidth+FTImageViewBarDefaultMargin*2)*2, height: self.frame.height)
+    }
+    
     //MARK: - onCloseButtonTapped
 
     func onCloseButtonTapped(){

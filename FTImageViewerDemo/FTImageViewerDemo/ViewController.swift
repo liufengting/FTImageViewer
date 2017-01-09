@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  FTImageViewerDemo
 //
-//  Created by liufengting https://github.com/liufengting on 16/5/21.
-//  Copyright © 2016年 liufengting. All rights reserved.
+//  Created by liufengting on 16/5/21.
+//  Copyright © 2016年 <https://github.com/liufengting>. All rights reserved.
 //
 
 import UIKit
@@ -68,7 +68,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
-        
+     
+        self.addOrientationChangeNotification()
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -95,4 +96,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
 }
-
+extension ViewController {
+    
+    fileprivate func addOrientationChangeNotification() {
+        NotificationCenter.default.addObserver(self,selector: #selector(onChangeStatusBarOrientationNotification(notification:)),
+                                               name: NSNotification.Name.UIApplicationDidChangeStatusBarOrientation,
+                                               object: nil)
+        
+    }
+    
+    fileprivate func removeOrientationChangeNotification() {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc fileprivate func onChangeStatusBarOrientationNotification(notification : Notification) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(0.1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
+            self.tableView.reloadData()
+        })
+    }
+    
+}
