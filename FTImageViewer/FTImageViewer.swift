@@ -9,10 +9,6 @@
 import UIKit
 import Kingfisher
 
-// MARK: Settings
-
-public let FTImageColumnCount: Int = 3
-
 //MARK: - Marcros -
 
 private let FTImageViewerAnimationDuriation : TimeInterval =  0.3
@@ -31,9 +27,8 @@ private var FTImageViewerScreenHeight : CGFloat { return UIScreen.main.bounds.he
 
 public class FTImageViewer: NSObject, UIScrollViewDelegate, UIGestureRecognizerDelegate {
 
-    private var beginAnimationView: UIImageView!
     private var fromRect: CGRect!
-    private var fromIndex: NSInteger = 0
+    private var currenIndex: NSInteger = 0
     private var imageUrlArray: [String]!
     private var fromSenderRectArray: [CGRect] = []
     private var isPanRecognize: Bool = false
@@ -59,7 +54,7 @@ public class FTImageViewer: NSObject, UIScrollViewDelegate, UIGestureRecognizerD
             fromSenderRectArray.append(rect)
         }
 
-        fromIndex = atIndex
+        currenIndex = atIndex
         imageUrlArray = images
         fromRect = fromSenderRectArray[atIndex]
 
@@ -68,11 +63,7 @@ public class FTImageViewer: NSObject, UIScrollViewDelegate, UIGestureRecognizerD
         backgroundView.addSubview(scrollView)
         backgroundView.addSubview(tabBar)
         
-        beginAnimationView = UIImageView(frame : fromRect)
-        beginAnimationView.clipsToBounds = true
-        beginAnimationView.isUserInteractionEnabled = false
-        beginAnimationView.contentMode = UIViewContentMode.scaleAspectFit
-        beginAnimationView.backgroundColor = UIColor.clear;
+        beginAnimationView.frame = fromRect
         backgroundView.addSubview(beginAnimationView)
         beginAnimationView.kf.setImage(with: URL(string: images[atIndex])!)
 
@@ -91,6 +82,15 @@ public class FTImageViewer: NSObject, UIScrollViewDelegate, UIGestureRecognizerD
         return view
     }()
 
+    fileprivate lazy var beginAnimationView : UIImageView = {
+        let imageView = UIImageView(frame : CGRect.zero)
+        imageView.clipsToBounds = true
+        imageView.isUserInteractionEnabled = false
+        imageView.contentMode = UIViewContentMode.scaleAspectFit
+        imageView.backgroundColor = UIColor.clear;
+        return imageView
+    }()
+    
     fileprivate lazy var scrollView : UIScrollView = {
         let sView = UIScrollView(frame: UIScreen.main.bounds)
         sView.backgroundColor = UIColor.clear
@@ -139,8 +139,8 @@ public class FTImageViewer: NSObject, UIScrollViewDelegate, UIGestureRecognizerD
             scrollView.addSubview(imageView)
         }
         scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width * CGFloat(imageUrlArray.count), height: UIScreen.main.bounds.height)
-        scrollView.scrollRectToVisible(CGRect(x: FTImageViewerScreenWidth*CGFloat(fromIndex), y: 0, width: FTImageViewerScreenWidth, height: FTImageViewerScreenHeight), animated: false)
-        tabBar.countLabel.text = "\(fromIndex+1)/\(imageUrlArray.count)"
+        scrollView.scrollRectToVisible(CGRect(x: FTImageViewerScreenWidth*CGFloat(currenIndex), y: 0, width: FTImageViewerScreenWidth, height: FTImageViewerScreenHeight), animated: false)
+        tabBar.countLabel.text = "\(currenIndex+1)/\(imageUrlArray.count)"
         
         if shouldAnimate {
             self.show()
@@ -225,8 +225,8 @@ public class FTImageViewer: NSObject, UIScrollViewDelegate, UIGestureRecognizerD
     //MARK: - UIScrollViewDelegate
 
     open func scrollViewDidEndDecelerating(_ scrollView: UIScrollView){
-        let page = NSInteger(scrollView.contentOffset.x / FTImageViewerScreenWidth)
-        tabBar.countLabel.text = "\(page+1)/\(imageUrlArray.count)"
+        currenIndex = NSInteger(scrollView.contentOffset.x / FTImageViewerScreenWidth)
+        tabBar.countLabel.text = "\(currenIndex+1)/\(imageUrlArray.count)"
     }
 
     //MARK: - animationOut
@@ -264,11 +264,9 @@ public class FTImageViewer: NSObject, UIScrollViewDelegate, UIGestureRecognizerD
     //MARK: - saveCurrentImage
 
     fileprivate func saveCurrentImage(){
-        let page = NSInteger(scrollView.contentOffset.x / FTImageViewerScreenWidth)
         var imageToSave : UIImage? = nil;
-        
         for img in scrollView.subviews{
-            if (img is FTImageView) && ((img as! FTImageView).tag == page) {
+            if (img is FTImageView) && ((img as! FTImageView).tag == currenIndex) {
                 if ((img as! FTImageView).imageView.image != nil) {
                     imageToSave = (img as! FTImageView).imageView.image!
                 }
@@ -284,8 +282,7 @@ public class FTImageViewer: NSObject, UIScrollViewDelegate, UIGestureRecognizerD
     @objc func saveImageDone(_ image : UIImage, error: Error, context: UnsafeMutableRawPointer?) {
         self.tabBar.countLabel.text = NSLocalizedString("Save image done.", comment: "Save image done.")
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(1.0 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
-            let page = NSInteger(self.scrollView.contentOffset.x / FTImageViewerScreenWidth)
-            self.tabBar.countLabel.text = "\(page+1)/\(self.imageUrlArray.count)"
+            self.tabBar.countLabel.text = "\(self.currenIndex+1)/\(self.imageUrlArray.count)"
         })
     }
     
@@ -536,27 +533,10 @@ open class FTImageGridView: UIView {
         
         if imageArray.count > 0 {
             FTImageGridViewTapBlock = tapBlock
-            let imgHeightFullRow : CGFloat = (frame.size.width - FTImageGridViewImageMargin * CGFloat((FTImageColumnCount - 1))) / CGFloat(FTImageColumnCount)
-            let remainImagesCount = imageArray.count % FTImageColumnCount
-            let minIndexRemainImages = imageArray.count - remainImagesCount - 1
-
-            var x : CGFloat
-            var y : CGFloat
-            var imgHeight : CGFloat
-
+            let imgHeight : CGFloat = (frame.size.width - FTImageGridViewImageMargin * 2) / 3
             for i in 0 ... imageArray.count-1 {
-                // the last remain images has different size
-                if (remainImagesCount > 0 && i > minIndexRemainImages) {
-                    imgHeight = frame.size.width / CGFloat(remainImagesCount)
-
-                    x = CGFloat(i % remainImagesCount) * (imgHeight + FTImageGridViewImageMargin)
-                    y = CGFloat(i / FTImageColumnCount) * (imgHeightFullRow + FTImageGridViewImageMargin)
-                } else {
-                    imgHeight = imgHeightFullRow
-
-                    x = CGFloat(i % FTImageColumnCount) * (imgHeight + FTImageGridViewImageMargin)
-                    y = CGFloat(i / FTImageColumnCount) * (imgHeight + FTImageGridViewImageMargin)
-                }
+                let x = CGFloat(i % 3) * (imgHeight + FTImageGridViewImageMargin)
+                let y = CGFloat(i / 3) * (imgHeight + FTImageGridViewImageMargin)
                 let imageButton  = UIButton()
                 imageButton.frame = CGRect(x: x, y: y, width: imgHeight, height: imgHeight)
                 imageButton.backgroundColor = KCOLOR_BACKGROUND_WHITE
@@ -578,31 +558,8 @@ open class FTImageGridView: UIView {
     //MARK: - get Height With Width
 
     open class func getHeightWithWidth(_ width: CGFloat, imgCount: Int) -> CGFloat{
-        var photoAlbumHeight : CGFloat = 0
-        let imgHeight: CGFloat = (width - FTImageGridViewImageMargin * (CGFloat(FTImageColumnCount) - 1)) / CGFloat(FTImageColumnCount)
-        let remainImagesCount = imgCount % FTImageColumnCount
-
-        // If we have not filled row
-        if (remainImagesCount > 0) {
-
-            // Add height of full rows if at least one fullfilled row exist
-            if (imgCount >= FTImageColumnCount) {
-                let filledRows = floor(CGFloat(imgCount) / CGFloat(FTImageColumnCount))
-                photoAlbumHeight = imgHeight * CGFloat(filledRows) + FTImageGridViewImageMargin * CGFloat(filledRows)
-            }
-
-            // Add height of remain images height
-
-            let remainImagesHeight  = width / CGFloat(remainImagesCount)
-
-            photoAlbumHeight = photoAlbumHeight + remainImagesHeight
-
-        } else {
-            // Rows are filled by FTImageColumnCount in each row
-            photoAlbumHeight = CGFloat(imgHeight) * (ceil(CGFloat(imgCount / FTImageColumnCount))) +
-            CGFloat(FTImageGridViewImageMargin) * (ceil(CGFloat(imgCount / FTImageColumnCount) - 1))
-        }
-
+        let imgHeight: CGFloat = (width - FTImageGridViewImageMargin * 2) / 3
+        let photoAlbumHeight : CGFloat = imgHeight * CGFloat(ceilf(Float(imgCount) / 3)) + FTImageGridViewImageMargin * CGFloat(ceilf(Float(imgCount) / 3)-1)
         return photoAlbumHeight
     }
     
