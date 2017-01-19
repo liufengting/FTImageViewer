@@ -40,7 +40,7 @@ class DemoTableViewCell: UITableViewCell {
         // show images in grid
         imageGridView.showWithImageArray(imageArray) { (buttonsArray, buttonIndex) in
             // preview images with one line of code
-            FTImageViewer.sharedInstance.showImages(self.imageArray, atIndex: buttonIndex, fromSenderArray: buttonsArray)
+            FTImageViewer.showImages(self.imageArray, atIndex: buttonIndex, fromSenderArray: buttonsArray)
         }
     }
     var name : String = "" {
