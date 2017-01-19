@@ -24,11 +24,21 @@ private let KCOLOR_BACKGROUND_WHITE = UIColor(red:241/255.0, green:241/255.0, bl
 
 //MARK: - FTImageViewer -
 
-
-public struct FTImageResource {
-    var image: UIImage?
-    var imageURLstring: String?
+protocol FTImageResourceProtocol {
+    var image : UIImage? { get }
+    var imageURLString : String? { get }
 }
+
+public struct FTImageResource : FTImageResourceProtocol {
+    var image: UIImage?
+    var imageURLString: String?
+    
+    public init(image: UIImage?, imageURLString: String?) {
+        self.image = image
+        self.imageURLString = imageURLString
+    }
+}
+
 
 
 open class FTImageViewer: NSObject, UIScrollViewDelegate, UIGestureRecognizerDelegate {
@@ -83,7 +93,7 @@ open class FTImageViewer: NSObject, UIScrollViewDelegate, UIGestureRecognizerDel
         
         if let img : UIImage = (images[atIndex]).image {
             beginAnimationView.image = img
-        }else if let imageURL : String = (images[atIndex]).imageURLstring {
+        }else if let imageURL : String = (images[atIndex]).imageURLString {
             beginAnimationView.kf.setImage(with: URL(string: imageURL)!)
         }
         
@@ -104,7 +114,7 @@ open class FTImageViewer: NSObject, UIScrollViewDelegate, UIGestureRecognizerDel
         
         var resources : [FTImageResource] = []
         for imageURL in images {
-            let resource : FTImageResource = FTImageResource.init(image: nil, imageURLstring:imageURL)
+            let resource : FTImageResource = FTImageResource(image: nil, imageURLString:imageURL)
             resources.append(resource)
         }
         self.showImages(resources, atIndex: atIndex, fromSenderArray: fromSenderArray)
@@ -328,7 +338,7 @@ open class FTImageView: UIScrollView, UIScrollViewDelegate{
         
         if let img : UIImage = imageResource.image {
             imageView.image = img
-        }else if let imageURL : String = imageResource.imageURLstring {
+        }else if let imageURL : String = imageResource.imageURLString {
             imageView.kf.setImage(with: URL(string: imageURL)!,
                                   placeholder: nil,
                                   options: nil,
