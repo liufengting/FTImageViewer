@@ -11,7 +11,7 @@ import Kingfisher
 
 //MARK: - Marcros -
 
-private let FTImageViewerAnimationDuriation : TimeInterval =  0.3
+private let FTImageViewerAnimationDuriation : TimeInterval =  3
 private let FTImageViewerBackgroundColor =  UIColor.black
 private let FTImageViewBarBackgroundColor =  UIColor.black.withAlphaComponent(0.3)
 private let FTImageViewBarHeight : CGFloat =  40.0
