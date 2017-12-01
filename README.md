@@ -36,7 +36,7 @@
 
 run the demo in `FTImageViewerDemo` to see more
 
-##Usage
+## Usage
 
 * show images in  a grid and preview images with one line of code 
 
@@ -48,15 +48,15 @@ run the demo in `FTImageViewerDemo` to see more
 ```
 * see more docs in `FTImageViewerDemo/DemoTableViewCell.swift` 
 
-##Installation
+## Installation
 
-###Manually
+### Manually
 
 * clone this repo.
 * Simply drop the `FTImageViewer` folder into your project.
 * Enjoy！ 
 
-###Cocoapods
+### Cocoapods
 
 `FTImageViewer` is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
 
