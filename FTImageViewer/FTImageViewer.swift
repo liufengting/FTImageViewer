@@ -224,7 +224,7 @@ public class FTImageViewer: NSObject, UIScrollViewDelegate, UIGestureRecognizerD
     
     //MARK: - panGestureRecognized
 
-    func panGestureRecognized(_ gesture : UIPanGestureRecognizer){
+    @objc func panGestureRecognized(_ gesture : UIPanGestureRecognizer){
         let currentItem : UIView = gesture.view!
         let translatedPoint = gesture.translation(in: currentItem)
         let newAlpha = CGFloat(1 - fabsf(Float(translatedPoint.y/FTImageViewerScreenHeight)))
@@ -459,13 +459,13 @@ public class FTImageView: UIScrollView, UIScrollViewDelegate{
 
     //MARK: - handleSingleTap
 
-    func handleSingleTap(_ sender: UITapGestureRecognizer){
+    @objc func handleSingleTap(_ sender: UITapGestureRecognizer){
         self.FTImageViewHandleTap?()
     }
     
     //MARK: - handleDoubleTap
     
-    func handleDoubleTap(_ sender: UITapGestureRecognizer){
+    @objc func handleDoubleTap(_ sender: UITapGestureRecognizer){
         let touchPoint = sender.location(in: self)
         if (self.zoomScale == self.maximumZoomScale){
             self.setZoomScale(self.minimumZoomScale, animated: true)
@@ -545,13 +545,13 @@ public class FTImageViewBar : UIView {
     
     //MARK: - onCloseButtonTapped
 
-    func onCloseButtonTapped(){
+    @objc func onCloseButtonTapped(){
         self.closeButtonTapBlock();
     }
 
     //MARK: - onSaveButtonTapped
 
-    func onSaveButtonTapped(){
+    @objc func onSaveButtonTapped(){
         self.saveButtonTapBlock();
     }
 }
@@ -617,7 +617,7 @@ public class FTImageGridView: UIView {
     
     //MARK: - onClickImage
 
-    func onClickImage(_ sender: UIButton){
+    @objc func onClickImage(_ sender: UIButton){
         FTImageGridViewTapBlock?(self.buttonArray , sender.tag)
     }
     
