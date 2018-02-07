@@ -14,7 +14,7 @@ import Kingfisher
 private let FTImageViewerAnimationDuriation : TimeInterval =  3
 private let FTImageViewerBackgroundColor =  UIColor.black
 private let FTImageViewBarBackgroundColor =  UIColor.black.withAlphaComponent(0.3)
-private let FTImageViewBarHeight : CGFloat =  40.0
+private let FTImageViewBarHeight : CGFloat =  60.0 // for iPhoneX layout issue
 private let FTImageViewBarButtonWidth : CGFloat =  30.0
 private let FTImageViewBarDefaultMargin : CGFloat =  5.0
 private let FTImageGridViewImageMargin : CGFloat = 2.0
