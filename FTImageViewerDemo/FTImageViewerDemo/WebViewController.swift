@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FTImageViewer
 
 class WebViewController: UIViewController, UIWebViewDelegate{
 
@@ -38,11 +39,18 @@ class WebViewController: UIViewController, UIWebViewDelegate{
         webView.stringByEvaluatingJavaScript(from: "registerImageClickAction();")
     }
     
-    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebView.NavigationType) -> Bool {
         
         if request.url?.scheme == "image-preview" {
-            let prString = "image-preview:"
-            var imageURL : String = (request.url?.absoluteString.substring(from: prString.endIndex))! as String
+            let prString :String = "image-preview:"
+//            var imageURL : String = (request.url?.absoluteString.substring(from: prString.endIndex))! as String
+            let url :String = request.url?.absoluteString ?? ""
+            let index = url.firstIndex(of: Character(prString)) ?? url.endIndex
+            let beginning = url[..<index]
+            // beginning is "Hello"
+            
+            // Convert the result to a String for long-term storage.
+            var imageURL = String(beginning)
             imageURL = imageURL.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlPathAllowed)!
             
             print("the url of the web image about to show is : \(imageURL)")

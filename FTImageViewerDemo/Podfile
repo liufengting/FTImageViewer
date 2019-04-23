@@ -1,5 +1,8 @@
+platform :ios, '10.0'
+use_frameworks!
 
 target 'FTImageViewerDemo' do
-pod 'Kingfisher'
-use_frameworks!
+
+    pod 'FTImageViewer', :path => '../'
+
 end

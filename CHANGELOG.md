@@ -12,5 +12,6 @@
 | 2.0.0 | 2017-01-09 | Fix some bugs |
 | 2.0.1 | 2017-01-19 | add local image support |
 | 2.0.5 | 2018-02-07 | Mohsinali Matiya : fix iPhoneX tabbar layout issue |
+| 2.0.6 | 2019-04-23 | Swift 5 support. |
 
 
