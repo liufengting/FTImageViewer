@@ -1,4 +1,3 @@
-
 Pod::Spec.new do |s|
 
   s.name         = "FTImageViewer"
@@ -17,8 +16,7 @@ Pod::Spec.new do |s|
   s.resources    = "FTImageViewer/*.{bundle}"
   s.requires_arc = true
   s.framework    = "UIKit"
-  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '5.0' }
+  s.swift_versions = '5.0'
   s.dependency 'Kingfisher'
 
 end
-# 
