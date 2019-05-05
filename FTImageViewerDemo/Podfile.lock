@@ -1,7 +1,7 @@
 PODS:
-  - FTImageViewer (2.0.6):
+  - FTImageViewer (2.0.7):
     - Kingfisher
-  - Kingfisher (5.3.1)
+  - Kingfisher (5.4.0)
 
 DEPENDENCIES:
   - FTImageViewer (from `../`)
@@ -15,8 +15,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  FTImageViewer: d96a81b2fc4119568db1b1ccf127ab6c4e1adc4f
-  Kingfisher: d9e7e0b209b59b8f9873aa2f37654e81a7beea51
+  FTImageViewer: 7983c98b037ed1ef2abb9f6cbe70c8a42023f995
+  Kingfisher: 9c8f2cc6710334e06f32ba2b45e77707d5e2f0c9
 
 PODFILE CHECKSUM: 7a97655781c9cfe087047f64e37ee9482afec1c0
 

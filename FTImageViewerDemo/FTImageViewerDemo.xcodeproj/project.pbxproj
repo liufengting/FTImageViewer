@@ -41,10 +41,6 @@
 		5AEFDF4C1CF0AD380081F07F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AEFDF4F1CF0AD380081F07F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5AEFDF511CF0AD380081F07F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5AEFDF5A1CF0AD380081F07F /* FTImageViewerDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTImageViewerDemoTests.swift; sourceTree = "<group>"; };
-		5AEFDF5C1CF0AD380081F07F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5AEFDF651CF0AD380081F07F /* FTImageViewerDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTImageViewerDemoUITests.swift; sourceTree = "<group>"; };
-		5AEFDF671CF0AD380081F07F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9739679F62DB5C3B822BF688 /* Pods-FTImageViewerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FTImageViewerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-FTImageViewerDemo/Pods-FTImageViewerDemo.release.xcconfig"; sourceTree = "<group>"; };
 		C1AF93BE5CE17D827B77329C /* Pods_FTImageViewerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FTImageViewerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -82,8 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				5AEFDF441CF0AD380081F07F /* FTImageViewerDemo */,
-				5AEFDF591CF0AD380081F07F /* FTImageViewerDemoTests */,
-				5AEFDF641CF0AD380081F07F /* FTImageViewerDemoUITests */,
 				5AEFDF431CF0AD380081F07F /* Products */,
 				3CAC87B7E0B3D25DAADBB6C4 /* Pods */,
 				D97588C9B0AC1458FCE773A8 /* Frameworks */,
@@ -113,24 +107,6 @@
 			path = FTImageViewerDemo;
 			sourceTree = "<group>";
 		};
-		5AEFDF591CF0AD380081F07F /* FTImageViewerDemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				5AEFDF5A1CF0AD380081F07F /* FTImageViewerDemoTests.swift */,
-				5AEFDF5C1CF0AD380081F07F /* Info.plist */,
-			);
-			path = FTImageViewerDemoTests;
-			sourceTree = "<group>";
-		};
-		5AEFDF641CF0AD380081F07F /* FTImageViewerDemoUITests */ = {
-			isa = PBXGroup;
-			children = (
-				5AEFDF651CF0AD380081F07F /* FTImageViewerDemoUITests.swift */,
-				5AEFDF671CF0AD380081F07F /* Info.plist */,
-			);
-			path = FTImageViewerDemoUITests;
-			sourceTree = "<group>";
-		};
 		D97588C9B0AC1458FCE773A8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,7 +127,7 @@
 				5AEFDF3F1CF0AD380081F07F /* Frameworks */,
 				5AEFDF401CF0AD380081F07F /* Resources */,
 				2A76637A1DED48C30068C6FF /* Embed Frameworks */,
-				867F5CD3813F20F376091867 /* [CP] Embed Pods Frameworks */,
+				94D6C791A62A009D31AF0CD7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -231,7 +207,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		867F5CD3813F20F376091867 /* [CP] Embed Pods Frameworks */ = {
+		94D6C791A62A009D31AF0CD7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (

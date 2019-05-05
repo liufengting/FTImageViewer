@@ -505,11 +505,11 @@
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
+				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			productRefGroup = 598CDC590EFEE73D051C038EEEAC8285 /* Products */;
@@ -642,69 +642,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		058EF6B2C8FFE4C8F854E6ED4485D638 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 328E28D4A01985742FE72677554685F2 /* FTImageViewer.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/FTImageViewer/FTImageViewer-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FTImageViewer/FTImageViewer-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FTImageViewer/FTImageViewer.modulemap";
-				PRODUCT_MODULE_NAME = FTImageViewer;
-				PRODUCT_NAME = FTImageViewer;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		0FF70AC89F1D8989AE50139792118067 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 328E28D4A01985742FE72677554685F2 /* FTImageViewer.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/FTImageViewer/FTImageViewer-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FTImageViewer/FTImageViewer-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FTImageViewer/FTImageViewer.modulemap";
-				PRODUCT_MODULE_NAME = FTImageViewer;
-				PRODUCT_NAME = FTImageViewer;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		216586C97781E74F00B2DF794419F89D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 410D72ED69291ADBA52726CAD78EF9CA /* Kingfisher.xcconfig */;
@@ -862,6 +799,38 @@
 			};
 			name = Debug;
 		};
+		723A9B539254E46C440A91E3B0F57D4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 328E28D4A01985742FE72677554685F2 /* FTImageViewer.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/FTImageViewer/FTImageViewer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FTImageViewer/FTImageViewer-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FTImageViewer/FTImageViewer.modulemap";
+				PRODUCT_MODULE_NAME = FTImageViewer;
+				PRODUCT_NAME = FTImageViewer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		CDFEE48915F9AD2EA1387C215C03DA2E /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6CBC2D0E412372D90F5384E5B75CF4F5 /* Pods-FTImageViewerDemo.release.xcconfig */;
@@ -919,6 +888,39 @@
 				MODULEMAP_FILE = "Target Support Files/Kingfisher/Kingfisher.modulemap";
 				PRODUCT_MODULE_NAME = Kingfisher;
 				PRODUCT_NAME = Kingfisher;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EF407A4D9A9F97B54A0240AAFC6B9695 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 328E28D4A01985742FE72677554685F2 /* FTImageViewer.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/FTImageViewer/FTImageViewer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FTImageViewer/FTImageViewer-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FTImageViewer/FTImageViewer.modulemap";
+				PRODUCT_MODULE_NAME = FTImageViewer;
+				PRODUCT_NAME = FTImageViewer;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -988,8 +990,8 @@
 		BC5DCBB955C2780A38A2F9C8C944D127 /* Build configuration list for PBXNativeTarget "FTImageViewer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				058EF6B2C8FFE4C8F854E6ED4485D638 /* Debug */,
-				0FF70AC89F1D8989AE50139792118067 /* Release */,
+				723A9B539254E46C440A91E3B0F57D4B /* Debug */,
+				EF407A4D9A9F97B54A0240AAFC6B9695 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
