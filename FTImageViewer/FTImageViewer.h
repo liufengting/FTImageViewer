@@ -2,11 +2,10 @@
 //  FTImageViewer.h
 //  FTImageViewer
 //
-//  Created by liufengting on 29/11/2016.
-//  Copyright © 2016 LiuFengting. All rights reserved.
+//  Created by LiuFengting on 2021/7/7.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for FTImageViewer.
 FOUNDATION_EXPORT double FTImageViewerVersionNumber;

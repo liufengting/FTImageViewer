@@ -1,8 +1,0 @@
-platform :ios, '10.0'
-use_frameworks!
-
-target 'FTImageViewerDemo' do
-
-    pod 'FTImageViewer', :path => '../'
-
-end
