@@ -3,6 +3,7 @@
 //  FTImageViewer
 //
 //  Created by LiuFengting on 2021/7/7.
+//  Copyright © 2022年 <https://github.com/liufengting>. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

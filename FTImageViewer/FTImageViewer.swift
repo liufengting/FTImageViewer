@@ -3,7 +3,7 @@
 //  FTImageViewer
 //
 //  Created by liufengting on 15/12/17.
-//  Copyright © 2015年 liufengting <https://github.com/liufengting>. All rights reserved.
+//  Copyright © 2022年 <https://github.com/liufengting>. All rights reserved.
 //
 
 import UIKit
@@ -73,6 +73,15 @@ public class FTImageViewer: NSObject, UIScrollViewDelegate, UIGestureRecognizerD
         }
         return Static.instance
     }
+    
+    func getWindow() -> UIWindow? {
+        return UIApplication
+            .shared
+            .connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .flatMap { $0.windows }
+            .first { $0.isKeyWindow }
+    }
 
     //MARK: - showImages with images (supports both images and url strings)
     
@@ -80,7 +89,7 @@ public class FTImageViewer: NSObject, UIScrollViewDelegate, UIGestureRecognizerD
         fromSenderRectArray = []
         
         for i in 0 ... fromSenderArray.count-1 {
-            let rect: CGRect = fromSenderArray[i].superview!.convert(fromSenderArray[i].frame, to:UIApplication.shared.keyWindow)
+            let rect: CGRect = fromSenderArray[i].superview!.convert(fromSenderArray[i].frame, to:self.getWindow())
             fromSenderRectArray.append(rect)
         }
         
@@ -89,7 +98,7 @@ public class FTImageViewer: NSObject, UIScrollViewDelegate, UIGestureRecognizerD
         fromRect = fromSenderRectArray[atIndex]
 
         backgroundView.backgroundColor = FTImageViewerBackgroundColor
-        UIApplication.shared.keyWindow?.addSubview(backgroundView);
+        self.getWindow()?.addSubview(backgroundView);
         backgroundView.addSubview(scrollView)
         backgroundView.addSubview(tabBar)
         
@@ -367,7 +376,7 @@ extension FTImageViewer {
     
     fileprivate func addOrientationChangeNotification() {
         NotificationCenter.default.addObserver(self,selector: #selector(onChangeStatusBarOrientationNotification(notification:)),
-                                               name: UIApplication.didChangeStatusBarOrientationNotification,
+                                               name: UIDevice.orientationDidChangeNotification,
                                                object: nil)
     }
     
@@ -376,9 +385,9 @@ extension FTImageViewer {
     }
     
     @objc fileprivate func onChangeStatusBarOrientationNotification(notification: Notification) {
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(0.1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.setupView(shouldAnimate: false)
-        })
+        }
     }
     
 }
@@ -408,7 +417,7 @@ public class FTImageView: UIScrollView, UIScrollViewDelegate{
         self.tag = atIndex
         
         activityIndicator = UIActivityIndicatorView(frame: CGRect(x: (frame.width - FTImageViewBarHeight)/2, y: (frame.height - FTImageViewBarHeight)/2, width: FTImageViewBarHeight, height: FTImageViewBarHeight))
-        activityIndicator.style = UIActivityIndicatorView.Style.white
+        activityIndicator.style = .medium
         activityIndicator.hidesWhenStopped = true
         self.addSubview(activityIndicator)
         

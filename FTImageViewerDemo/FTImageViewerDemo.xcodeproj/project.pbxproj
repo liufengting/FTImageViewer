@@ -7,95 +7,86 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A84FF1B269575F900D54C99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A84FF1A269575F900D54C99 /* AppDelegate.swift */; };
-		2A84FF1D269575F900D54C99 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A84FF1C269575F900D54C99 /* SceneDelegate.swift */; };
-		2A84FF22269575F900D54C99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A84FF20269575F900D54C99 /* Main.storyboard */; };
-		2A84FF24269575F900D54C99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A84FF23269575F900D54C99 /* Assets.xcassets */; };
-		2A84FF27269575F900D54C99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A84FF25269575F900D54C99 /* LaunchScreen.storyboard */; };
-		2A84FF352695784A00D54C99 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A84FF322695784A00D54C99 /* ViewController.swift */; };
-		2A84FF362695784A00D54C99 /* DemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A84FF332695784A00D54C99 /* DemoTableViewCell.swift */; };
-		2A84FF372695784A00D54C99 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A84FF342695784A00D54C99 /* WebViewController.swift */; };
-		2A84FF3A269578A000D54C99 /* FTImageViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A84FF39269578A000D54C99 /* FTImageViewer.framework */; };
-		2A84FF3B269578A000D54C99 /* FTImageViewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A84FF39269578A000D54C99 /* FTImageViewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		26118B52EE6F66AD803B2CC0 /* Pods_FTImageViewerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90ADAC0193F30C6148074D96 /* Pods_FTImageViewerDemo.framework */; };
+		2AD9B62627D5EB900053C920 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD9B62527D5EB900053C920 /* AppDelegate.swift */; };
+		2AD9B62A27D5EB900053C920 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD9B62927D5EB900053C920 /* ViewController.swift */; };
+		2AD9B62D27D5EB900053C920 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD9B62B27D5EB900053C920 /* Main.storyboard */; };
+		2AD9B62F27D5EB910053C920 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AD9B62E27D5EB910053C920 /* Assets.xcassets */; };
+		2AD9B63227D5EB910053C920 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD9B63027D5EB910053C920 /* LaunchScreen.storyboard */; };
+		2AD9B63A27D5EC100053C920 /* DemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD9B63927D5EC100053C920 /* DemoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		2A84FF3C269578A000D54C99 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				2A84FF3B269578A000D54C99 /* FTImageViewer.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		2A84FF17269575F900D54C99 /* FTImageViewerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FTImageViewerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A84FF1A269575F900D54C99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2A84FF1C269575F900D54C99 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2A84FF21269575F900D54C99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2A84FF23269575F900D54C99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2A84FF26269575F900D54C99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		2A84FF28269575F900D54C99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2A84FF322695784A00D54C99 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../../../../../.Trash/FTImageViewerDemo/FTImageViewerDemo/ViewController.swift; sourceTree = "<group>"; };
-		2A84FF332695784A00D54C99 /* DemoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoTableViewCell.swift; sourceTree = "<group>"; };
-		2A84FF342695784A00D54C99 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		2A84FF39269578A000D54C99 /* FTImageViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FTImageViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AD9B62227D5EB900053C920 /* FTImageViewerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FTImageViewerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AD9B62527D5EB900053C920 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2AD9B62927D5EB900053C920 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2AD9B62C27D5EB900053C920 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2AD9B62E27D5EB910053C920 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2AD9B63127D5EB910053C920 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2AD9B63327D5EB910053C920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2AD9B63927D5EC100053C920 /* DemoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoTableViewCell.swift; sourceTree = "<group>"; };
+		2C0046483921B8500D42E103 /* Pods-FTImageViewerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FTImageViewerDemo.release.xcconfig"; path = "Target Support Files/Pods-FTImageViewerDemo/Pods-FTImageViewerDemo.release.xcconfig"; sourceTree = "<group>"; };
+		90ADAC0193F30C6148074D96 /* Pods_FTImageViewerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FTImageViewerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB924496713680E91DE06E1F /* Pods-FTImageViewerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FTImageViewerDemo.debug.xcconfig"; path = "Target Support Files/Pods-FTImageViewerDemo/Pods-FTImageViewerDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2A84FF14269575F900D54C99 /* Frameworks */ = {
+		2AD9B61F27D5EB900053C920 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A84FF3A269578A000D54C99 /* FTImageViewer.framework in Frameworks */,
+				26118B52EE6F66AD803B2CC0 /* Pods_FTImageViewerDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2A84FF0E269575F900D54C99 = {
+		1E96FC51451E94FDDBF443A7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2A84FF19269575F900D54C99 /* FTImageViewerDemo */,
-				2A84FF18269575F900D54C99 /* Products */,
-				2A84FF38269578A000D54C99 /* Frameworks */,
+				AB924496713680E91DE06E1F /* Pods-FTImageViewerDemo.debug.xcconfig */,
+				2C0046483921B8500D42E103 /* Pods-FTImageViewerDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		2AD9B61927D5EB900053C920 = {
+			isa = PBXGroup;
+			children = (
+				2AD9B62427D5EB900053C920 /* FTImageViewerDemo */,
+				2AD9B62327D5EB900053C920 /* Products */,
+				1E96FC51451E94FDDBF443A7 /* Pods */,
+				399D46EE86FB8863B98522AB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		2A84FF18269575F900D54C99 /* Products */ = {
+		2AD9B62327D5EB900053C920 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2A84FF17269575F900D54C99 /* FTImageViewerDemo.app */,
+				2AD9B62227D5EB900053C920 /* FTImageViewerDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2A84FF19269575F900D54C99 /* FTImageViewerDemo */ = {
+		2AD9B62427D5EB900053C920 /* FTImageViewerDemo */ = {
 			isa = PBXGroup;
 			children = (
-				2A84FF1A269575F900D54C99 /* AppDelegate.swift */,
-				2A84FF1C269575F900D54C99 /* SceneDelegate.swift */,
-				2A84FF322695784A00D54C99 /* ViewController.swift */,
-				2A84FF342695784A00D54C99 /* WebViewController.swift */,
-				2A84FF332695784A00D54C99 /* DemoTableViewCell.swift */,
-				2A84FF20269575F900D54C99 /* Main.storyboard */,
-				2A84FF23269575F900D54C99 /* Assets.xcassets */,
-				2A84FF25269575F900D54C99 /* LaunchScreen.storyboard */,
-				2A84FF28269575F900D54C99 /* Info.plist */,
+				2AD9B62527D5EB900053C920 /* AppDelegate.swift */,
+				2AD9B62927D5EB900053C920 /* ViewController.swift */,
+				2AD9B63927D5EC100053C920 /* DemoTableViewCell.swift */,
+				2AD9B62B27D5EB900053C920 /* Main.storyboard */,
+				2AD9B62E27D5EB910053C920 /* Assets.xcassets */,
+				2AD9B63027D5EB910053C920 /* LaunchScreen.storyboard */,
+				2AD9B63327D5EB910053C920 /* Info.plist */,
 			);
 			path = FTImageViewerDemo;
 			sourceTree = "<group>";
 		};
-		2A84FF38269578A000D54C99 /* Frameworks */ = {
+		399D46EE86FB8863B98522AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2A84FF39269578A000D54C99 /* FTImageViewer.framework */,
+				90ADAC0193F30C6148074D96 /* Pods_FTImageViewerDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -103,14 +94,15 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2A84FF16269575F900D54C99 /* FTImageViewerDemo */ = {
+		2AD9B62127D5EB900053C920 /* FTImageViewerDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2A84FF2B269575F900D54C99 /* Build configuration list for PBXNativeTarget "FTImageViewerDemo" */;
+			buildConfigurationList = 2AD9B63627D5EB910053C920 /* Build configuration list for PBXNativeTarget "FTImageViewerDemo" */;
 			buildPhases = (
-				2A84FF13269575F900D54C99 /* Sources */,
-				2A84FF14269575F900D54C99 /* Frameworks */,
-				2A84FF15269575F900D54C99 /* Resources */,
-				2A84FF3C269578A000D54C99 /* Embed Frameworks */,
+				A5445B8F6B795CF1BE53211B /* [CP] Check Pods Manifest.lock */,
+				2AD9B61E27D5EB900053C920 /* Sources */,
+				2AD9B61F27D5EB900053C920 /* Frameworks */,
+				2AD9B62027D5EB900053C920 /* Resources */,
+				D8F2711281C7F6003483A061 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -118,25 +110,25 @@
 			);
 			name = FTImageViewerDemo;
 			productName = FTImageViewerDemo;
-			productReference = 2A84FF17269575F900D54C99 /* FTImageViewerDemo.app */;
+			productReference = 2AD9B62227D5EB900053C920 /* FTImageViewerDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		2A84FF0F269575F900D54C99 /* Project object */ = {
+		2AD9B61A27D5EB900053C920 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1300;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
 				TargetAttributes = {
-					2A84FF16269575F900D54C99 = {
-						CreatedOnToolsVersion = 13.0;
+					2AD9B62127D5EB900053C920 = {
+						CreatedOnToolsVersion = 13.3;
 					};
 				};
 			};
-			buildConfigurationList = 2A84FF12269575F900D54C99 /* Build configuration list for PBXProject "FTImageViewerDemo" */;
+			buildConfigurationList = 2AD9B61D27D5EB900053C920 /* Build configuration list for PBXProject "FTImageViewerDemo" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -144,57 +136,97 @@
 				en,
 				Base,
 			);
-			mainGroup = 2A84FF0E269575F900D54C99;
-			productRefGroup = 2A84FF18269575F900D54C99 /* Products */;
+			mainGroup = 2AD9B61927D5EB900053C920;
+			productRefGroup = 2AD9B62327D5EB900053C920 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2A84FF16269575F900D54C99 /* FTImageViewerDemo */,
+				2AD9B62127D5EB900053C920 /* FTImageViewerDemo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2A84FF15269575F900D54C99 /* Resources */ = {
+		2AD9B62027D5EB900053C920 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A84FF27269575F900D54C99 /* LaunchScreen.storyboard in Resources */,
-				2A84FF24269575F900D54C99 /* Assets.xcassets in Resources */,
-				2A84FF22269575F900D54C99 /* Main.storyboard in Resources */,
+				2AD9B63227D5EB910053C920 /* LaunchScreen.storyboard in Resources */,
+				2AD9B62F27D5EB910053C920 /* Assets.xcassets in Resources */,
+				2AD9B62D27D5EB900053C920 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A5445B8F6B795CF1BE53211B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FTImageViewerDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8F2711281C7F6003483A061 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FTImageViewerDemo/Pods-FTImageViewerDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FTImageViewerDemo/Pods-FTImageViewerDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FTImageViewerDemo/Pods-FTImageViewerDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		2A84FF13269575F900D54C99 /* Sources */ = {
+		2AD9B61E27D5EB900053C920 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A84FF372695784A00D54C99 /* WebViewController.swift in Sources */,
-				2A84FF1B269575F900D54C99 /* AppDelegate.swift in Sources */,
-				2A84FF352695784A00D54C99 /* ViewController.swift in Sources */,
-				2A84FF362695784A00D54C99 /* DemoTableViewCell.swift in Sources */,
-				2A84FF1D269575F900D54C99 /* SceneDelegate.swift in Sources */,
+				2AD9B63A27D5EC100053C920 /* DemoTableViewCell.swift in Sources */,
+				2AD9B62A27D5EB900053C920 /* ViewController.swift in Sources */,
+				2AD9B62627D5EB900053C920 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2A84FF20269575F900D54C99 /* Main.storyboard */ = {
+		2AD9B62B27D5EB900053C920 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2A84FF21269575F900D54C99 /* Base */,
+				2AD9B62C27D5EB900053C920 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		2A84FF25269575F900D54C99 /* LaunchScreen.storyboard */ = {
+		2AD9B63027D5EB910053C920 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2A84FF26269575F900D54C99 /* Base */,
+				2AD9B63127D5EB910053C920 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -202,14 +234,13 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		2A84FF29269575F900D54C99 /* Debug */ = {
+		2AD9B63427D5EB910053C920 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -253,7 +284,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -263,14 +294,13 @@
 			};
 			name = Debug;
 		};
-		2A84FF2A269575F900D54C99 /* Release */ = {
+		2AD9B63527D5EB910053C920 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -308,7 +338,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -318,8 +348,9 @@
 			};
 			name = Release;
 		};
-		2A84FF2C269575F900D54C99 /* Debug */ = {
+		2AD9B63727D5EB910053C920 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB924496713680E91DE06E1F /* Pods-FTImageViewerDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -328,14 +359,12 @@
 				DEVELOPMENT_TEAM = E83AC9WR2F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FTImageViewerDemo/Info.plist;
-				INFOPLIST_KEY_CFBundleExecutable = FTImageViewerDemo;
-				INFOPLIST_KEY_CFBundleName = FTImageViewerDemo;
-				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -349,8 +378,9 @@
 			};
 			name = Debug;
 		};
-		2A84FF2D269575F900D54C99 /* Release */ = {
+		2AD9B63827D5EB910053C920 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C0046483921B8500D42E103 /* Pods-FTImageViewerDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -359,14 +389,12 @@
 				DEVELOPMENT_TEAM = E83AC9WR2F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FTImageViewerDemo/Info.plist;
-				INFOPLIST_KEY_CFBundleExecutable = FTImageViewerDemo;
-				INFOPLIST_KEY_CFBundleName = FTImageViewerDemo;
-				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -383,25 +411,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2A84FF12269575F900D54C99 /* Build configuration list for PBXProject "FTImageViewerDemo" */ = {
+		2AD9B61D27D5EB900053C920 /* Build configuration list for PBXProject "FTImageViewerDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2A84FF29269575F900D54C99 /* Debug */,
-				2A84FF2A269575F900D54C99 /* Release */,
+				2AD9B63427D5EB910053C920 /* Debug */,
+				2AD9B63527D5EB910053C920 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2A84FF2B269575F900D54C99 /* Build configuration list for PBXNativeTarget "FTImageViewerDemo" */ = {
+		2AD9B63627D5EB910053C920 /* Build configuration list for PBXNativeTarget "FTImageViewerDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2A84FF2C269575F900D54C99 /* Debug */,
-				2A84FF2D269575F900D54C99 /* Release */,
+				2AD9B63727D5EB910053C920 /* Debug */,
+				2AD9B63827D5EB910053C920 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 2A84FF0F269575F900D54C99 /* Project object */;
+	rootObject = 2AD9B61A27D5EB900053C920 /* Project object */;
 }

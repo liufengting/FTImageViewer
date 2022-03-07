@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "container:FTImageViewerDemo.xcodeproj">
+      location = "group:FTImageViewerDemo.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:../FTImageViewer.xcodeproj">
+      location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

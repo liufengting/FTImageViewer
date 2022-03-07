@@ -3,13 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2A84FF30269576C000D54C99 /* FTImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A84FF2E269576C000D54C99 /* FTImageViewer.swift */; };
 		2A84FF31269576C000D54C99 /* FTResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2A84FF2F269576C000D54C99 /* FTResource.bundle */; };
-		2A84FF3F269578C700D54C99 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2A84FF3E269578C700D54C99 /* Kingfisher */; };
 		2A9873E826957591004F4888 /* FTImageViewer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A9873E626957591004F4888 /* FTImageViewer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -26,7 +25,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A84FF3F269578C700D54C99 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,7 +87,6 @@
 			);
 			name = FTImageViewer;
 			packageProductDependencies = (
-				2A84FF3E269578C700D54C99 /* Kingfisher */,
 			);
 			productName = FTImageViewer;
 			productReference = 2A9873E326957591004F4888 /* FTImageViewer.framework */;
@@ -119,7 +116,6 @@
 			);
 			mainGroup = 2A9873D926957591004F4888;
 			packageReferences = (
-				2A84FF3D269578C700D54C99 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 2A9873E426957591004F4888 /* Products */;
 			projectDirPath = "";
@@ -348,25 +344,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		2A84FF3D269578C700D54C99 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		2A84FF3E269578C700D54C99 /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2A84FF3D269578C700D54C99 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2A9873DA26957591004F4888 /* Project object */;
 }

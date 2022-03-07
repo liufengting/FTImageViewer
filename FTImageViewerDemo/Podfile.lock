@@ -1,0 +1,23 @@
+PODS:
+  - FTImageViewer (2.0.7):
+    - Kingfisher
+  - Kingfisher (7.2.0)
+
+DEPENDENCIES:
+  - FTImageViewer (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - Kingfisher
+
+EXTERNAL SOURCES:
+  FTImageViewer:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FTImageViewer: 8e6c8ad3376a4e8a37e059be43b9906e285796fd
+  Kingfisher: 3ac0b75b155cabc0e544877d1a4deea29feece92
+
+PODFILE CHECKSUM: fe035bd790420427ae55547fae7af90567bd6cbc
+
+COCOAPODS: 1.11.2
